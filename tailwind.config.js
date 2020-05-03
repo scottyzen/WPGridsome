@@ -6,6 +6,16 @@ module.exports = {
       },
     },
     variants: {},
-    plugins: []
+    plugins: [],
+    purge: {
+      enabled: true,
+      content: [
+        "components/**/*.vue",
+        "layouts/**/*.vue",
+        "pages/**/*.vue",
+        "templates/**/*.js",
+        "gridsome.config.js"
+      ]
+    }
   }
   

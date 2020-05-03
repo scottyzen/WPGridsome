@@ -9,16 +9,10 @@
 
 <page-query>
 query Post ($id: ID!){
-  post( id: $id){
-    id
+  post(idType: DATABASE_ID, id: $id) {
+    databaseId
     title
     content
   }
 }
 </page-query>
-
-<script>
-export default {};
-</script>
-
-<style></style>
