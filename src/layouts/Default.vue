@@ -1,9 +1,7 @@
 <template>
-  <div class="layout">
-    <header>
-      <div
-        class="container flex justify-between bg-indigo-300 my-2 py-4 px-8 rounded-md border-b border-indigo-400"
-      >
+  <div>
+    <header class="border-b mb-8 absolute inset-x-0 top-0">
+      <div class="container flex justify-between items-center">
         <g-link class="font-bold" to="/">{{
           $static.metadata.siteName
         }}</g-link>
@@ -30,3 +28,10 @@ export default {
   },
 };
 </script>
+
+<style>
+a,
+button {
+  cursor: pointer;
+}
+</style>
