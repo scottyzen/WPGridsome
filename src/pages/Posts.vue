@@ -36,7 +36,7 @@
 
       <ul class="grid grid-cols-3 gap-16 py-12">
         <li
-          v-for="{ node } in $page.posts.edges"
+          v-for="{ node } in $page.posts.edges.slice(1)"
           :key="node.id"
           class="rounded-md shadow-lg"
         >
@@ -53,9 +53,11 @@
             ></g-image>
 
             <div class="py-2 px-4 pb-8">
-              <span class="text-indigo-500 text-sm">{{
-                node.categories.edges[0].node.name
-              }}</span>
+              <span
+                v-if="node.categories.edges[0]"
+                class="text-indigo-500 text-sm"
+                v-html="node.categories.edges[0].node.name"
+              ></span>
               <h2 class="text-gray-800">{{ node.title }}</h2>
             </div>
           </a>
@@ -67,7 +69,7 @@
 
 <page-query>
 query Posts {
-  posts(first: 12) {
+  posts(first: 10) {
     edges {
       node {
         title
@@ -80,7 +82,7 @@ query Posts {
             }
           }
         }
-        excerpt
+        excerpt(format: RENDERED)
         featuredImage {
           sourceUrl(size: MEDIUM_LARGE)
         }
@@ -88,6 +90,7 @@ query Posts {
     }
   }
 }
+
 </page-query>
 
 <style>
