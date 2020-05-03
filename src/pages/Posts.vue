@@ -97,6 +97,7 @@ query Posts {
 .shape {
   background: url("../../src/assets/images/shape.svg") no-repeat;
   background-size: contain;
+  min-height: 600px;
 }
 .h-200 {
   height: 200px;

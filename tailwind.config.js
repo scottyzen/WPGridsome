@@ -8,13 +8,13 @@ module.exports = {
     variants: {},
     plugins: [],
     purge: {
-      enabled: true,
+      enabled: process.env.NODE_ENV === 'production',
       content: [
-        "components/**/*.vue",
-        "layouts/**/*.vue",
-        "pages/**/*.vue",
-        "templates/**/*.js",
-        "gridsome.config.js"
+        "./src/components/**/*.vue",
+        "./src/layouts/**/*.vue",
+        "./src/pages/**/*.vue",
+        "./src/templates/**/*.vue",
+        "./gridsome.config.js"
       ]
     }
   }
