@@ -5,17 +5,25 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
-  plugins: [{
-    use: 'gridsome-source-graphql',
-    options: {
-      url: process.env.GRAPHQL_URL,
-      fieldName: 'wp',
-      typeName: 'wp',
+  siteName: 'WPGridsome',
+  plugins: [
+    {
+      use: 'gridsome-source-graphql',
+      options: {
+        url: process.env.GRAPHQL_URL,
+        fieldName: 'wp',
+        typeName: 'WordPress',
 
-      headers: {
-        Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
+        headers: {
+          Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
+        },
       },
     },
-  },]
+    {
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        tailwindConfig: './tailwind.config.js',
+      }
+    }
+  ]
 }
