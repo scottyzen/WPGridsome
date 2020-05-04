@@ -37,7 +37,7 @@
       <ul class="grid gap-16 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <li
           v-for="{ node } in $page.posts.edges.slice(1, currentPossition)"
-          :key="node.id"
+          :key="node.databaseId"
           class="rounded-md shadow-lg"
         >
           <a :href="`/post/${node.slug}`">
@@ -84,6 +84,7 @@ query Posts {
         title
         slug
         id
+        databaseId
         categories {
           edges {
             node {
