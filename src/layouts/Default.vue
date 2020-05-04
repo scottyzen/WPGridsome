@@ -1,14 +1,36 @@
 <template>
   <div>
-    <header class="border-b mb-8 absolute inset-x-0 top-0">
-      <div class="container flex justify-between items-center">
+    <header class="absolute inset-x-0 top-0 mb-8 border-b">
+      <div class="container flex items-center justify-between">
         <g-link class="font-bold" to="/">{{
           $static.metadata.siteName
         }}</g-link>
         <Nav />
       </div>
     </header>
-    <slot />
+    <div class="min-h-screen pt-32 pb-12">
+      <slot />
+    </div>
+    <footer class="font-light text-white bg-gray-700">
+      <div class="container py-12 ">
+        <p class="max-w-xl">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
+          quia vero molestias odit blanditiis sunt facilis veniam doloremque
+          quas exercitationem architecto numquam, perferendis eligendi cumque
+          omnis ipsam.
+        </p>
+      </div>
+      <p class="p-4 text-sm text-center bg-gray-800">
+        © 2020 WPGrdisome.com by
+        <a
+          href="https://scottyzen.com?ref=wpgridsome"
+          target="_blank"
+          rel="noopener"
+          class="text-yellow-500"
+          >Scott Kennedy</a
+        >
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -33,5 +55,6 @@ export default {
 a,
 button {
   cursor: pointer;
+  outline: none !important;
 }
 </style>
