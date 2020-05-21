@@ -6,11 +6,11 @@
         <div class="mt-8">
           <form
             @submit="sendform"
-            class="flex flex-wrap justify-between text-indigo-600"
+            class="flex flex-wrap justify-between max-w-2xl text-indigo-600"
           >
             <input
               type="text"
-              class="w-6/12 mr-4"
+              class="w-7/12 mr-4"
               name="name"
               v-model="name"
               placeholder="Full Name "
@@ -30,9 +30,9 @@
               placeholder="Email Address"
             />
             <input
-              class="text-blue-100 bg-indigo-600 border-indigo-700 cursor-pointer"
+              class="w-56 text-blue-100 bg-indigo-600 border-indigo-700 cursor-pointer hover:bg-indigo-700"
               type="submit"
-              value="Send"
+              :value="buttonText"
             />
           </form>
         </div>
@@ -54,10 +54,12 @@ export default {
       name: "",
       subject: "",
       email: "",
+      buttonText: "Send",
     };
   },
   methods: {
     sendform(e) {
+      this.buttonText = "Sending...";
       e.preventDefault();
       console.log("Sending out an SOS");
       const payload = {
@@ -68,7 +70,11 @@ export default {
 
       axios
         .post("/.netlify/functions/sendgrid", JSON.stringify(payload), headers)
-        .then((res) => console.log(res))
+        .then((res) => {
+          if (res.data == "successful") {
+            this.buttonText = "Message sent";
+          }
+        })
         .catch((error) => console.log(error));
     },
   },
