@@ -48,6 +48,7 @@ export default {
   },
   methods: {
     sendform(e) {
+      e.preventDefault();
       console.log("Sending out an SOS");
       const payload = {
         name: this.name,
@@ -61,8 +62,6 @@ export default {
         .then((res) => {
           console.log(res);
         });
-
-      e.preventDefault();
     },
   },
 };
