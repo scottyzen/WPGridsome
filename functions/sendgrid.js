@@ -6,25 +6,30 @@ exports.handler = function (event, context, callback) {
 //   let body = JSON.parse(event.body)
 console.log(event.body);
 
+    const {name, email} = event.body;
 
   let msg = {
-    to: 'scottyzen@me.com',
+    to: email,
     from: 'website@wpgridsome.com',
-    subject: 'Website Contact Form',
+    subject: `New donation from ${name}`,
     text: 'Someone has filled out a form on your website, check out the message they left and get in touch with them :)',
     html: '<p>Hello HTML world!</p>'
   }
 
 
-  sgMail.send(msg);
-//   sgMail.send(msg).then(message => {
-//     console.log(`Contact form sent`)
-//     callback(null, {
-//         statusCode: 200,
-//         body: JSON.stringify({message})
-//       });
-//   }).catch(e => {
-//     console.error(e.toString())
-//     callback(e.toString())
-//   })
+//   sgMail.send(msg);
+  sgMail.send(msg).then(message => {
+    
+    callback(null, {
+        statusCode: 200,
+        body: {
+            mailStatus: 'Successful',
+            responce: message
+        }
+    });
+
+  }).catch(e => {
+    console.error(e.toString())
+    callback(e.toString())
+  })
 }
