@@ -23,7 +23,11 @@
               v-model="email"
               placeholder="Email Address"
             />
-            <input type="submit" value="Send" />
+            <input
+              class="text-blue-100 bg-blue-600 cursor-pointer "
+              type="submit"
+              value="Send"
+            />
           </form>
         </div>
       </div>
@@ -55,13 +59,11 @@ export default {
         subject: this.subject,
         email: this.email,
       };
-      console.log(payload);
 
       axios
-        .post("/.netlify/functions/sendgrid", payload, headers)
-        .then((res) => {
-          console.log(res);
-        });
+        .post("/.netlify/functions/sendgrid", JSON.stringify(payload), headers)
+        .then((res) => console.log(res.data))
+        .catch((error) => console.log(error));
     },
   },
 };
