@@ -20,17 +20,12 @@ exports.handler = function (event, context, callback) {
 
 //   sgMail.send(msg);
   sgMail.send(msg).then(message => {
-    
+
     callback(null, {
         statusCode: 200,
-        body: {
-            mailStatus: 'Successful',
-            responce: message
-        }
-    });
+        status: 'Successfull',
+        body: JSON.stringify({message})
+      });
 
-  }).catch(e => {
-    console.error(e.toString())
-    callback(e.toString())
   })
 }
