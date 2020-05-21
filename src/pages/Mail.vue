@@ -58,7 +58,7 @@ export default {
       console.log(payload);
 
       axios
-        .push("/.netlify/functions/sendgrid", payload, headers)
+        .post("/.netlify/functions/sendgrid", payload, headers)
         .then((res) => {
           console.log(res);
         });

@@ -9,7 +9,7 @@ console.log(event.body);
 
   let msg = {
     to: 'scottyzen@me.com',
-    from: 'scottyzen@me.com',
+    from: 'website@wpgridsome.com',
     subject: 'Website Contact Form',
     text: 'Someone has filled out a form on your website, check out the message they left and get in touch with them :)',
     html: '<p>Hello HTML world!</p>'
