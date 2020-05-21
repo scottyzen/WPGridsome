@@ -7,10 +7,13 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gridsome": "^0.7.14",
-    "gridsome-source-graphql": "^1.0.2"
+    "gridsome-source-graphql": "^1.0.2",
+    "@sendgrid/mail": "^7.1.1"
   },
   "devDependencies": {
+    "axios": "^0.19.2",
     "gridsome-plugin-tailwindcss": "^2.2.48"
   }
 }

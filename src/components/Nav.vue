@@ -3,7 +3,8 @@
     <div>
       <ul class="main-menu">
         <g-link class="inline-block py-8 mr-8" to="/">Home</g-link>
-        <g-link class="inline-block py-8" to="/posts">Posts</g-link>
+        <g-link class="inline-block py-8 mr-8" to="/posts">Posts</g-link>
+        <g-link class="inline-block py-8" to="/mail">Mail</g-link>
       </ul>
     </div>
   </div>
