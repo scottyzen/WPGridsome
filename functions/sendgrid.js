@@ -16,14 +16,15 @@ console.log(event.body);
   }
 
 
-  sgMail.send(msg).then(message => {
-    console.log(`Contact form sent`)
-    callback(null, {
-        statusCode: 200,
-        body: JSON.stringify({message})
-      });
-  }).catch(e => {
-    console.error(e.toString())
-    callback(e.toString())
-  })
+  sgMail.send(msg);
+//   sgMail.send(msg).then(message => {
+//     console.log(`Contact form sent`)
+//     callback(null, {
+//         statusCode: 200,
+//         body: JSON.stringify({message})
+//       });
+//   }).catch(e => {
+//     console.error(e.toString())
+//     callback(e.toString())
+//   })
 }
