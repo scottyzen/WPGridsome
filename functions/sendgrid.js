@@ -4,6 +4,8 @@ const sgMail = require('@sendgrid/mail')
 exports.handler = function (event, context, callback) {
   sgMail.setApiKey(process.env.RED_SENDGRID_API_KEY)
 //   let body = JSON.parse(event.body)
+console.log(event.body);
+
 
   let msg = {
     to: 'scottyzen@me.com',

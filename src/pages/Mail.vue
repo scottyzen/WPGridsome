@@ -33,6 +33,11 @@
 
 <script>
 import axios from "axios";
+const headers = {
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
 export default {
   data() {
     return {
@@ -50,6 +55,12 @@ export default {
         email: this.email,
       };
       console.log(payload);
+
+      axios
+        .push("/.netlify/functions/sendgrid", payload, headers)
+        .then((res) => {
+          console.log(res);
+        });
 
       e.preventDefault();
     },
