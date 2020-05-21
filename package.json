@@ -1,19 +1,22 @@
 {
-  "name": "WPGraphQL",
+  "name": "wpgraphql",
   "private": true,
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "postinstall": "netlify-lambda install",
+    "start:lambda": "netlify-lambda serve"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.14",
     "gridsome-source-graphql": "^1.0.2",
-    "@sendgrid/mail": "^7.1.1"
+    "@sendgrid/mail": "^7.1.1",
+    "netlify-lambda": "^1.6.3"
   },
   "devDependencies": {
     "axios": "^0.19.2",
-    "gridsome-plugin-tailwindcss": "^2.2.48",
+    "gridsome-plugin-tailwindcss": "^2.2.48"
   }
 }
