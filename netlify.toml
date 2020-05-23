@@ -2,8 +2,8 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/.netlify/functions/sendgrid"
-  to = "/api/sendgrid"
+  to = "/.netlify/functions/sendgrid"
+  from = "/api/sendgrid"
   status = 200
 
   [redirects.headers]
