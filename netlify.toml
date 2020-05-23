@@ -2,9 +2,15 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/api/sendgrid"
-  to = "/.netlify/functions/sendgrid"
+  from = "/.netlify/functions/sendgrid"
+  to = "/api/sendgrid"
   status = 200
 
   [redirects.headers]
-     Access-Control-Allow-Origin = "..."
+     Access-Control-Allow-Origin = "*"
+
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
