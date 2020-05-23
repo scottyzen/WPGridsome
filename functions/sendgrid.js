@@ -5,9 +5,13 @@ exports.handler = function (event, context, callback) {
   sgMail.setApiKey(process.env.RED_SENDGRID_API_KEY)
   
   console.log('SENDGRID STARTED');
-  console.log(event.body);
+  console.log('BODY: ',event.body);
+  console.log('PATH: ',event.path);
+  console.log('HTTP_METHOD: ',event.httpMethod);
+  console.log('HEADERS: ',event.headers);
+  console.log('QUERY_STRING_PARAMETERS: ',event.queryStringParameters);
 
-  if (!even.body) {
+  if (!event.body) {
     callback(null, {
       statusCode: 200,
       body: JSON.stringify('No data passed')
