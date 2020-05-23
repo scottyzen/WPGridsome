@@ -7,15 +7,15 @@ exports.handler = function (event, context, callback) {
   console.log('SENDGRID STARTED');
   
 //   let body = JSON.parse(event.body)
-    const {name='Mr. X', email="scottyzen@gmail.com"} = JSON.parse(event.body)
-    console.log('name: ' + name);
-    console.log('email: ' + email);
+    // const {name='Mr. X', email="scottyzen@gmail.com"} = JSON.parse(event.body);
+    // console.log('name: ' + name);
+    // console.log('email: ' + email);
     
 
   let msg = {
-    to: email,
+    to: 'scottyzen@gmail.com',
     from: 'website@wpgridsome.com',
-    subject: `New donation from ${name}`,
+    subject: `New donation from XXXXX`,
     text: 'Someone has filled out a form on your website, check out the message they left and get in touch with them :)',
     html: '<p>Hello HTML world!</p>'
   }
@@ -24,7 +24,6 @@ exports.handler = function (event, context, callback) {
 
     callback(null, {
         statusCode: 200,
-        status: 'Successfull',
         body: JSON.stringify('successful')
       });
 
