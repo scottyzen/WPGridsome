@@ -3,8 +3,11 @@ const sgMail = require('@sendgrid/mail')
 
 exports.handler = function (event, context, callback) {
   sgMail.setApiKey(process.env.RED_SENDGRID_API_KEY)
+  
+  console.log('SENDGRID STARTED');
+  
 //   let body = JSON.parse(event.body)
-    const {name, email} = JSON.parse(event.body)
+    const {name='Mr. X', email="scottyzen@gmail.com"} = JSON.parse(event.body)
     console.log('name: ' + name);
     console.log('email: ' + email);
     
@@ -17,8 +20,6 @@ exports.handler = function (event, context, callback) {
     html: '<p>Hello HTML world!</p>'
   }
 
-
-//   sgMail.send(msg);
   sgMail.send(msg).then(message => {
 
     callback(null, {
