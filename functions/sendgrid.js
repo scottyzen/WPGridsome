@@ -6,6 +6,14 @@ exports.handler = function (event, context, callback) {
   
   console.log('SENDGRID STARTED');
   console.log(event.body);
+
+  if (!even.body) {
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify('No data passed')
+    });
+    return ;
+  }
   
   
     const {name, email} = JSON.parse(event.body);
