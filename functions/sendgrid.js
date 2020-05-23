@@ -6,10 +6,9 @@ exports.handler = function (event, context, callback) {
   
   console.log('SENDGRID STARTED');
   
-//   let body = JSON.parse(event.body)
-    // const {name='Mr. X', email="scottyzen@gmail.com"} = JSON.parse(event.body);
-    // console.log('name: ' + name);
-    // console.log('email: ' + email);
+    const {name, email} = JSON.parse(event.body);
+    console.log('name: ' + name);
+    console.log('email: ' + email);
     
 
   let msg = {
