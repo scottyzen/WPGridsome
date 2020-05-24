@@ -1,13 +1,6 @@
 [build]
   functions = "functions"
 
-[[redirects]]
-  to = "/.netlify/functions/sendgrid"
-  from = "/api/sendgrid"
-  status = 200
-
-  [redirects.headers]
-     Access-Control-Allow-Origin = "*"
 
 
 [[headers]]
