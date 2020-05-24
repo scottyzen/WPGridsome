@@ -1,19 +1,23 @@
 require("dotenv").config()
 const sgMail = require('@sendgrid/mail')
 
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
+};
+
+
 exports.handler = function (event, context, callback) {
   sgMail.setApiKey(process.env.RED_SENDGRID_API_KEY)
   
   console.log('SENDGRID STARTED');
   console.log('BODY: ',event.body);
-  console.log('PATH: ',event.path);
-  console.log('HTTP_METHOD: ',event.httpMethod);
-  console.log('HEADERS: ',event.headers);
-  console.log('QUERY_STRING_PARAMETERS: ',event.queryStringParameters);
 
   if (!event.body) {
     callback(null, {
       statusCode: 200,
+      headers,
       body: JSON.stringify('No data passed')
     });
     return ;
@@ -42,12 +46,7 @@ exports.handler = function (event, context, callback) {
 
     callback(null, {
         statusCode: 200,
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Headers": "Content-Type",
-          "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-          "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
-        },
+        headers,
         body: JSON.stringify(response)
       });
 
