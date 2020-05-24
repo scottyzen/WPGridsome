@@ -35,14 +35,20 @@ exports.handler = function (event, context, callback) {
 
   sgMail.send(msg).then(message => {
 
+    var response = {
+      message: message,
+      body: 'Successfull'
+    }
+
     callback(null, {
         statusCode: 200,
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
           "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
         },
-        body: JSON.stringify('successful')
+        body: JSON.stringify(response)
       });
 
   })
