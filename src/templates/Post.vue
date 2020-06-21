@@ -23,17 +23,10 @@
 <page-query>
 query Post ($databaseId: ID!){
   post(idType: DATABASE_ID, id: $databaseId) {
-    databaseId
     title
     content
     featuredImage {
       mediaItemUrl
-      mediaDetails {
-        sizes {
-          width
-          sourceUrl
-        }
-      }
     }
   }
 }
@@ -41,7 +34,6 @@ query Post ($databaseId: ID!){
 
 <script>
 import SingleBlog from "~/layouts/SingleBlog.vue";
-
 export default {
   components: {
     SingleBlog,

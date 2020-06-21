@@ -12,7 +12,6 @@ module.exports = function (api) {
         edges{
           node{
             slug
-            id
             databaseId
           }
         }
