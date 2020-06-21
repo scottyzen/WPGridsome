@@ -24,7 +24,7 @@ module.exports = function (api) {
         path: `/post/${node.slug}`,
         component: './src/templates/Post.vue',
         context: {
-          id: node.databaseId
+          databaseId: node.databaseId
         }
       })
     })
