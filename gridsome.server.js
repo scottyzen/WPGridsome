@@ -8,7 +8,7 @@ module.exports = function (api) {
 
   api.createPages(async ({ graphql, createPage }) => {
     const { data } = await graphql(`{
-      posts{
+      posts (first: 999){
         edges{
           node{
             slug
