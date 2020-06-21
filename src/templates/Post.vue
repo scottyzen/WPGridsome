@@ -4,6 +4,7 @@
       <!-- BLOG CONTENT  -->
       <div class="flex-1 content ">
         <div
+          v-if="$page.post.featuredImage.mediaItemUrl"
           class="h-64 mb-12 bg-center bg-cover featured-image"
           :style="{
             backgroundImage: `url(${$page.post.featuredImage.mediaItemUrl})`,
