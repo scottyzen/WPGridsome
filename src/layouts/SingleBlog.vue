@@ -108,6 +108,7 @@ button {
 }
 
 .sidebar .active-blog {
+  /*! purgecss ignore current */
   & .title {
     @apply text-orange-400 relative;
 

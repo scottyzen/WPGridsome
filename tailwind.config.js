@@ -15,7 +15,11 @@ module.exports = {
         "./src/pages/**/*.vue",
         "./src/templates/**/*.vue",
         "./gridsome.config.js"
-      ]
+      ],
+      options: {
+        whitelist: ['sidebar', 'active-blog', 'excerpt', 'title', 'author-and-date'],
+        whitelistPatternsChildren: [/^slick/, /^aria/]
+      }
     }
   }
   
