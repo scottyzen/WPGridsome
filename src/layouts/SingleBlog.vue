@@ -42,7 +42,8 @@
                 <div>
                   <span
                     class="font-serif text-xs italic text-gray-600 author-and-date"
-                    >by {{ post.node.author.name }} | {{ post.node.date }}</span
+                    >by {{ post.node.author.node.name }} |
+                    {{ post.node.date }}</span
                   >
                 </div>
               </li>

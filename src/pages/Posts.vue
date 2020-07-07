@@ -23,7 +23,7 @@
         <div class="order-1 ">
           <g-image
             v-if="$page.posts.edges[0].node.featuredImage"
-            :src="$page.posts.edges[0].node.featuredImage.sourceUrl"
+            :src="$page.posts.edges[0].node.featuredImage.node.sourceUrl"
             class="object-cover w-full rounded-lg shadow-lg"
           ></g-image>
           <g-image
@@ -43,7 +43,7 @@
           <a :href="`/post/${node.slug}`">
             <g-image
               v-if="node.featuredImage"
-              :src="node.featuredImage.sourceUrl"
+              :src="node.featuredImage.node.sourceUrl"
               class="object-cover w-full h-200 rounded-t-md"
             ></g-image>
             <g-image
