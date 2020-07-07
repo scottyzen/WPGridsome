@@ -94,7 +94,9 @@ query Posts {
         }
         excerpt(format: RENDERED)
         featuredImage {
-          sourceUrl(size: MEDIUM_LARGE)
+          node {
+            sourceUrl(size: MEDIUM)
+          }
         }
       }
     }

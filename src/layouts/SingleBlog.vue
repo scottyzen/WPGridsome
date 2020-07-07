@@ -39,6 +39,12 @@
                   class="font-light text-gray-600 excerpt"
                   v-html="post.node.excerpt.substring(0, 80) + '...'"
                 ></div>
+                <div>
+                  <span
+                    class="font-serif text-xs italic text-gray-600 author-and-date"
+                    >by {{ post.node.author.name }} | {{ post.node.date }}</span
+                  >
+                </div>
               </li>
             </ul>
           </div>
@@ -76,6 +82,11 @@ query {
         title
         excerpt
         date
+        author {
+          node{
+            name
+          }
+        }
       }
     }
   }

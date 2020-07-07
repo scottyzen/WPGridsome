@@ -26,7 +26,9 @@ query Post ($databaseId: ID!){
     title
     content
     featuredImage {
-      mediaItemUrl
+      node {
+        mediaItemUrl
+      }
     }
   }
 }
