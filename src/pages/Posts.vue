@@ -95,7 +95,7 @@ query Posts {
         excerpt(format: RENDERED)
         featuredImage {
           node {
-            sourceUrl(size: MEDIUM)
+            sourceUrl(size: MEDIUM_LARGE)
           }
         }
       }
