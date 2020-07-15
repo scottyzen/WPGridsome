@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <header class="absolute inset-x-0 top-0 mb-8 border-b">
+  <div class="relative flex flex-col h-full temp-min-hight">
+    <header class="sticky inset-x-0 top-0 z-50 bg-white">
       <div class="container flex items-center justify-between">
         <g-link class="font-bold" to="/">{{
           $static.metadata.siteName
@@ -8,10 +8,10 @@
         <Nav />
       </div>
     </header>
-    <div class="min-h-screen pt-32 pb-12">
+    <div class="flex-1">
       <slot />
     </div>
-    <footer class="font-light text-white bg-gray-700">
+    <footer class="font-light text-white">
       <div class="container py-12 ">
         <p class="max-w-xl">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
@@ -20,7 +20,7 @@
           omnis ipsam.
         </p>
       </div>
-      <p class="p-4 text-sm text-center bg-gray-800">
+      <p class="p-4 text-sm text-center">
         © 2020 WPGrdisome.com by
         <a
           href="https://scottyzen.com?ref=wpgridsome"
@@ -56,5 +56,14 @@ a,
 button {
   cursor: pointer;
   outline: none !important;
+}
+body {
+  background-color: #111c1e;
+  z-index: -1;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.temp-min-hight {
+  min-height: 2000px;
 }
 </style>

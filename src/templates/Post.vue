@@ -1,6 +1,6 @@
 <template>
   <SingleBlog>
-    <div class=" content">
+    <div class="bg-white  content">
       <div
         v-if="$page.post.featuredImage"
         class="h-64 mb-12 bg-center bg-cover featured-image"
@@ -13,7 +13,7 @@
         {{ $page.post.title }}
       </h1>
       <div
-        class="max-w-2xl m-auto mt-8 font-light text-gray-700 post-content"
+        class="max-w-2xl m-auto mt-8 font-light text-gray-700 post-content prose"
         v-html="$page.post.content"
       ></div>
     </div>
@@ -45,7 +45,7 @@ export default {
 
 <style lang="postcss">
 .post-content {
-  & h1,
+  /* & h1,
   & h2,
   & h3,
   & h4,
@@ -80,7 +80,7 @@ export default {
 
   & hr {
     @apply my-8;
-  }
+  } */
 
   & img {
     width: 125%;

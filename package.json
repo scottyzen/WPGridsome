@@ -9,10 +9,11 @@
     "start:lambda": "netlify-lambda serve"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.2.1",
+    "@tailwindcss/typography": "^0.2.0",
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.18",
     "gridsome-source-graphql": "^1.0.2",
-    "@sendgrid/mail": "^7.2.1",
     "netlify-lambda": "^1.6.3"
   },
   "devDependencies": {

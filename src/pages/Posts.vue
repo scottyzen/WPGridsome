@@ -1,5 +1,5 @@
 <template>
-  <Layout class="shape">
+  <Layout>
     <div class="container">
       <div class="grid mb-12 md:grid-cols-2">
         <div class="order-2 py-12 pr-12 md:order-1">
@@ -121,16 +121,6 @@ export default {
 </script>
 
 <style>
-.shape {
-  background: url("../../src/assets/images/shape.svg") no-repeat;
-  background-size: auto 400px;
-  min-height: 600px;
-}
-@media (min-width: 768px) {
-  .shape {
-    background-size: contain;
-  }
-}
 .h-200 {
   height: 200px;
 }

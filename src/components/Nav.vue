@@ -10,13 +10,9 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="postcss">
 .main-menu .active--exact,
 .main-menu a:hover {
-  @apply border-b-2 border-indigo-500;
+  @apply border-b-2 border-orange-500;
 }
 </style>

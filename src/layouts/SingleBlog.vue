@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <!-- HEADER  -->
-    <header class="sticky inset-x-0 top-0 z-10 bg-white border-b">
+    <header class="relative sticky inset-x-0 top-0 z-10 bg-white border-b">
       <div class="container flex items-center justify-between">
         <g-link class="font-bold" to="/">{{
           $static.metadata.siteName
