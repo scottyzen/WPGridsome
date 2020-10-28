@@ -9,17 +9,14 @@
       </div>
     </header>
     <div class="flex-1">
+      <g-image
+        src="~/assets/images/jesse-gardner-45qGrlP-aBY-unsplash.jpg"
+        class="hero-image"
+        :style="{ transform: `scale(clamp(1, ${scroolpos + 1}, 1.1))` }"
+      ></g-image>
       <slot />
     </div>
-    <footer class="font-light text-white">
-      <div class="container py-12 ">
-        <p class="max-w-xl">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          quia vero molestias odit blanditiis sunt facilis veniam doloremque
-          quas exercitationem architecto numquam, perferendis eligendi cumque
-          omnis ipsam.
-        </p>
-      </div>
+    <footer class="font-light text-white pt-24">
       <p class="p-4 text-sm text-center">
         © 2020 WPGrdisome.com by
         <a
@@ -48,6 +45,22 @@ export default {
   components: {
     Nav,
   },
+  data() {
+    return {
+      scroolpos: 0,
+    };
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+      if (window.scrollY < 500) this.scroolpos = window.scrollY * 0.0005;
+    },
+  },
 };
 </script>
 
@@ -65,5 +78,11 @@ body {
 }
 .temp-min-hight {
   min-height: 2000px;
+}
+.hero-image {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  transform-origin: top;
 }
 </style>

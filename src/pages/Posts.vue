@@ -1,22 +1,31 @@
 <template>
   <Layout>
-    <div class="container">
+    <div class="container min-h-screen">
+      <div class="flex flex-col items-center justify-center p-8 mt-12">
+        <h1 class="font-bold text-gray-800 text-7xl">
+          Blog
+        </h1>
+        <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
+      </div>
+    </div>
+
+    <div class="container -mt-48">
       <div class="grid mb-12 md:grid-cols-2">
         <div class="order-2 py-12 pr-12 md:order-1">
-          <div class="mb-2 text-indigo-500">
+          <div class="mb-2 text-orange-500">
             {{ $page.posts.edges[0].node.categories.edges[0].node.name }}
           </div>
           <h2
-            class="mb-4 text-4xl font-bold leading-none text-gray-800"
+            class="mb-4 text-4xl font-bold leading-none text-white"
             v-html="$page.posts.edges[0].node.title"
           ></h2>
           <p
-            class="max-w-lg mb-8 leading-normal text-justify text-gray-600"
+            class="max-w-lg mb-8 leading-normal text-justify text-gray-200"
             v-html="$page.posts.edges[0].node.excerpt"
           ></p>
           <g-link
             :to="`/post/${$page.posts.edges[0].node.slug}`"
-            class="px-8 py-3 text-white bg-indigo-600 rounded button hover:bg-white hover:bg-indigo-500"
+            class="px-8 py-3 text-white bg-orange-500 rounded button  hover:bg-orange-500"
             >Read More</g-link
           >
         </div>
@@ -36,9 +45,9 @@
 
       <ul class="grid gap-16 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <li
-          v-for="{ node } in $page.posts.edges.slice(1, currentPossition)"
+          v-for="{ node } in $page.posts.edges"
           :key="node.databaseId"
-          class="rounded-md shadow-lg"
+          class="rounded-md shadow-lg bg-white"
         >
           <a :href="`/post/${node.slug}`">
             <g-image
@@ -55,7 +64,7 @@
             <div class="px-4 py-2 pb-8">
               <span
                 v-if="node.categories.edges[0]"
-                class="text-sm text-indigo-500"
+                class="text-sm text-orange-500"
                 v-html="node.categories.edges[0].node.name"
               ></span>
               <h2 class="text-gray-800">{{ node.title }}</h2>
@@ -66,7 +75,7 @@
       <div class="text-center">
         <button
           v-if="$page.posts.edges.length >= currentPossition"
-          class="px-6 py-2 m-auto text-white bg-indigo-600 rounded button hover:bg-white hover:bg-indigo-500"
+          class="px-6 py-2 m-auto text-white bg-orange-600 rounded button hover:bg-orange-500"
           @click="showMore()"
         >
           Load more

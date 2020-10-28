@@ -1,12 +1,19 @@
 <template>
   <Layout class="shape">
-    <div class="container">
+    <div class="container min-h-screen">
+      <div class="flex flex-col items-center justify-center p-8 mt-12">
+        <h1 class="font-bold text-gray-800 text-7xl">
+          Get In Touch
+        </h1>
+        <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
+      </div>
+    </div>
+    <div class="container -mt-56">
       <div class="flex flex-col items-center justify-center">
-        <h1 class="text-6xl font-bold text-gray-800">Contact</h1>
-        <div class="mt-8">
+        <div>
           <form
             @submit="sendform"
-            class="flex flex-wrap justify-between max-w-2xl text-indigo-600"
+            class="flex flex-wrap justify-between max-w-2xl text-orange-500"
           >
             <input
               type="text"
@@ -29,8 +36,14 @@
               v-model="email"
               placeholder="Email Address"
             />
+            <textarea
+              class="w-full h-32"
+              name="message"
+              v-model="message"
+              placeholder="Message"
+            />
             <input
-              class="w-56 text-blue-100 bg-indigo-600 border-indigo-700 cursor-pointer hover:bg-indigo-700"
+              class="w-56 mx-auto text-blue-100 bg-orange-500 border-orange-600 cursor-pointer hover:bg-orange-600"
               type="submit"
               :value="buttonText"
             />
@@ -82,8 +95,9 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-input {
-  @apply border-b p-3 px-5 rounded-md mt-4 outline-none shadow-xs;
+input,
+textarea {
+  @apply border-b p-3 px-5 rounded-md mb-5 outline-none shadow-xs;
 }
 input:active,
 input:focus {
