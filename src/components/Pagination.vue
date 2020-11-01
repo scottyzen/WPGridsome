@@ -13,36 +13,22 @@
   </div>
 </template>
 
-<static-query>
-query Pagination{
-      posts{
-          pageInfo{
-              offsetPagination{
-                  total
-              }
-          }
-      }
-    }
-</static-query>
-
 <script>
 export default {
-  data() {
-    return {
-      perPage: process.env.GRIDSOME_POSTS_PER_PAGE,
-    };
-  },
   props: {
     currentPage: {
       default: 1,
-      type: Number,
+    },
+    totalNumberOfPages: {
+      default: 0,
+    },
+    perPage: {
+      default: 0,
     },
   },
   computed: {
     numberOfPagesForPagination() {
-      return Math.ceil(
-        this.$static.posts.pageInfo.offsetPagination.total / this.perPage
-      );
+      return Math.ceil(this.totalNumberOfPages / this.perPage);
     },
   },
 };

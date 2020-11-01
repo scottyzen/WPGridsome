@@ -34,7 +34,11 @@
           </a>
         </li>
       </ul>
-      <Pagination />
+      <Pagination
+        :currentPage="1"
+        :totalNumberOfPages="$page.posts.pageInfo.offsetPagination.total"
+        :perPage="perPage"
+      />
     </div>
   </Layout>
 </template>
@@ -42,6 +46,11 @@
 <page-query>
 query{
   posts(first: 12) {
+    pageInfo{
+      offsetPagination{
+        total
+      }
+    }
     edges {
       node {
         title
@@ -72,6 +81,11 @@ import Pagination from "../../components/Pagination";
 export default {
   components: {
     Pagination,
+  },
+  data() {
+    return {
+      perPage: process.env.GRIDSOME_POSTS_PER_PAGE,
+    };
   },
 };
 </script>

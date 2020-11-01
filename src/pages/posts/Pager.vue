@@ -36,7 +36,11 @@
           </a>
         </li>
       </ul>
-      <Pagination :currentPage="$context.currentPage" />
+      <Pagination
+        :currentPage="$context.currentPage"
+        :totalNumberOfPages="$context.total"
+        :perPage="perPage"
+      />
     </div>
   </Layout>
 </template>
@@ -74,6 +78,11 @@ import Pagination from "../../components/Pagination";
 export default {
   components: {
     Pagination,
+  },
+  data() {
+    return {
+      perPage: process.env.GRIDSOME_POSTS_PER_PAGE,
+    };
   },
 };
 </script>

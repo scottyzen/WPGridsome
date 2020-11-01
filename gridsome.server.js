@@ -29,7 +29,8 @@ module.exports = function (api) {
         component: './src/pages/posts/Pager.vue',
         context: {
           cursor: (data.posts.edges[i * 12 - 1].cursor) ? data.posts.edges[i * 12 - 1].cursor : data.posts.edges[i * 12 - 12].cursor,
-          currentPage: i + 1
+          currentPage: i + 1,
+          total: totalNumberOfPosts
         }
       })
     }
