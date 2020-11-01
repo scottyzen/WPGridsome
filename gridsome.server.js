@@ -17,9 +17,16 @@ module.exports = function (api) {
 
     // Pagination 
     const perPage = process.env.GRIDSOME_POSTS_PER_PAGE;
-    const numberOfPagesForPagination = Math.round(data.posts.edges.length / perPage);
+    const totalNumberOfPosts = data.posts.edges.length;
+    const numberOfPagesForPagination = Math.round(totalNumberOfPosts / perPage);
+
+    console.log('numberOfPagesForPagination ' + numberOfPagesForPagination);
 
     for (let i = 1; i < numberOfPagesForPagination; i++) {
+
+      let cur = (data.posts.edges[i * 12 - 1].cursor) ? data.posts.edges[i * 12 - 1].cursor : '';
+      console.log('cur ' + cur);
+      
       createPage({
         path: `/posts/page/${i + 1}`,
         component: './src/pages/posts/Pager.vue',
