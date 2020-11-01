@@ -42,7 +42,7 @@
 </template>
 
 <page-query>
-query Posts($cursor: String!) {
+query Posts($cursor: String) {
   posts(first: 12 after: $cursor) {
     edges {
       node {
