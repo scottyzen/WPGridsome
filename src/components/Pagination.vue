@@ -5,7 +5,7 @@
         <g-link
           class="p-1"
           :class="{ active: currentPage == i }"
-          :to="i == 1 ? `/posts` : `/posts/page/${i}`"
+          :to="i === 1 ? `/posts` : `/posts/page/${i}`"
           >{{ i }}</g-link
         >
       </li>

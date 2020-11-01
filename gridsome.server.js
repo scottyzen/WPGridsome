@@ -23,15 +23,12 @@ module.exports = function (api) {
     console.log('numberOfPagesForPagination ' + numberOfPagesForPagination);
 
     for (let i = 1; i < numberOfPagesForPagination; i++) {
-
-      let cur = (data.posts.edges[i * 12 - 1].cursor) ? data.posts.edges[i * 12 - 1].cursor : '';
-      console.log('cur ' + cur);
       
       createPage({
         path: `/posts/page/${i + 1}`,
         component: './src/pages/posts/Pager.vue',
         context: {
-          cursor: (data.posts.edges[i * 12 - 1].cursor) ? data.posts.edges[i * 12 - 1].cursor : '',
+          cursor: (data.posts.edges[i * 12 - 1].cursor) ? data.posts.edges[i * 12 - 1].cursor : data.posts.edges[i * 12 - 12].cursor,
           currentPage: i + 1
         }
       })
