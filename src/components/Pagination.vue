@@ -14,7 +14,7 @@
 </template>
 
 <static-query>
-query {
+query Pagination{
       posts{
           pageInfo{
               offsetPagination{
