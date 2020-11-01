@@ -15,17 +15,7 @@
 
 <script>
 export default {
-  props: {
-    currentPage: {
-      default: 1,
-    },
-    totalNumberOfPages: {
-      default: 0,
-    },
-    perPage: {
-      default: 0,
-    },
-  },
+  props: ["currentPage", "totalNumberOfPages", "perPage"],
   computed: {
     numberOfPagesForPagination() {
       return Math.ceil(this.totalNumberOfPages / this.perPage);

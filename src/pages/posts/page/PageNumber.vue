@@ -39,7 +39,7 @@
       <Pagination
         :currentPage="$context.currentPage"
         :totalNumberOfPages="$context.total"
-        :perPage="perPage"
+        :perPage="$page.allSettings.readingSettingsPostsPerPage"
       />
     </div>
   </Layout>
@@ -47,7 +47,10 @@
 
 <page-query>
 query Posts($cursor: String) {
-  posts(first: 12 after: $cursor) {
+  allSettings {
+    readingSettingsPostsPerPage
+  }
+  posts(after: $cursor) {
     edges {
       node {
         title
@@ -74,7 +77,7 @@ query Posts($cursor: String) {
 </page-query>
 
 <script>
-import Pagination from "../../components/Pagination";
+import Pagination from "../../../components/Pagination";
 export default {
   components: {
     Pagination,

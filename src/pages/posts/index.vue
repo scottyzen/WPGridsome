@@ -37,7 +37,7 @@
       <Pagination
         :currentPage="1"
         :totalNumberOfPages="$page.posts.pageInfo.offsetPagination.total"
-        :perPage="perPage"
+        :perPage="$page.allSettings.readingSettingsPostsPerPage"
       />
     </div>
   </Layout>
@@ -45,7 +45,10 @@
 
 <page-query>
 query{
-  posts(first: 12) {
+  allSettings {
+    readingSettingsPostsPerPage
+  }
+  posts {
     pageInfo{
       offsetPagination{
         total
