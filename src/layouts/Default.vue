@@ -11,15 +11,7 @@
     <div class="min-h-screen pt-32 pb-12">
       <slot />
     </div>
-    <footer class="font-light text-white bg-gray-700">
-      <div class="container py-12 ">
-        <p class="max-w-xl">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          quia vero molestias odit blanditiis sunt facilis veniam doloremque
-          quas exercitationem architecto numquam, perferendis eligendi cumque
-          omnis ipsam.
-        </p>
-      </div>
+    <footer class="font-light text-white bg-gray-800">
       <p class="p-4 text-sm text-center bg-gray-800">
         © 2020 WPGrdisome.com by
         <a

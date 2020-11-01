@@ -1,23 +1,36 @@
-// Server API makes it possible to hook into various parts of Gridsome
-// on server-side and add custom data to the GraphQL data layer.
-// Learn more: https://gridsome.org/docs/server-api/
 
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
 module.exports = function (api) {
 
   api.createPages(async ({ graphql, createPage }) => {
     const { data } = await graphql(`{
-      posts (first: 999){
-        edges{
-          node{
+      posts(first: 999) {
+        edges {
+          node {
             slug
             databaseId
           }
+          cursor
         }
       }
-    }`)
+    }
+    `)
 
+    // Pagination 
+    const perPage = process.env.GRIDSOME_POSTS_PER_PAGE;
+    const numberOfPagesForPagination = Math.round(data.posts.edges.length / perPage);
+
+    for (let i = 1; i < numberOfPagesForPagination; i++) {
+      createPage({
+        path: `/posts/page/${i + 1}`,
+        component: './src/pages/posts/Pager.vue',
+        context: {
+          cursor: (data.posts.edges[i * 12 - 1].cursor) ? data.posts.edges[i * 12 - 1].cursor : '',
+          currentPage: i + 1
+        }
+      })
+    }
+
+    // Single Post 
     data.posts.edges.forEach(({ node }) => {
       createPage({
         path: `/post/${node.slug}`,
@@ -27,5 +40,7 @@ module.exports = function (api) {
         }
       })
     })
+
+
   })
 }

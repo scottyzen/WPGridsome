@@ -1,8 +1,11 @@
 <template>
   <Layout class="shape">
     <div class="container">
-      <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mb-20">
         <h1 class="text-6xl font-bold text-gray-800">Contact</h1>
+        <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
+      </div>
+      <div class="flex flex-col items-center justify-center mb-20">
         <div class="mt-8">
           <form
             @submit="sendform"
@@ -29,8 +32,15 @@
               v-model="email"
               placeholder="Email Address"
             />
+            <textarea
+              name="message"
+              id="message"
+              class="w-full"
+              rows="8"
+              v-model="message"
+            ></textarea>
             <input
-              class="w-56 text-blue-100 bg-indigo-600 border-indigo-700 cursor-pointer hover:bg-indigo-700"
+              class="w-56 text-blue-100 bg-indigo-600 cursor-pointer hover:bg-indigo-700 border-b-2 border-indigo-900 p-3 px-5 rounded-md mt-4 outline-none shadow"
               type="submit"
               :value="buttonText"
             />
@@ -54,7 +64,8 @@ export default {
       name: "",
       subject: "",
       email: "",
-      buttonText: "Send",
+      message: "",
+      buttonText: "Send Message",
     };
   },
   methods: {
@@ -67,23 +78,15 @@ export default {
         subject: this.subject,
         email: this.email,
       };
-
-      axios
-        .post("/.netlify/functions/sendgrid", JSON.stringify(payload), headers)
-        .then((res) => {
-          if (res.data == "successful") {
-            this.buttonText = "Message sent";
-          }
-        })
-        .catch((error) => console.log(error));
     },
   },
 };
 </script>
 
 <style lang="postcss" scoped>
-input {
-  @apply border-b p-3 px-5 rounded-md mt-4 outline-none shadow-xs;
+input:not([type="submit"]),
+textarea {
+  @apply border-b border-indigo-300 p-3 px-5 rounded-md mt-4 outline-none shadow;
 }
 input:active,
 input:focus {
