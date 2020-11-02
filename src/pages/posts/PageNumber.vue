@@ -36,17 +36,19 @@
           </a>
         </li>
       </ul>
-      <Pagination
-        :currentPage="$context.currentPage"
-        :totalNumberOfPages="$context.total"
-        :perPage="$page.allSettings.readingSettingsPostsPerPage"
-      />
+      <ClientOnly>
+        <Pagination
+          :currentPage="$context.currentPage"
+          :totalNumberOfPages="$context.total"
+          :perPage="$page.allSettings.readingSettingsPostsPerPage"
+        />
+      </ClientOnly>
     </div>
   </Layout>
 </template>
 
 <page-query>
-query Posts($cursor: String) {
+query ($cursor: String) {
   allSettings {
     readingSettingsPostsPerPage
   }
@@ -77,15 +79,10 @@ query Posts($cursor: String) {
 </page-query>
 
 <script>
-import Pagination from "../../../components/Pagination";
+import Pagination from "../../components/Pagination";
 export default {
   components: {
     Pagination,
-  },
-  data() {
-    return {
-      perPage: process.env.GRIDSOME_POSTS_PER_PAGE,
-    };
   },
 };
 </script>

@@ -19,15 +19,17 @@ module.exports = function (api) {
     `)
     const perPage = data.allSettings.readingSettingsPostsPerPage;
     const totalNumberOfPosts = data.posts.edges.length;
-    const numberOfPagesForPagination = Math.round(totalNumberOfPosts / perPage);
+    const numberOfPagesForPagination = Math.ceil(totalNumberOfPosts / perPage);
     
     // Pagination 
     for (let i = 1; i < numberOfPagesForPagination; i++) {
+
+      console.log(`/posts/page/${i + 1}`);
       createPage({
         path: `/posts/page/${i + 1}`,
-        component: './src/pages/posts/page/PageNumber.vue',
+        component: './src/pages/posts/PageNumber.vue',
         context: {
-          cursor: (data.posts.edges[i * perPage - 1].cursor) ? data.posts.edges[i * perPage - 1].cursor : '',
+          cursor: (data.posts.edges[i * perPage - 1].cursor) ? data.posts.edges[i * perPage - 1].cursor : 'YXJyYXljb25uZWN0aW9uOjE3MA==',
           currentPage: i + 1,
           total: totalNumberOfPosts
         }
