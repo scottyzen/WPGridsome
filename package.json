@@ -13,7 +13,8 @@
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.21",
     "gridsome-source-graphql": "^1.0.2",
-    "netlify-lambda": "^2.0.1"
+    "netlify-lambda": "^2.0.1",
+    "vue-code-highlight": "^0.7.6"
   },
   "devDependencies": {
     "axios": "^0.21.0",

@@ -11,14 +11,14 @@
     <div class="min-h-screen pt-32 pb-12">
       <slot />
     </div>
-    <footer class="font-light text-white bg-gray-800">
-      <p class="p-4 text-sm text-center bg-gray-800">
+    <footer class="font-light text-white bg-gray-900">
+      <p class="p-4 text-sm text-center">
         © 2020 WPGrdisome.com by
         <a
           href="https://scottyzen.com?ref=wpgridsome"
           target="_blank"
           rel="noopener"
-          class="text-yellow-500"
+          class="text-orange-300"
           >Scott Kennedy</a
         >
       </p>
