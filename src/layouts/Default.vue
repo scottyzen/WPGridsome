@@ -2,7 +2,7 @@
   <div>
     <header class="absolute inset-x-0 top-0 mb-8 border-b">
       <div class="container flex items-center justify-between">
-        <g-link class="font-bold" to="/">{{
+        <g-link class="hidden md:block font-bold" to="/">{{
           $static.metadata.siteName
         }}</g-link>
         <Nav />

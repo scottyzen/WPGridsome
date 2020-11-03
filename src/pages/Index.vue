@@ -55,7 +55,14 @@
             >)
           </li>
         </ul>
-        <h3 class="text-lg mb-2 font-bold">
+
+        <h3 class="text-lg mb-2 font-bold">Environment Variables</h3>
+        <div>
+          <span class="w-32 inline-block">GRAPHQL_URL</span>
+          <span class="text-indigo-600">https:yourwebsite.com/graphql</span>
+        </div>
+
+        <h3 class="text-lg mt-12 mb-2 font-bold">
           WordPress Snippits (functions.php)
         </h3>
         <div class="column-2">
@@ -130,6 +137,7 @@ pre {
   color: rgba(255, 255, 255, 1);
   white-space: pre-wrap;
   margin-bottom: 2rem;
+  overflow: scroll;
 }
 
 .token.comment,

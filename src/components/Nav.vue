@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="flex items-center">
+  <div class="flex-1">
+    <div class="flex items-center justify-between w-full">
       <ul class="main-menu">
         <g-link class="inline-block py-8 mr-10" to="/">Home</g-link>
         <g-link class="inline-block py-8 mr-10" to="/posts">Posts</g-link>
