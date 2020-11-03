@@ -20,6 +20,7 @@
     "axios": "^0.21.0",
     "gridsome-plugin-tailwindcss": "^3.0.1",
     "vue": "^2.6.12",
+    "vue-server-renderer": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   }
 }
