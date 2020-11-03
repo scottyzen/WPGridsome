@@ -28,10 +28,10 @@ module.exports = function (api) {
         path: `/posts/page/${i + 1}`,
         component: './src/pages/posts/page/PageNumber.vue',
         context: {
-          currentPage: i + 1,
-          total: totalNumberOfPosts,
-          offset: i * perPage,
-          perPage: perPage
+          currentPage: parseInt(i + 1),
+          total: parseInt(totalNumberOfPosts),
+          offset: parseInt(i * perPage) ,
+          perPage: parseInt(perPage) 
         }
       })
     }

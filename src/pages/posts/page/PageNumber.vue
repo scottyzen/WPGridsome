@@ -48,7 +48,7 @@
 </template>
 
 <page-query>
-query ($offset: Int!, $perPage: Int!) {
+query ($offset: Int, $perPage: Int) {
   allSettings {
     readingSettingsPostsPerPage
   }
