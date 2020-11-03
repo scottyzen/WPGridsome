@@ -48,16 +48,15 @@
 </template>
 
 <page-query>
-query ($cursor: String) {
+query ($offset: Int!, $perPage: Int!) {
   allSettings {
     readingSettingsPostsPerPage
   }
-  posts(after: $cursor) {
+  posts(where: {offsetPagination: {offset: $offset, size: $perPage}}) {
     edges {
       node {
         title
         slug
-        id
         databaseId
         categories {
           edges {
@@ -79,7 +78,7 @@ query ($cursor: String) {
 </page-query>
 
 <script>
-import Pagination from "../../components/Pagination";
+import Pagination from "../../../components/Pagination";
 export default {
   components: {
     Pagination,

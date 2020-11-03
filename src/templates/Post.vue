@@ -1,5 +1,5 @@
 <template>
-  <SingleBlog>
+  <Layout>
     <div class=" content">
       <div
         v-if="$page.post.featuredImage"
@@ -17,7 +17,7 @@
         v-html="$page.post.content"
       ></div>
     </div>
-  </SingleBlog>
+  </Layout>
 </template>
 
 <page-query>
@@ -33,15 +33,6 @@ query Post ($databaseId: ID!){
   }
 }
 </page-query>
-
-<script>
-import SingleBlog from "~/layouts/SingleBlog.vue";
-export default {
-  components: {
-    SingleBlog,
-  },
-};
-</script>
 
 <style lang="postcss">
 .post-content {

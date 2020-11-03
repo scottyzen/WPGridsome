@@ -1,4 +1,3 @@
-
 module.exports = function (api) {
 
   api.createPages(async ({ graphql, createPage }) => {
@@ -12,7 +11,6 @@ module.exports = function (api) {
             slug
             databaseId
           }
-          cursor
         }
       }
     }
@@ -24,14 +22,16 @@ module.exports = function (api) {
     // Pagination 
     for (let i = 1; i < numberOfPagesForPagination; i++) {
 
-      console.log(`/posts/page/${i + 1}`);
+      console.log(`Creating page: /posts/page/${i + 1}`);
+
       createPage({
         path: `/posts/page/${i + 1}`,
-        component: './src/pages/posts/PageNumber.vue',
+        component: './src/pages/posts/page/PageNumber.vue',
         context: {
-          cursor: (data.posts.edges[i * perPage - 1].cursor) ? data.posts.edges[i * perPage - 1].cursor : 'YXJyYXljb25uZWN0aW9uOjE3MA==',
           currentPage: i + 1,
-          total: totalNumberOfPosts
+          total: totalNumberOfPosts,
+          offset: i * perPage,
+          perPage: perPage
         }
       })
     }

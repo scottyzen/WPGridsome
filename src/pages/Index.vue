@@ -1,12 +1,14 @@
 <template>
   <Layout class="shape">
     <div class="container text-gray-800">
-      <div class="flex flex-col items-center justify-center mb-48">
-        <h1 class="text-6xl font-bold">WPGridsome</h1>
+      <div
+        class="flex flex-col items-center justify-center mb-24 md:mb-48 text-center"
+      >
+        <h1 class="text-3xl md:text-6xl font-bold">WPGridsome</h1>
         <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
       </div>
 
-      <div class="bg-white p-12">
+      <div class="bg-white p-4 md:p-12">
         <h2 class="text-2xl font-bold mb-12">WordPress Setup</h2>
         <h3 class="text-lg mb-2 font-bold">Plugins</h3>
         <ul class=" list-disc list-inside mb-12">
