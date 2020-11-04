@@ -1,10 +1,10 @@
 <template>
-  <div class="flex-1">
+  <div class="w-full md:w-auto">
     <div class="flex items-center justify-between w-full">
       <ul class="main-menu">
         <g-link class="inline-block py-8 mr-10" to="/">Home</g-link>
         <g-link class="inline-block py-8 mr-10" to="/posts">Posts</g-link>
-        <g-link class="inline-block py-8 mr-10" to="/mail">Mail</g-link>
+        <!-- <g-link class="inline-block py-8 mr-10" to="/mail">Mail</g-link> -->
       </ul>
       <a
         class="py-2 px-4 flex bg-indigo-600 hover:bg-indigo-700 rounded text-white"
