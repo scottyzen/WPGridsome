@@ -2,54 +2,75 @@
   <Layout class="shape">
     <div class="container text-gray-800">
       <div
-        class="flex flex-col items-center justify-center mb-24 md:mb-48 text-center"
+        class="flex flex-col items-center justify-center md:mt-12 mb-24 md:mb-48 text-center"
       >
         <h1 class="text-3xl md:text-6xl font-bold">WPGridsome</h1>
         <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
       </div>
 
       <div class="md:bg-white md:p-12">
-        <h2 class="text-2xl font-bold mb-8">Why Jamstack?</h2>
-        <h3 class="text-lg mb-2 font-bold">
-          Better Performance
-          <small
-            >(
-            <span class="text-indigo-600"
-              ><a
-                href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwpgridsome.com%2F"
-                target="_blank"
-                rel="noopener noreferrer"
-                >See Google Speed Test</a
-              ></span
-            >
-            )</small
-          >
-        </h3>
-        <p class="mb-8">
-          Why wait for pages to build on the fly when you can generate them at
-          deploy time? When it comes to minimizing the time to first byte,
-          nothing beats pre-built files served over a CDN.
-        </p>
-        <h3 class="text-lg mb-2 font-bold">Higher Security</h3>
-        <p class="mb-8">
-          With server-side processes abstracted into microservice APIs, surface
-          areas for attacks are reduced. You can also leverage the domain
-          expertise of specialist third-party services.
-        </p>
-        <h3 class="text-lg mb-2 font-bold">Cheaper, Easier Scaling</h3>
-        <p class="mb-8">
-          When your deployment amounts to a stack of files that can be served
-          anywhere, scaling is a matter of serving those files in more places.
-          CDNs are perfect for this, and often include scaling in all of their
-          plans.
-        </p>
-        <h3 class="text-lg mb-2 font-bold">Better Developer Experience</h3>
-        <p class="mb-8">
-          Loose coupling and separation of controls allow for more targeted
-          development and debugging, and the expanding selection of CMS options
-          for site generators remove the need to maintain a separate stack for
-          content and marketing.
-        </p>
+        <h2 class="text-4xl font-bold mt-2 mb-2 text-center">Why Jamstack?</h2>
+        <div
+          class="mb-12 text-center text-lg text-gray-700 max-w-lg mx-auto leading-tight"
+        >
+          A Jamstack architecture can bring all sorts of benefits to the sites
+          and to project workflows
+        </div>
+        <g-image
+          class="mb-12 rounded"
+          src="~/assets/images/speed.jpg"
+        ></g-image>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-lg mb-2 font-bold">
+              Better Performance
+              <small
+                >(
+                <span class="text-indigo-600"
+                  ><a
+                    href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwpgridsome.com%2F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >See Google Speed Test</a
+                  ></span
+                >
+                )</small
+              >
+            </h3>
+            <p class="mb-8">
+              Why wait for pages to build on the fly when you can generate them
+              at deploy time? When it comes to minimizing the time to first
+              byte, nothing beats pre-built files served over a CDN.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg mb-2 font-bold">Higher Security</h3>
+            <p class="mb-8">
+              With server-side processes abstracted into microservice APIs,
+              surface areas for attacks are reduced. You can also leverage the
+              domain expertise of specialist third-party services.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg mb-2 font-bold">Cheaper, Easier Scaling</h3>
+            <p class="mb-8">
+              When your deployment amounts to a stack of files that can be
+              served anywhere, scaling is a matter of serving those files in
+              more places. CDNs are perfect for this, and often include scaling
+              in all of their plans.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg mb-2 font-bold">Better Developer Experience</h3>
+            <p class="mb-8">
+              Loose coupling and separation of controls allow for more targeted
+              development and debugging, and the expanding selection of CMS
+              options for site generators remove the need to maintain a separate
+              stack for content and marketing.
+            </p>
+          </div>
+        </div>
 
         <h2 class="text-2xl font-bold mt-20 mb-8">WordPress Setup</h2>
         <h3 class="text-lg mb-2 font-bold">Plugins</h3>
