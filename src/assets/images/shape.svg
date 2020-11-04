@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1400 600" style="enable-background:new 0 0 1400 600;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-</style>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-0.5" y1="299.5" x2="1399.5" y2="299.5">
-	<stop  offset="0" style="stop-color:#E8EDF8"/>
-	<stop  offset="1" style="stop-color:#E8EDF8;stop-opacity:0.1"/>
-</linearGradient>
-<polygon class="st0" points="-0.5,-0.5 -0.5,599.5 1399.5,465.5 1399.5,-0.5 "/>
-</svg>
+<svg enable-background="new 0 0 1400 600" viewBox="0 0 1400 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-.5" x2="1399.5" y1="299.5" y2="299.5"><stop offset="0" stop-color="#e8edf8"/><stop offset="1" stop-color="#e8edf8" stop-opacity=".1"/></linearGradient><path d="m-.5-.5v600l1400-134v-466z" fill="url(#a)"/></svg>
