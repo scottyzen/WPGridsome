@@ -2,26 +2,28 @@
   <Layout class="shape">
     <div class="container text-gray-800">
       <div
-        class="flex flex-col items-center justify-center md:mt-12 mb-24 md:mb-48 text-center"
+        class="flex flex-col items-center justify-center mt-12 mb-48 text-center"
       >
-        <h1 class="text-3xl md:text-6xl font-bold">WPGridsome</h1>
+        <h1 class="text-4xl md:text-6xl font-bold">WPGridsome</h1>
         <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
       </div>
 
       <div class="md:bg-white md:p-12">
-        <h2 class="text-4xl font-bold mt-2 mb-2 text-center">Why Jamstack?</h2>
+        <h2 class="text-xl md:text-4xl font-bold mt-2 mb-2 text-center">
+          Why Jamstack?
+        </h2>
         <div
-          class="mb-12 text-center text-lg text-gray-700 max-w-lg mx-auto leading-tight"
+          class="mb-12 text-center md:text-lg text-gray-700 max-w-lg mx-auto leading-tight"
         >
           A Jamstack architecture can bring all sorts of benefits to the sites
           and to project workflows
         </div>
         <g-image
-          class="mb-12 rounded"
+          class="mb-16 rounded"
           src="~/assets/images/speed.jpg"
         ></g-image>
 
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-2 gap-6">
           <div>
             <h3 class="text-lg mb-2 font-bold">
               Better Performance
