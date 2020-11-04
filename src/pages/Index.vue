@@ -21,6 +21,8 @@
         <g-image
           class="mb-16 rounded"
           src="~/assets/images/speed.jpg"
+          width="1600"
+          height="425"
         ></g-image>
 
         <div class="grid md:grid-cols-2 gap-6">

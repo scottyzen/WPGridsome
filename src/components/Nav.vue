@@ -10,7 +10,13 @@
         class="py-2 px-4 flex bg-indigo-600 hover:bg-indigo-700 rounded text-white"
         href="https://github.com/scottyzen/WPGridsome"
         target="_blank"
-        >Repo <g-image class="ml-2" src="~/assets/images/github.svg"></g-image
+        >Repo
+        <g-image
+          width="16"
+          height="16"
+          class="ml-2"
+          src="~/assets/images/github.svg"
+        ></g-image
       ></a>
     </div>
   </div>
