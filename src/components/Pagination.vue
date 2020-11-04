@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="w-full flex justify-center gap-1 text-gray-800">
+    <ul class="flex justify-center w-full gap-1 text-gray-800">
       <li v-for="i in Math.ceil(totalNumberOfPages / perPage)" :key="i">
         <g-link
           class="p-1"

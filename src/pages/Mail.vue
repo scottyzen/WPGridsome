@@ -40,7 +40,7 @@
               v-model="message"
             ></textarea>
             <input
-              class="w-56 text-blue-100 bg-indigo-600 cursor-pointer hover:bg-indigo-700 border-b-2 border-indigo-900 p-3 px-5 rounded-md mt-4 outline-none shadow"
+              class="w-56 p-3 px-5 mt-4 text-blue-100 bg-indigo-600 border-b-2 border-indigo-900 rounded-md shadow outline-none cursor-pointer hover:bg-indigo-700"
               type="submit"
               :value="buttonText"
             />

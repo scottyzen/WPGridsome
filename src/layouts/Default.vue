@@ -1,8 +1,8 @@
 <template>
   <div>
     <header class="absolute inset-x-0 top-0 mb-8 border-b">
-      <div class="container flex items-center justify-between ">
-        <g-link class="hidden md:block font-bold flex-1" to="/">{{
+      <div class="container flex items-center justify-between">
+        <g-link class="flex-1 hidden font-bold md:block" to="/">{{
           $static.metadata.siteName
         }}</g-link>
         <Nav />
@@ -11,7 +11,7 @@
     <div class="min-h-screen pt-32 pb-12">
       <slot />
     </div>
-    <footer class="py-4 text-gray-800 bg-gray-200">
+    <footer class="py-4 text-gray-800 bg-gray-100">
       <p class="p-4 text-sm text-center">
         © 2020 WPGridsome.com by
         <a

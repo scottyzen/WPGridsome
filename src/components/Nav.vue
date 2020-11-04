@@ -7,7 +7,7 @@
         <!-- <g-link class="inline-block py-8 mr-10" to="/mail">Mail</g-link> -->
       </ul>
       <a
-        class="py-2 px-4 flex bg-indigo-600 hover:bg-indigo-700 rounded text-white"
+        class="flex px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700"
         href="https://github.com/scottyzen/WPGridsome"
         target="_blank"
         >Repo

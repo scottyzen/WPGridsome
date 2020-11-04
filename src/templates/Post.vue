@@ -3,7 +3,7 @@
     <div class="content">
       <div
         v-if="$page.post.featuredImage"
-        class="h-64 -mt-10 mb-12 bg-center bg-cover featured-image"
+        class="h-64 mb-12 -mt-10 bg-center bg-cover featured-image"
         :style="{
           backgroundImage: `url(${$page.post.featuredImage.node.mediaItemUrl})`,
         }"

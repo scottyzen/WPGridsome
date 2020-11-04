@@ -4,16 +4,16 @@
       <div
         class="flex flex-col items-center justify-center mt-12 mb-48 text-center"
       >
-        <h1 class="text-4xl md:text-6xl font-bold">WPGridsome</h1>
+        <h1 class="text-4xl font-bold md:text-6xl">WPGridsome</h1>
         <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
       </div>
 
       <div class="md:bg-white md:p-12">
-        <h2 class="text-xl md:text-4xl font-bold mt-2 mb-2 text-center">
+        <h2 class="mt-2 mb-2 text-xl font-bold text-center md:text-4xl">
           Why Jamstack?
         </h2>
         <div
-          class="mb-12 text-center md:text-lg text-gray-700 max-w-lg mx-auto leading-tight"
+          class="max-w-lg mx-auto mb-12 leading-tight text-center text-gray-700 md:text-lg"
         >
           A Jamstack architecture can bring all sorts of benefits to the sites
           and to project workflows
@@ -25,9 +25,9 @@
           height="425"
         ></g-image>
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid gap-6 md:grid-cols-2">
           <div>
-            <h3 class="text-lg mb-2 font-bold">
+            <h3 class="mb-2 text-lg font-bold">
               Better Performance
               <small
                 >(
@@ -49,7 +49,7 @@
             </p>
           </div>
           <div>
-            <h3 class="text-lg mb-2 font-bold">Higher Security</h3>
+            <h3 class="mb-2 text-lg font-bold">Higher Security</h3>
             <p class="mb-8">
               With server-side processes abstracted into microservice APIs,
               surface areas for attacks are reduced. You can also leverage the
@@ -57,7 +57,7 @@
             </p>
           </div>
           <div>
-            <h3 class="text-lg mb-2 font-bold">Cheaper, Easier Scaling</h3>
+            <h3 class="mb-2 text-lg font-bold">Cheaper, Easier Scaling</h3>
             <p class="mb-8">
               When your deployment amounts to a stack of files that can be
               served anywhere, scaling is a matter of serving those files in
@@ -66,7 +66,7 @@
             </p>
           </div>
           <div>
-            <h3 class="text-lg mb-2 font-bold">Better Developer Experience</h3>
+            <h3 class="mb-2 text-lg font-bold">Better Developer Experience</h3>
             <p class="mb-8">
               Loose coupling and separation of controls allow for more targeted
               development and debugging, and the expanding selection of CMS
@@ -76,9 +76,9 @@
           </div>
         </div>
 
-        <h2 class="text-2xl font-bold mt-20 mb-8">WordPress Setup</h2>
-        <h3 class="text-lg mb-2 font-bold">Plugins</h3>
-        <ul class=" list-disc list-inside mb-12">
+        <h2 class="mt-20 mb-8 text-2xl font-bold">WordPress Setup</h2>
+        <h3 class="mb-2 text-lg font-bold">Plugins</h3>
+        <ul class="mb-12 list-disc list-inside">
           <li>
             WP GraphQL (
             <a
@@ -123,30 +123,30 @@
           </li>
         </ul>
 
-        <h3 class="text-lg mb-2 font-bold">Environment Variables</h3>
+        <h3 class="mb-2 text-lg font-bold">Environment Variables</h3>
         <div>
-          <span class="w-32 inline-block">GRAPHQL_URL</span>
+          <span class="inline-block w-32">GRAPHQL_URL</span>
           <span class="text-indigo-600">https:yourwebsite.com/graphql</span>
         </div>
 
-        <h3 class="text-lg mt-12 mb-2 font-bold">
+        <h3 class="mt-12 mb-2 text-lg font-bold">
           WordPress Snippits (functions.php)
         </h3>
         <div class="column-2">
           <div>
-            <p class="text-sm mb-2">
+            <p class="mb-2 text-sm">
               Increase the maxium number of results returned. Default (100)
             </p>
-            <vue-code-highlight
-              ><pre>
+            <vue-code-highlight>
+              <pre>
 add_filter('graphql_connection_max_query_amount', function () {
     return 1000;
 });</pre
-              ></vue-code-highlight
-            >
+              >
+            </vue-code-highlight>
           </div>
           <div>
-            <p class="text-sm mb-2">
+            <p class="mb-2 text-sm">
               Sets the number of posts returned to be the same as WordPress's
               posts per page
             </p>
