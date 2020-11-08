@@ -28,23 +28,14 @@ module.exports = {
     {
       use: 'gridsome-plugin-pwa',
       options: {
-          // Service Worker Options
-          disableServiceWorker: false,
-          cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
-
-          // Manifest Options (https://developer.mozilla.org/en-US/docs/Web/Manifest)
-          manifestPath: 'manifest.json',
-          title: 'WPGridsome',
-          display: 'standalone',
-          statusBarStyle: 'default',
-          themeColor: '#F7901F',
-          backgroundColor: '#E8EDF8',
-          icon: 'favicon.svg',
-          shortName: 'WPGridsome',
-
-          // Standard Meta Tags
-          svgFavicon: 'favicon.svg',          // Optional. Requires favicon.ico fallback
-      }
-  }
+        title: 'WPGridsome',
+        disableServiceWorker: false,
+        shortName: 'WPGridsome',
+        themeColor: '#3590d5',
+        backgroundColor: '#3590d5',
+        icon: './src/favicon.png',
+        msTileColor: '#3590d5',
+      },
+    },
   ]
 }
