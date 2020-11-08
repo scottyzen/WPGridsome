@@ -30,23 +30,17 @@ module.exports = {
       options: {
           // Service Worker Options
           disableServiceWorker: false,
-          serviceWorkerPath: 'service-worker.js',
           cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
 
           // Manifest Options (https://developer.mozilla.org/en-US/docs/Web/Manifest)
           manifestPath: 'manifest.json',
           title: 'WPGridsome',
-          startUrl: '/',
           display: 'standalone',
           statusBarStyle: 'default',
           themeColor: '#F7901F',
           backgroundColor: '#E8EDF8',
           icon: 'favicon.svg',
-          shortName: 'WPGridsome',              // Optional
-          description: 'About Gridsome WordPress Starter using WPGraphql',// Optional
-          categories: ['Technology', 'Web', 'Development'],          // Optional
-          lang: 'en-GB',                      // Optional
-          maskableIcon: true,                 // Optional
+          shortName: 'WPGridsome',
 
           // Standard Meta Tags
           svgFavicon: 'favicon.svg',          // Optional. Requires favicon.ico fallback
