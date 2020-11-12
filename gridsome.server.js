@@ -13,6 +13,15 @@ module.exports = function (api) {
           }
         }
       }
+      pages (first: 999){
+        edges {
+          node {
+            title
+            uri
+            slug
+          }
+        }
+      }
     }
     `)
     const perPage = data.allSettings.readingSettingsPostsPerPage;
@@ -43,6 +52,18 @@ module.exports = function (api) {
         component: './src/templates/Post.vue',
         context: {
           databaseId: node.databaseId
+        }
+      })
+    })
+
+    // Single Page 
+    data.pages.edges.forEach(({ node }) => {
+      console.log(`Create page: /${node.slug}`);
+      createPage({
+        path: `/${node.slug}`,
+        component: './src/templates/Page.vue',
+        context: {
+          uri: node.uri
         }
       })
     })
