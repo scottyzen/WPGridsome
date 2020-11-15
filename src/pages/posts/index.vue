@@ -5,11 +5,7 @@
         <h1 class="text-6xl font-bold text-gray-800">Blog</h1>
         <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
       </div>
-      <ul class="grid gap-16 py-12 md:grid-cols-2 lg:grid-cols-3">
-        <li v-for="{ node } in $page.posts.edges" :key="node.databaseId">
-          <Card :node="node" />
-        </li>
-      </ul>
+      <Posts :posts="$page.posts.edges" />
       <Pagination
         :currentPage="1"
         :totalNumberOfPages="$page.posts.pageInfo.offsetPagination.total"
@@ -40,6 +36,7 @@ query{
           edges {
             node {
               name
+              slug
             }
           }
         }
@@ -56,13 +53,13 @@ query{
 </page-query>
 
 <script>
+import Posts from "../../components/Posts";
 import Pagination from "../../components/Pagination";
-import Card from "../../components/Card";
 
 export default {
   components: {
+    Posts,
     Pagination,
-    Card,
   },
   data() {
     return {
@@ -82,12 +79,6 @@ export default {
   .shape {
     background-size: contain;
   }
-}
-.h-200 {
-  height: 200px;
-}
-.read-more {
-  display: none;
 }
 .button {
   transition: all 200ms ease-out, background-color 100ms ease-out;

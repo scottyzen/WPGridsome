@@ -31,7 +31,7 @@
           v-for="{ node } in node.categories.edges.slice(0, 3)"
           :key="node"
           class="p-1 px-3 text-xs text-indigo-700 bg-indigo-100 rounded-full"
-          >{{ node.name }}</span
+          ><g-link :to="`/posts/${node.slug}`">{{ node.name }}</g-link></span
         >
       </div>
     </div>
@@ -49,5 +49,8 @@ export default {
   width: 0;
   height: 0;
   background: transparent; /* make scrollbar transparent */
+}
+.h-200 {
+  height: 200px;
 }
 </style>

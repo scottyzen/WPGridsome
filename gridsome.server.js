@@ -13,6 +13,14 @@ module.exports = function (api) {
           }
         }
       }
+      categories {
+        edges {
+          node {
+            slug
+            name
+          }
+        }
+      }
     }
     `)
     const perPage = data.allSettings.readingSettingsPostsPerPage;
@@ -26,7 +34,7 @@ module.exports = function (api) {
 
       createPage({
         path: `/posts/page/${i + 1}`,
-        component: './src/pages/posts/page/PageNumber.vue',
+        component: './src/pages/posts/pagination/PostsPagination.vue',
         context: {
           currentPage: parseInt(i + 1),
           total: parseInt(totalNumberOfPosts),
@@ -43,6 +51,17 @@ module.exports = function (api) {
         component: './src/templates/Post.vue',
         context: {
           databaseId: node.databaseId
+        }
+      })
+    })
+
+    // Categories Pages
+    data.categories.edges.forEach(({ node }) => {
+      createPage({
+        path: `/posts/${node.slug}`,
+        component: './src/pages/posts/CategoriesArchive.vue',
+        context: {
+          name: node.name
         }
       })
     })
