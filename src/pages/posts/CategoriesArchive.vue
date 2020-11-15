@@ -11,7 +11,7 @@
 </template>
 
 <page-query>
-query Categories($name: String!){
+query Categories($name){
   posts(where: {categoryName: $name}, first: 999) {
     pageInfo{
       offsetPagination{
