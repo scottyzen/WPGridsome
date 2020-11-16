@@ -18,6 +18,7 @@ module.exports = function (api) {
           node {
             slug
             name
+            databaseId
           }
         }
       }
@@ -63,6 +64,7 @@ module.exports = function (api) {
         path: `/posts/${node.slug}`,
         component: './src/pages/posts/CategoriesArchive.vue',
         context: {
+          databaseId: node.databaseId,
           name: node.name
         }
       })

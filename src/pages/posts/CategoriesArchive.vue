@@ -11,8 +11,8 @@
 </template>
 
 <page-query>
-query Categories($name: String){
-  posts(where: {categoryName: $name}) {
+query Categories($databaseId: Int){
+  posts(where: {categoryId: $databaseId}) {
     edges {
       node {
         title
