@@ -30,7 +30,7 @@ module.exports = function (api) {
     // Pagination 
     for (let i = 1; i < numberOfPagesForPagination; i++) {
 
-      console.log(`Creating page: /posts/page/${i + 1}`);
+      console.log(`Creating Post Pagination: /posts/page/${i + 1}`);
 
       createPage({
         path: `/posts/page/${i + 1}`,
@@ -46,6 +46,7 @@ module.exports = function (api) {
 
     // Single Post 
     data.posts.edges.forEach(({ node }) => {
+      console.log(`Creating Single Post: /post/${node.slug}`);
       createPage({
         path: `/post/${node.slug}`,
         component: './src/templates/Post.vue',
@@ -57,6 +58,7 @@ module.exports = function (api) {
 
     // Categories Pages
     data.categories.edges.forEach(({ node }) => {
+      console.log(`Creating Category Page: /posts/${node.slug}`);
       createPage({
         path: `/posts/${node.slug}`,
         component: './src/pages/posts/CategoriesArchive.vue',

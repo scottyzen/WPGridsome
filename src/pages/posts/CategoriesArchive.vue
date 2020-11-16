@@ -11,13 +11,8 @@
 </template>
 
 <page-query>
-query Categories($name){
-  posts(where: {categoryName: $name}, first: 999) {
-    pageInfo{
-      offsetPagination{
-        total
-      }
-    }
+query Categories($name: String){
+  posts(where: {categoryName: $name}) {
     edges {
       node {
         title
