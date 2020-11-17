@@ -138,19 +138,7 @@
         <h3 class="mt-12 mb-2 text-lg font-bold">
           WordPress Snippits (functions.php)
         </h3>
-        <div class="column-2">
-          <div>
-            <p class="mb-2 text-sm">
-              Increase the maxium number of results returned. Default (100)
-            </p>
-            <vue-code-highlight>
-              <pre>
-add_filter('graphql_connection_max_query_amount', function () {
-    return 1000;
-});</pre
-              >
-            </vue-code-highlight>
-          </div>
+        <div>
           <div>
             <p class="mb-2 text-sm">
               Sets the number of posts returned to be the same as WordPress's
