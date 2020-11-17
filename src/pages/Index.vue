@@ -19,7 +19,7 @@
           and to project workflows
         </div>
         <g-image
-          class="mb-16 rounded"
+          class="object-cover h-56 mb-16 rounded md:h-auto"
           src="~/assets/images/speed.jpg"
           width="1600"
           height="425"
@@ -30,16 +30,14 @@
             <h3 class="mb-2 text-lg font-bold">
               Better Performance
               <small
-                >(
-                <span class="text-indigo-600"
+                >(<span class="text-indigo-600"
                   ><a
                     href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwpgridsome.com%2F"
                     target="_blank"
                     rel="noopener noreferrer"
                     >See Google Speed Test</a
                   ></span
-                >
-                )</small
+                >)</small
               >
             </h3>
             <p class="mb-8">
