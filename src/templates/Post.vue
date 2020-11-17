@@ -9,11 +9,11 @@
         }"
       ></div>
 
-      <h1 class="text-4xl text-center text-gray-800">
+      <h1 class="px-8 mx-auto text-4xl leading-none text-center text-gray-800">
         {{ $page.post.title }}
       </h1>
       <div
-        class="max-w-2xl m-auto mt-8 font-light text-gray-700 post-content"
+        class="max-w-2xl px-8 py-4 m-auto mt-8 font-light text-gray-700 post-content"
         v-html="$page.post.content"
       ></div>
     </div>
