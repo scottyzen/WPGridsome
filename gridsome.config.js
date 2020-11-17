@@ -24,6 +24,14 @@ module.exports = {
       options: {
         tailwindConfig: './tailwind.config.js',
       }
+    },
+    {
+      use: 'gridsome-plugin-gtm',
+      options: {
+        id: process.env.GTAG_ID,
+        enabled: true,
+        defer: true
+      }
     }
   ]
 }
