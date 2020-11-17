@@ -5,7 +5,7 @@
         class="flex flex-col items-center justify-center mt-12 mb-48 text-center"
       >
         <h1 class="text-4xl font-bold md:text-6xl">WPGridsome</h1>
-        <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
+        <h2 class="text-xl text-gray-700">A WPGraphQL starter for Gridsome</h2>
       </div>
 
       <div class="md:bg-white md:p-12">
@@ -25,7 +25,7 @@
           height="425"
         ></g-image>
 
-        <div class="grid gap-6 md:grid-cols-2">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 text-lg font-bold">
               Better Performance
@@ -74,57 +74,67 @@
           </div>
         </div>
 
-        <h2 class="mt-20 mb-8 text-2xl font-bold">WordPress Setup</h2>
-        <h3 class="mb-2 text-lg font-bold">Plugins</h3>
-        <ul class="mb-12 list-disc list-inside">
-          <li>
-            WP GraphQL (
-            <a
-              class="text-indigo-600"
-              href="https://github.com/wp-graphql/wp-graphql"
-              target="_blank"
-              >Githib</a
-            >)
-          </li>
-          <li>
-            WPGraphQL for Advanced Custom Fields (
-            <a
-              class="text-indigo-600"
-              href="https://github.com/wp-graphql/wp-graphql-acf"
-              target="_blank"
-              >Githib</a
-            >)
-          </li>
-          <li>
-            WPGraphQL Offset Pagination (
-            <a
-              class="text-indigo-600"
-              href="https://github.com/valu-digital/wp-graphql-offset-pagination"
-              target="_blank"
-              >Githib</a
-            >)
-          </li>
-          <li>
-            WPGraphQL Yoast SEO Addon (
-            <a
-              class="text-indigo-600"
-              href="https://github.com/ashhitch/wp-graphql-yoast-seo"
-              target="_blank"
-              >Githib</a
-            >) (
-            <a
-              class="text-indigo-600"
-              href="https://wordpress.org/plugins/add-wpgraphql-seo/"
-              target="_blank"
-              >Plugin</a
-            >)
-          </li>
-        </ul>
+        <h2 class="mt-20 mb-8 text-2xl font-bold">Setup</h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div>
+            <h3 class="mb-2 text-lg font-bold">Plugins</h3>
+            <ul class="mb-12 list-disc list-inside">
+              <li>
+                WP GraphQL (<a
+                  class="text-indigo-600"
+                  href="https://github.com/wp-graphql/wp-graphql"
+                  target="_blank"
+                  >Githib</a
+                >) (<a
+                  class="text-indigo-600"
+                  href="https://wordpress.org/plugins/wp-graphql/"
+                  target="_blank"
+                  >Plugin</a
+                >)
+              </li>
 
-        <h3 class="mb-2 text-lg font-bold">Environment Variables</h3>
-        <div>
-          <span class="inline-block w-32">GRAPHQL_URL</span>
-          <span class="text-indigo-600">https:yourwebsite.com/graphql</span>
+              <li>
+                WPGraphQL for Advanced Custom Fields (<a
+                  class="text-indigo-600"
+                  href="https://github.com/wp-graphql/wp-graphql-acf"
+                  target="_blank"
+                  >Githib</a
+                >)
+              </li>
+              <li>
+                WPGraphQL Offset Pagination (<a
+                  class="text-indigo-600"
+                  href="https://github.com/valu-digital/wp-graphql-offset-pagination"
+                  target="_blank"
+                  >Githib</a
+                >)
+              </li>
+              <li>
+                WPGraphQL Yoast SEO Addon (<a
+                  class="text-indigo-600"
+                  href="https://github.com/ashhitch/wp-graphql-yoast-seo"
+                  target="_blank"
+                  >Githib</a
+                >) (<a
+                  class="text-indigo-600"
+                  href="https://wordpress.org/plugins/add-wpgraphql-seo/"
+                  target="_blank"
+                  >Plugin</a
+                >)
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">Environment Variables</h3>
+            <div>
+              <span class="inline-block w-40">GRAPHQL_URL</span>
+              <span class="text-gray-500">https:yourwebsite.com/graphql</span>
+            </div>
+            <div>
+              <span class="inline-block w-40">GTAG_ID</span>
+              <span class="text-gray-500">G-XXXXXXXXXX</span>
+            </div>
+          </div>
         </div>
 
         <h3 class="mt-12 mb-2 text-lg font-bold">

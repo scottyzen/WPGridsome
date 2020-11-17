@@ -12,11 +12,7 @@ module.exports = {
       options: {
         url: process.env.GRAPHQL_URL,
         fieldName: 'wp',
-        typeName: 'WordPress',
-
-        headers: {
-          Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
-        },
+        typeName: 'WordPress'
       },
     },
     {

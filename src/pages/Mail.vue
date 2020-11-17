@@ -3,7 +3,7 @@
     <div class="container">
       <div class="flex flex-col items-center justify-center mb-20">
         <h1 class="text-6xl font-bold text-gray-800">Contact</h1>
-        <h2 class="text-xl text-gray-700">A WordPress starter for Gridsome</h2>
+        <h2 class="text-xl text-gray-700">A WPGraphQL starter for Gridsome</h2>
       </div>
       <div class="flex flex-col items-center justify-center mb-20">
         <div class="mt-8">
