@@ -5,7 +5,9 @@
         class="flex flex-col items-center justify-center mt-12 mb-48 text-center"
       >
         <h1 class="text-4xl font-bold md:text-6xl">WPGridsome</h1>
-        <h2 class="text-xl text-gray-700">A WPGraphQL starter for Gridsome</h2>
+        <h2 class="text-xl text-gray-700">
+          A starter for Gridsome using WordPress + WPGraphQL
+        </h2>
       </div>
 
       <div class="md:bg-white md:p-12">
