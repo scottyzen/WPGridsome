@@ -132,10 +132,6 @@
               <span class="inline-block w-40">GRAPHQL_URL</span>
               <span class="text-gray-500">https:yourwebsite.com/graphql</span>
             </div>
-            <div>
-              <span class="inline-block w-40">GTAG_ID</span>
-              <span class="text-gray-500">G-XXXXXXXXXX</span>
-            </div>
           </div>
         </div>
 

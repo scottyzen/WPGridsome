@@ -4,14 +4,11 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore",
-    "postinstall": "netlify-lambda install",
-    "start:lambda": "netlify-lambda serve"
+    "explore": "gridsome explore"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.22",
-    "gridsome-plugin-gtm": "^0.1.1",
     "gridsome-source-graphql": "^1.0.2",
     "vue-code-highlight": "^0.7.6"
   },
