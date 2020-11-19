@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="flex justify-center w-full gap-1 text-gray-800">
+    <ul v-if="pageInfo" class="flex justify-center w-full gap-1 text-gray-800">
       <li v-for="i in Math.ceil(pageInfo.total / perPage)" :key="i">
         <g-link
           class="px-2 py-1 rounded"
