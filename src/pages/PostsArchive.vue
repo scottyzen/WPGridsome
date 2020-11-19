@@ -56,16 +56,6 @@ export default {
 </script>
 
 <style>
-.shape {
-  background: url("../../src/assets/images/shape.svg") no-repeat;
-  background-size: auto 400px;
-  min-height: 600px;
-}
-@media (min-width: 768px) {
-  .shape {
-    background-size: contain;
-  }
-}
 .button {
   transition: all 200ms ease-out, background-color 100ms ease-out;
   display: inline-block;

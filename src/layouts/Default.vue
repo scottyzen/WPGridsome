@@ -2,9 +2,7 @@
   <div>
     <header class="absolute inset-x-0 top-0 mb-8 border-b">
       <div class="container flex items-center justify-between">
-        <g-link class="flex-1 hidden font-bold md:block" to="/">{{
-          $static.metadata.siteName
-        }}</g-link>
+        <g-link class="flex-1 hidden font-bold md:block" to="/">{{$static.metadata.siteName}}</g-link>
         <Nav />
       </div>
     </header>
@@ -14,13 +12,7 @@
     <footer class="py-4 text-gray-800 bg-gray-100">
       <p class="p-4 text-sm text-center">
         © 2020 WPGridsome.com by
-        <a
-          href="https://scottyzen.com?ref=wpgridsome"
-          target="_blank"
-          rel="noopener"
-          class="text-indigo-600"
-          >Scott Kennedy</a
-        >
+        <a href="https://scottyzen.com?ref=wpgridsome" target="_blank" rel="noopener" class="text-indigo-600">Scott Kennedy</a>
       </p>
     </footer>
   </div>
@@ -51,5 +43,15 @@ button {
 }
 body {
   @apply text-gray-800;
+}
+.shape {
+  background: url("../../src/assets/images/shape.svg") no-repeat;
+  background-size: auto 400px;
+  min-height: 600px;
+}
+@media (min-width: 768px) {
+  .shape {
+    background-size: contain;
+  }
 }
 </style>
