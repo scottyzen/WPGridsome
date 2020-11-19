@@ -1,13 +1,8 @@
 <template>
   <Layout class="shape">
     <div class="container">
-      <div class="flex flex-col items-center justify-center mb-48">
-        <h1 class="text-6xl font-bold text-gray-800">Blog</h1>
-        <h2 class="text-xl text-gray-700">
-          A starter for Gridsome using WordPress + WPGraphQL
-        </h2>
-      </div>
-      <Posts :posts="$page.posts.edges" />
+      <PageTitle title="Blog" />
+      <PostGrid :posts="$page.posts.edges" />
       <Pagination :perPage="$context.perPage" :pageInfo="$context.pageInfo" />
     </div>
   </Layout>
@@ -25,6 +20,7 @@ query ($offset: Int, $perPage: Int) {
           edges {
             node {
               name
+              slug
             }
           }
         }
@@ -41,13 +37,15 @@ query ($offset: Int, $perPage: Int) {
 </page-query>
 
 <script>
-import Posts from "../components/Posts";
+import PostGrid from "../components/PostGrid";
 import Pagination from "../components/Pagination";
+import PageTitle from "../components/PageTitle";
 
 export default {
   components: {
-    Posts,
+    PostGrid,
     Pagination,
+    PageTitle,
   },
   data() {
     return {

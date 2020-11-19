@@ -1,20 +1,15 @@
 <template>
   <Layout class="shape">
     <div class="container">
-      <div class="flex flex-col items-center justify-center mb-48">
-        <h1 class="text-6xl font-bold text-gray-800">{{ $context.name }}</h1>
-        <h2 class="text-xl text-gray-700">
-          A starter for Gridsome using WordPress + WPGraphQL
-        </h2>
-      </div>
-      <Posts :posts="$page.posts.edges" />
+      <PageTitle :title="$context.name" />
+      <PostGrid :posts="$page.posts.edges" />
     </div>
   </Layout>
 </template>
 
 <page-query>
 query Categories($databaseId: Int){
-  posts(where: {categoryId: $databaseId}) {
+  posts(where: {categoryId: $databaseId}, first: 48) {
     edges {
       node {
         title
@@ -42,10 +37,12 @@ query Categories($databaseId: Int){
 </page-query>
 
 <script>
-import Posts from "../components/Posts";
+import PostGrid from "../components/PostGrid";
+import PageTitle from "../components/PageTitle";
 export default {
   components: {
-    Posts,
+    PostGrid,
+    PageTitle,
   },
 };
 </script>
