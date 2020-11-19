@@ -1,10 +1,10 @@
 <template>
   <div>
-    <ul class="flex justify-center w-full gap-1 text-gray-800">
-      <li v-for="i in Math.ceil(totalNumberOfPages / perPage)" :key="i">
+    <ul v-if="pageInfo" class="flex justify-center w-full gap-1 text-gray-800">
+      <li v-for="i in Math.ceil(pageInfo.total / perPage)" :key="i">
         <g-link
-          class="p-1"
-          :class="{ active: currentPage == i }"
+          class="px-2 py-1 rounded"
+          :class="{ active: pageInfo.currentPage == i }"
           :to="i === 1 ? `/posts` : `/posts/page/${i}`"
           >{{ i }}</g-link
         >
@@ -15,12 +15,13 @@
 
 <script>
 export default {
-  props: ["currentPage", "totalNumberOfPages", "perPage"],
+  props: ["pageInfo", "perPage"],
 };
 </script>
 
 <style lang="postcss" scoped>
-.active--exact {
-  @apply bg-gray-200 rounded;
+.active--exact,
+a:hover {
+  @apply bg-indigo-500 text-white;
 }
 </style>

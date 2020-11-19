@@ -1,38 +1,20 @@
 <template>
   <Layout class="shape">
     <div class="container">
-      <div class="flex flex-col items-center justify-center mb-48">
-        <h1 class="text-6xl font-bold text-gray-800">Blog</h1>
-        <h2 class="text-xl text-gray-700">
-          A starter for Gridsome using WordPress + WPGraphQL
-        </h2>
-      </div>
-      <Posts :posts="$page.posts.edges" />
-      <Pagination
-        :currentPage="1"
-        :totalNumberOfPages="$page.posts.pageInfo.offsetPagination.total"
-        :perPage="$page.allSettings.readingSettingsPostsPerPage"
-      />
+      <PageTitle title="Blog" />
+      <PostGrid :posts="$page.posts.edges" />
+      <Pagination :perPage="$context.perPage" :pageInfo="$context.pageInfo" />
     </div>
   </Layout>
 </template>
 
 <page-query>
-query{
-  allSettings {
-    readingSettingsPostsPerPage
-  }
-  posts {
-    pageInfo{
-      offsetPagination{
-        total
-      }
-    }
+query ($offset: Int, $perPage: Int) {
+  posts(where: {offsetPagination: {offset: $offset, size: $perPage}}) {
     edges {
       node {
         title
         slug
-        id
         databaseId
         categories {
           edges {
@@ -42,7 +24,7 @@ query{
             }
           }
         }
-        excerpt
+        excerpt(format: RENDERED)
         featuredImage {
           node {
             sourceUrl(size: MEDIUM_LARGE)
@@ -51,17 +33,19 @@ query{
       }
     }
   }
-},
+}
 </page-query>
 
 <script>
-import Posts from "../../components/Posts";
-import Pagination from "../../components/Pagination";
+import PostGrid from "../components/PostGrid";
+import Pagination from "../components/Pagination";
+import PageTitle from "../components/PageTitle";
 
 export default {
   components: {
-    Posts,
+    PostGrid,
     Pagination,
+    PageTitle,
   },
   data() {
     return {
@@ -73,7 +57,7 @@ export default {
 
 <style>
 .shape {
-  background: url("../../../src/assets/images/shape.svg") no-repeat;
+  background: url("../../src/assets/images/shape.svg") no-repeat;
   background-size: auto 400px;
   min-height: 600px;
 }

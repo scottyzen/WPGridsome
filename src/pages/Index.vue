@@ -1,14 +1,7 @@
 <template>
   <Layout class="shape">
-    <div class="container text-gray-800">
-      <div
-        class="flex flex-col items-center justify-center mt-12 mb-48 text-center"
-      >
-        <h1 class="text-4xl font-bold md:text-6xl">WPGridsome</h1>
-        <h2 class="text-xl text-gray-700">
-          A starter for Gridsome using WordPress + WPGraphQL
-        </h2>
-      </div>
+    <div class="container">
+      <PageTitle />
 
       <div class="md:bg-white md:p-12">
         <h2 class="mt-2 mb-2 text-xl font-bold text-center md:text-4xl">
@@ -169,9 +162,11 @@ add_filter('graphql_post_object_connection_query_args', function ($query_args, $
 
 <script>
 import { component as VueCodeHighlight } from "vue-code-highlight";
+import PageTitle from "../components/PageTitle";
 export default {
   components: {
     VueCodeHighlight,
+    PageTitle,
   },
 };
 </script>

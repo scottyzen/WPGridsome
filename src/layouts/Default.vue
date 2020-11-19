@@ -43,10 +43,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 a,
 button {
   cursor: pointer;
   outline: none !important;
+}
+body {
+  @apply text-gray-800;
 }
 </style>
