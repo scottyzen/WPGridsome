@@ -20,12 +20,6 @@ module.exports = {
       options: {
         tailwindConfig: './tailwind.config.js',
       }
-    },
-    {
-      use: 'gridsome-plugin-brotli',
-      options: {
-        extensions: ['css', 'html', 'js', 'svg', 'json']
-      }
     }
   ]
 }

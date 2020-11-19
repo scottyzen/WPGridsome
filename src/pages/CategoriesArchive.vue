@@ -42,7 +42,7 @@ query Categories($databaseId: Int){
 </page-query>
 
 <script>
-import Posts from "../../components/Posts";
+import Posts from "../components/Posts";
 export default {
   components: {
     Posts,
