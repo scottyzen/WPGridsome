@@ -1,6 +1,7 @@
 <template>
-  <a
-    :href="`/post/${node.slug}`"
+  <g-link
+    v-if="node"
+    :to="`/post/${node.slug}`"
     class="block bg-white border-b border-gray-400 rounded-md shadow-lg"
   >
     <g-image
@@ -36,7 +37,7 @@
         >
       </div>
     </div>
-  </a>
+  </g-link>
 </template>
 
 <script>
