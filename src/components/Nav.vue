@@ -5,18 +5,9 @@
         <g-link class="inline-block py-8 mr-10" to="/">Home</g-link>
         <g-link class="inline-block py-8 mr-10" to="/posts">Posts</g-link>
       </ul>
-      <a
-        class="flex px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700"
-        href="https://github.com/scottyzen/WPGridsome"
-        target="_blank"
-        >Repo
-        <g-image
-          width="16"
-          height="16"
-          class="ml-2"
-          src="~/assets/images/github.svg"
-        ></g-image
-      ></a>
+      <a class="flex px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700" href="https://github.com/scottyzen/WPGridsome" target="_blank">Repo
+        <g-image width="16" height="16" class="ml-2" src="~/assets/images/github.svg"></g-image>
+      </a>
     </div>
   </div>
 </template>
