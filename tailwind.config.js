@@ -1,3 +1,4 @@
+
 module.exports = {
     theme: {
       container: {
@@ -17,8 +18,8 @@ module.exports = {
         "./gridsome.config.js"
       ],
       options: {
-        whitelist: ['sidebar', 'active-blog', 'excerpt', 'title', 'author-and-date'],
-        whitelistPatternsChildren: [/^slick/, /^aria/]
+        whitelist: [],
+        whitelistPatternsChildren: []
       }
     }
   }
