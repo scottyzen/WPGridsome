@@ -12,6 +12,7 @@
     "gridsome": "^0.7.22",
     "gridsome-source-graphql": "^1.0.2",
     "postcss": "^8.1.8",
+    "postcss-import": "^13.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "vue-code-highlight": "^0.7.6"
   },

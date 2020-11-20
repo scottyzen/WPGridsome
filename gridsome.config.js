@@ -12,7 +12,10 @@ module.exports = {
         typeName: 'WordPress'
       },
     }, {
-      use: "gridsome-plugin-tailwindcss"
+      use: "gridsome-plugin-tailwindcss",
+      options: {
+        shouldImport: true
+      },
     }
   ]
 }
