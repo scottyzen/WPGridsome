@@ -14,7 +14,8 @@ module.exports = {
     }, {
       use: "gridsome-plugin-tailwindcss",
       options: {
-        shouldImport: true
+        shouldImport: true,
+        shouldTimeTravel: true
       },
     }
   ]
