@@ -1,6 +1,7 @@
 {
   "name": "wpgraphql",
   "private": true,
+  "node": "14.4.0",
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
