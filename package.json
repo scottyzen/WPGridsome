@@ -1,7 +1,9 @@
 {
   "name": "wpgraphql",
   "private": true,
-  "node": "14.15.1",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
