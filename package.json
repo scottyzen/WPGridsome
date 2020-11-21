@@ -1,18 +1,17 @@
 {
   "name": "wpgraphql",
   "private": true,
-  "node": "14.4.0",
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.0.2",
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.22",
     "gridsome-source-graphql": "^1.0.2",
-    "postcss": "^7.0.35",
+    "postcss": "^8.1.8",
     "postcss-cli": "^8.3.0",
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",

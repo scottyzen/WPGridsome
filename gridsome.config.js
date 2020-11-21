@@ -10,13 +10,9 @@ module.exports = {
         url: process.env.GRAPHQL_URL,
         fieldName: 'wp',
         typeName: 'WordPress'
-      },
+      }
     }, {
-      use: "gridsome-plugin-tailwindcss",
-      options: {
-        shouldImport: true,
-        shouldTimeTravel: true
-      },
+      use: "gridsome-plugin-tailwindcss"
     }
   ]
 }
