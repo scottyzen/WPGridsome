@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center mt-12 mb-48 text-center">
-    <h1 class="text-4xl font-bold md:text-6xl">{{ title }}</h1>
+    <h1 class="mb-2 text-4xl font-bold md:text-7xl">{{ title }}</h1>
     <h2 class="text-xl text-gray-700">{{ subTitle }}</h2>
   </div>
 </template>
