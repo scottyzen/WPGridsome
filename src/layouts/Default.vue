@@ -9,7 +9,7 @@
     <div class="min-h-screen pt-32 pb-12">
       <slot />
     </div>
-    <footer class="py-4 text-gray-800 bg-gray-100">
+    <footer class="py-4 text-gray-800 bg-gray-50">
       <p class="p-4 text-sm text-center">
         © 2020 WPGridsome.com by
         <a href="https://scottyzen.com?ref=wpgridsome" target="_blank" rel="noopener" class="text-indigo-600">Scott Kennedy</a>

@@ -8,7 +8,7 @@
       <p class="flex-1 mb-3 text-sm leading-tight text-gray-500" v-html="node.excerpt.slice(0, 130) + '...'"></p>
       <div class="flex w-full gap-2 mt-6 overflow-scroll whitespace-nowrap hide-scrollbar">
         <span v-for="{ node } in node.categories.edges.slice(0, 3)" :key="node">
-          <g-link class="p-1 px-3 text-xs text-indigo-700 bg-indigo-100 rounded-full" :to="`/posts/${node.slug}`">{{ node.name }}</g-link>
+          <g-link class="inline-block p-1 px-3 text-xs text-indigo-700 rounded-full bg-indigo-50" :to="`/posts/${node.slug}`">{{ node.name }}</g-link>
         </span>
       </div>
     </div>
