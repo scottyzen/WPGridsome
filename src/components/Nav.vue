@@ -2,6 +2,7 @@
   <div class="w-full md:w-auto">
     <div class="flex items-center justify-between w-full">
       <ul class="main-menu">
+        <DarkModeToggle />
         <g-link class="inline-block py-8 mr-10" to="/">Home</g-link>
         <g-link class="inline-block py-8 mr-10" to="/posts">Posts</g-link>
       </ul>
@@ -13,7 +14,12 @@
 </template>
 
 <script>
-export default {};
+import DarkModeToggle from "../components/DarkModeToggle";
+export default {
+  components: {
+    DarkModeToggle,
+  },
+};
 </script>
 
 <style lang="postcss">
