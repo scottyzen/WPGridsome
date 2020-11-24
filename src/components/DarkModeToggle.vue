@@ -1,5 +1,5 @@
 <template>
-  <button class="inline-block mr-10" @click="toggleTheme">
+  <button class="inline-block mr-6 md:mr-10" @click="toggleTheme">
     <g-image v-if="darkmode" class="inline" width="24" height="24" src="~/assets/images/sunny.svg"></g-image>
     <g-image v-else class="inline" width="24" height="24" src="~/assets/images/moon.svg"></g-image>
   </button>

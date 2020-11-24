@@ -3,10 +3,10 @@
     <div class="flex items-center justify-between w-full">
       <ul class="main-menu">
         <DarkModeToggle />
-        <g-link class="inline-block py-8 mr-10" to="/">Home</g-link>
-        <g-link class="inline-block py-8 mr-10" to="/posts">Posts</g-link>
+        <g-link class="inline-block py-5 mr-4 md:py-8 md:mr-10" to="/">Home</g-link>
+        <g-link class="inline-block py-5 mr-4 md:py-8 md:mr-10" to="/posts">Posts</g-link>
       </ul>
-      <a class="flex px-4 py-2 text-white bg-indigo-500 rounded hover:bg-indigo-700" href="https://github.com/scottyzen/WPGridsome" target="_blank">Repo
+      <a class="flex px-3 py-2 text-white bg-indigo-500 rounded md:px-4 hover:bg-indigo-700" href="https://github.com/scottyzen/WPGridsome" target="_blank">Repo
         <g-image width="16" height="16" class="ml-2" src="~/assets/images/github.svg"></g-image>
       </a>
     </div>
@@ -15,6 +15,7 @@
 
 <script>
 import DarkModeToggle from "../components/DarkModeToggle";
+
 export default {
   components: {
     DarkModeToggle,
