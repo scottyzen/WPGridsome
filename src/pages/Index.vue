@@ -3,33 +3,33 @@
     <div class="container">
       <PageTitle />
 
-      <div class="md:bg-white md:p-12">
+      <div class="md:bg-white md:dark:bg-gray-700 md:p-12">
         <h2 class="mt-2 mb-2 text-xl font-bold text-center md:text-4xl">Why Jamstack?</h2>
-        <div class="max-w-lg mx-auto mb-12 leading-tight text-center text-gray-700 md:text-lg">A Jamstack architecture can bring all sorts of benefits to the sites and to project workflows</div>
+        <div class="max-w-lg mx-auto mb-12 font-light leading-tight text-center text-gray-700 dark:text-gray-300 md:text-lg">A Jamstack architecture can bring all sorts of benefits to the sites and to project workflows</div>
         <g-image class="object-cover h-56 mb-16 rounded md:h-auto" src="~/assets/images/speed.jpg" width="1600" height="425"></g-image>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 text-lg font-bold">
               Better Performance
-              <small>(<span class="text-indigo-600"><a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwpgridsome.com%2F" target="_blank" rel="noopener noreferrer">See Google Speed Test</a></span>)</small>
+              <small>(<span class="text-indigo-600 dark:text-indigo-300"><a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwpgridsome.com%2F" target="_blank" rel="noopener noreferrer">See Google Speed Test</a></span>)</small>
             </h3>
-            <p class="mb-8">Why wait for pages to build on the fly when you can generate them at deploy time? When it comes to minimizing the time to first byte, nothing beats pre-built files served over a CDN.
+            <p class="mb-8 font-light dark:text-gray-300">Why wait for pages to build on the fly when you can generate them at deploy time? When it comes to minimizing the time to first byte, nothing beats pre-built files served over a CDN.
             </p>
           </div>
           <div>
             <h3 class="mb-2 text-lg font-bold">Higher Security</h3>
-            <p class="mb-8">With server-side processes abstracted into microservice APIs, surface areas for attacks are reduced. You can also leverage the domain expertise of specialist third-party services.
+            <p class="mb-8 font-light dark:text-gray-300">With server-side processes abstracted into microservice APIs, surface areas for attacks are reduced. You can also leverage the domain expertise of specialist third-party services.
             </p>
           </div>
           <div>
             <h3 class="mb-2 text-lg font-bold">Cheaper, Easier Scaling</h3>
-            <p class="mb-8">When your deployment amounts to a stack of files that can be served anywhere, scaling is a matter of serving those files in more places. CDNs are perfect for this, and often include scaling in all of their plans.
+            <p class="mb-8 font-light dark:text-gray-300">When your deployment amounts to a stack of files that can be served anywhere, scaling is a matter of serving those files in more places. CDNs are perfect for this, and often include scaling in all of their plans.
             </p>
           </div>
           <div>
             <h3 class="mb-2 text-lg font-bold">Better Developer Experience</h3>
-            <p class="mb-8">Loose coupling and separation of controls allow for more targeted development and debugging, and the expanding selection of CMS options for site generators remove the need to maintain a separate stack for content and marketing.
+            <p class="mb-8 font-light dark:text-gray-300">Loose coupling and separation of controls allow for more targeted development and debugging, and the expanding selection of CMS options for site generators remove the need to maintain a separate stack for content and marketing.
             </p>
           </div>
         </div>
@@ -38,27 +38,27 @@
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 text-lg font-bold">Plugins</h3>
-            <ul class="mb-12 list-disc list-inside">
+            <ul class="mb-12 font-light list-disc list-inside">
               <li>
-                WP GraphQL (<a class="text-indigo-600" href="https://github.com/wp-graphql/wp-graphql" target="_blank">Githib</a>) (<a class="text-indigo-600" href="https://wordpress.org/plugins/wp-graphql/" target="_blank">Plugin</a>)
+                WP GraphQL (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql" target="_blank">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/wp-graphql/" target="_blank">Plugin</a>)
               </li>
 
               <li>
-                WPGraphQL for Advanced Custom Fields (<a class="text-indigo-600" href="https://github.com/wp-graphql/wp-graphql-acf" target="_blank">Githib</a>)
+                WPGraphQL for Advanced Custom Fields (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql-acf" target="_blank">Githib</a>)
               </li>
               <li>
-                WPGraphQL Offset Pagination (<a class="text-indigo-600" href="https://github.com/valu-digital/wp-graphql-offset-pagination" target="_blank">Githib</a>)
+                WPGraphQL Offset Pagination (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/valu-digital/wp-graphql-offset-pagination" target="_blank">Githib</a>)
               </li>
               <li>
-                WPGraphQL Yoast SEO Addon (<a class="text-indigo-600" href="https://github.com/ashhitch/wp-graphql-yoast-seo" target="_blank">Githib</a>) (<a class="text-indigo-600" href="https://wordpress.org/plugins/add-wpgraphql-seo/" target="_blank">Plugin</a>)
+                WPGraphQL Yoast SEO Addon (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/ashhitch/wp-graphql-yoast-seo" target="_blank">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/add-wpgraphql-seo/" target="_blank">Plugin</a>)
               </li>
             </ul>
           </div>
           <div>
             <h3 class="mb-2 text-lg font-bold">Environment Variables</h3>
-            <div>
+            <div class="font-light">
               <span class="inline-block w-40">GRAPHQL_URL</span>
-              <span class="text-gray-500">https:yourwebsite.com/graphql</span>
+              <span class="text-gray-500 dark:text-gray-400">https:yourwebsite.com/graphql</span>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
         <h3 class="mt-12 mb-2 text-lg font-bold">WordPress Snippits (functions.php)</h3>
         <div>
           <div>
-            <p class="mb-2 text-sm">Sets the number of posts returned to be the same as WordPress's posts per page</p>
+            <p class="mb-2 text-sm font-light">Sets the number of posts returned to be the same as WordPress's posts per page</p>
 
             <vue-code-highlight>
               <pre>

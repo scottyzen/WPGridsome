@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      isOpen: true,
+      isOpen: false,
     };
   },
 };
@@ -24,14 +24,10 @@ export default {
   transition-timing-function: linear;
   overflow: visible;
 }
-.hamburger:hover,
-.hamburger.is-active:hover {
-  opacity: 0.7;
-}
 
 .hamburger-box {
   width: 28px;
-  height: 24px;
+  height: 28px;
   display: inline-block;
   position: relative;
 }

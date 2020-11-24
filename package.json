@@ -7,9 +7,9 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.0.2",
     "dotenv": "^8.2.0",
-    "gridsome": "^0.7.22",
+    "gridsome": "^0.7.23",
     "gridsome-source-graphql": "^1.0.2",
     "postcss": "^8.1.9",
     "postcss-cli": "^8.3.0",
