@@ -3,9 +3,9 @@
     <div class="flex items-center justify-end w-full md:justify-between">
       <DarkModeToggle />
       <div class="py-4 md:hidden">
-        <MobileMenuToggle @click.native="hideMobileMenu = !hideMobileMenu" :hideMobileMenu="hideMobileMenu" />
+        <MobileMenuToggle @click.native="menuIsOpen = !menuIsOpen" :menuIsOpen="menuIsOpen" />
       </div>
-      <ul class="main-menu " :class="{'hide-mobile-menu': hideMobileMenu}">
+      <ul class="main-menu " :class="{'hide-mobile-menu': !menuIsOpen}">
         <g-link class="inline-block py-2 md:py-8 md:mr-10" to="/">Home</g-link>
         <g-link class="inline-block py-2 md:py-8 md:mr-10" to="/posts">Posts</g-link>
         <a class="inline-block w-full px-3 py-2 text-white bg-indigo-500 rounded md:w-auto md:px-4 hover:bg-indigo-700" href="https://github.com/scottyzen/WPGridsome" target="_blank" rel="noopener noreferrer">
@@ -25,7 +25,7 @@ import DarkModeToggle from "../components/DarkModeToggle";
 export default {
   data() {
     return {
-      hideMobileMenu: true,
+      menuIsOpen: false,
     };
   },
   components: {
