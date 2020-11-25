@@ -1,5 +1,5 @@
 <template>
-  <button @click="isOpen = !isOpen" class="hamburger hamburger--collapse" :class="{'is-active': isOpen}" type="button">
+  <button class="hamburger hamburger--collapse" :class="{'is-active': hideMobileMenu}" type="button">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
@@ -8,11 +8,7 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isOpen: false,
-    };
-  },
+  props: ["hideMobileMenu"],
 };
 </script>
 

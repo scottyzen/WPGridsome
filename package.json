@@ -11,7 +11,7 @@
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.23",
     "gridsome-source-graphql": "^1.0.2",
-    "postcss": "^8.1.9",
+    "postcss": "^8.1.10",
     "postcss-cli": "^8.3.0",
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",

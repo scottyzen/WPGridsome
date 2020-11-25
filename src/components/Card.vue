@@ -1,8 +1,7 @@
 <template>
-  <g-link v-if="node" :to="`/post/${node.slug}`" class="block bg-white border-b border-gray-300 rounded-md shadow-lg dark:border-gray-900 dark:bg-gray-800">
+  <g-link :to="`/post/${node.slug}`" class="block bg-white border-b border-gray-300 rounded-md shadow-lg dark:border-gray-900 dark:bg-gray-800">
     <g-image v-if="node.featuredImage" :src="node.featuredImage.node.sourceUrl" class="object-cover w-full h-200 rounded-t-md"></g-image>
     <g-image v-else src="~/assets/images/no-img-found.jpg" class="object-cover w-full h-200 rounded-t-md"></g-image>
-
     <div class="flex flex-col p-4">
       <h2 class="mb-2 overflow-scroll leading-tight whitespace-nowrap hide-scrollbar">{{ node.title }}</h2>
       <p class="flex-1 mb-3 text-sm font-light leading-tight text-gray-500 dark:text-gray-300" v-html="node.excerpt.slice(0, 130) + '...'"></p>

@@ -6,9 +6,9 @@
         <Nav />
       </div>
     </header>
-    <div class="min-h-screen pt-32 pb-12">
+    <section class="min-h-screen pt-32 pb-12">
       <slot />
-    </div>
+    </section>
     <Footer />
   </div>
 </template>
