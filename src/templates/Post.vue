@@ -4,8 +4,8 @@
       <div v-if="$page.post.featuredImage" class="h-64 mb-12 -mt-10 bg-center bg-cover featured-image" :style="{
           backgroundImage: `url(${$page.post.featuredImage.node.mediaItemUrl})`,
         }"></div>
-      <h1 class="px-8 mx-auto text-4xl leading-none text-center text-gray-800">{{ $page.post.title }}</h1>
-      <div class="max-w-2xl px-8 py-4 m-auto mt-8 font-light text-gray-700 post-content" v-html="$page.post.content"></div>
+      <h1 class="px-8 mx-auto text-4xl leading-none text-center ">{{ $page.post.title }}</h1>
+      <div class="max-w-2xl px-8 py-4 m-auto mt-8 font-light post-content" v-html="$page.post.content"></div>
     </div>
   </Layout>
 </template>
@@ -68,6 +68,16 @@ query Post ($databaseId: ID!){
     max-width: unset;
     margin: 20px;
     margin-left: -12.5%;
+  }
+}
+.dark .post-content {
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    @apply text-gray-100;
   }
 }
 </style>
