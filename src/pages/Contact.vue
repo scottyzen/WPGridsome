@@ -29,7 +29,6 @@ const headers = {
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/x-www-form-urlencoded",
-    Accept: "application/json",
   },
 };
 export default {
