@@ -23,14 +23,8 @@
 </template>
 
 <script>
-import axios from "axios";
 import PageTitle from "../components/PageTitle";
-const headers = {
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
-};
+
 export default {
   data() {
     return {
@@ -44,32 +38,26 @@ export default {
   },
   methods: {
     async sendEmail() {
-      console.log("Sending");
-      const { data } = await axios.post(process.env.GRIDSOME_API_URL, {
-        query: `
-                mutation SEND_EMAIL($subject: String!, $body: String!) {
-                    sendEmail( input: { subject: $subject, body: $body } ) 
-                    {
-                        origin
-                        sent
-                        message
-                    }
-                }`,
-        variables: {
-          subject: this.subject,
-          body: this.body,
-        },
-        headers,
-      });
-      console.log(data);
-      if (data.data.sendEmail.sent) {
-        this.sent = true;
-        console.log("Message has been sent");
-      }
+      const query = `
+        mutation SEND_EMAIL {
+            sendEmail(input: {subject: "test email", body: "test email hello"}) {
+                origin
+                sent
+                message
+            }
+        }`;
+
+      const opts = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query }),
+      };
+
+      const data = await fetch(process.env.GRIDSOME_API_URL, opts)
+        .then((res) => res.json())
+        .then(console.log)
+        .catch(console.error);
     },
   },
 };
 </script>
-
-<style>
-</style>
