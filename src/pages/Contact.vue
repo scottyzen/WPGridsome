@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     async sendEmail() {
-      const query = `
+      const mutation = `
         mutation SEND_EMAIL {
             sendEmail(input: {subject: "test email", body: "test email hello"}) {
                 origin
@@ -50,10 +50,10 @@ export default {
       const opts = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query: mutation }),
       };
 
-      const data = await fetch(process.env.GRIDSOME_API_URL, opts)
+      fetch(process.env.GRIDSOME_API_URL, opts)
         .then((res) => res.json())
         .then(console.log)
         .catch(console.error);
