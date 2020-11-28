@@ -9,6 +9,7 @@
   "dependencies": {
     "autoprefixer": "^10.0.4",
     "dotenv": "^8.2.0",
+    "graphql-tag": "^2.11.0",
     "gridsome": "^0.7.23",
     "gridsome-source-graphql": "^1.0.2",
     "postcss": "^8.1.10",

@@ -7,14 +7,13 @@ module.exports = {
     {
       use: 'gridsome-source-graphql',
       options: {
-        url: process.env.GRAPHQL_URL,
+        url: process.env.GRIDSOME_API_URL,
         fieldName: 'wp',
         typeName: 'WordPress'
       }
     }, {
       use: "gridsome-plugin-tailwindcss",
       options: {
-        // shouldImport: true
         shouldTimeTravel: true
       }
     }
