@@ -7,7 +7,7 @@ module.exports = {
     {
       use: 'gridsome-source-graphql',
       options: {
-        url: process.env.GRIDSOME_API_URL,
+        url: process.env.GRAPHQL_URL,
         fieldName: 'wp',
         typeName: 'WordPress'
       }

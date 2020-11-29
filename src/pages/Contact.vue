@@ -2,62 +2,62 @@
   <Layout class="shape">
     <div class="container">
       <PageTitle title="Contact" />
-      <div class="p-8">
-        <form class="space-y-4">
-          <div class="w-full">
-            <label class="inline-block mb-2" for="subject">Subject</label>
-            <input class="w-full px-4 py-2 text-gray-800 rounded" v-model="subject" type="text" name="subject" id="subject" placeholder="Subject">
-          </div>
-          <div class="w-full">
-            <label class="inline-block mb-2" for="body">Message</label>
-            <textarea class="w-full px-4 py-2 text-gray-800 rounded" v-model="body" name="body" id="body" cols="30" rows="10"></textarea>
-          </div>
-          <div class="w-full">
-            <button class="px-4 py-2 bg-indigo-500 rounded" @click.prevent="sendEmail">Send Message</button>
-          </div>
+      <div class="flex flex-col items-center justify-center">
+        <form @submit.prevent="sendform" class="flex flex-wrap justify-between text-indigo-600 ">
+          <input type="text" class="w-6/12 mr-4" name="name" v-model="name" placeholder="Full Name " />
+          <input type="text" class="flex-1" name="subject" v-model="subject" placeholder="Subject" />
+          <input type="email" class="w-full" name="email" v-model="email" placeholder="Email Address" />
+          <textarea class="w-full" v-model="message" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+          <input class="text-white bg-indigo-500 border-indigo-700 cursor-pointer" type="submit" value="Send Message" />
         </form>
       </div>
     </div>
-
   </Layout>
 </template>
 
 <script>
+import axios from "axios";
 import PageTitle from "../components/PageTitle";
 
 export default {
   data() {
     return {
+      name: "",
       subject: "",
-      body: "",
-      sent: false,
+      message: "",
+      email: "",
     };
   },
   components: {
     PageTitle,
   },
   methods: {
-    async sendEmail() {
-      const mutation = `
-        mutation SEND_EMAIL {
-            sendEmail(input: {subject: "test email", body: "test email hello"}) {
-                origin
-                sent
-                message
-            }
-        }`;
-
-      const opts = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: mutation }),
+    sendform(e) {
+      console.log("Sending out an SOS");
+      const payload = {
+        name: this.name,
+        subject: this.subject,
+        message: this.message,
+        email: this.email,
       };
-
-      fetch(process.env.GRIDSOME_API_URL, opts)
-        .then((res) => res.json())
-        .then(console.log)
-        .catch(console.error);
+      axios
+        .post("/.netlify/functions/sendEmail", JSON.stringify(payload), {
+          headers: { "Content-Type": "application/json" },
+        })
+        .then((res) => console.log(res))
+        .catch((error) => console.log(error));
     },
   },
 };
 </script>
+
+<style lang="postcss">
+input,
+textarea {
+  @apply border-b p-3 px-5 rounded-md mt-4 outline-none;
+}
+input:active,
+input:focus {
+  @apply ring;
+}
+</style>
