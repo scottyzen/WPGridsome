@@ -3,8 +3,7 @@ const fetch = require("node-fetch");
 
 exports.handler = function (event, context, callback) {
     const {name, email, subject, message} = JSON.parse(event.body);
-
-    let body = `
+    const body = `
     Name: <strong>${name}</strong>
     Message: ${message}
     `
@@ -22,28 +21,19 @@ exports.handler = function (event, context, callback) {
             sent
             message
         }
-    }
-    `;
+    }`;
 
-
-      fetch(process.env.GRAPHQL_URL, {
-        method: 'POST',
+      fetch( process.env.GRAPHQL_URL, { method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
         body: JSON.stringify({
             query: mutation,
-            variables: { 
-                subject,
-                body,
-                from: email
-             }
+            variables: { subject, body }
         })
-      })
-        .then(res => res.json())
+      }).then(res => res.json())
         .then(data => {
-            console.log(data)
             callback(null, {
                 statusCode: 200,
                 status: 'Successfull',
