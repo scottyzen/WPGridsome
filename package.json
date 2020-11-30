@@ -17,7 +17,9 @@
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
-    "vue-code-highlight": "^0.7.6"
+    "vue-code-highlight": "^0.7.6",
+    "vuex": "^3.6.0",
+    "vuex-persistedstate": "^4.0.0-beta.1"
   },
   "devDependencies": {
     "axios": "^0.21.0",

@@ -1,15 +1,17 @@
-<template>
-  <div class="text-gray-800 dark:bg-gray-700 dark:text-white">
-    <header class="absolute inset-x-0 top-0 mb-8 border-b dark:border-gray-700">
-      <div class="container flex items-center justify-between">
-        <g-link class="font-bold" to="/">{{$static.metadata.siteName}}</g-link>
-        <Nav />
-      </div>
-    </header>
-    <section class="min-h-screen pt-32 pb-12">
-      <slot />
-    </section>
-    <Footer />
+<template >
+  <div :class="{'dark' : this.$store.state.enableDarkMode}">
+    <div class="text-gray-800 dark:bg-gray-700 dark:text-white">
+      <header class="absolute inset-x-0 top-0 mb-8 border-b dark:border-gray-700">
+        <div class="container flex items-center justify-between">
+          <g-link class="font-bold" to="/">{{$static.metadata.siteName}}</g-link>
+          <Nav />
+        </div>
+      </header>
+      <section class="min-h-screen pt-32 pb-12">
+        <slot />
+      </section>
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -28,6 +30,14 @@ export default {
   components: {
     Nav,
     Footer,
+  },
+  beforeMount() {
+    if (this.$store.state.enableDarkMode === null) {
+      this.$store.commit(
+        "SET_THEME",
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      );
+    }
   },
 };
 </script>
