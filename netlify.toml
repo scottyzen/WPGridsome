@@ -1,8 +1,20 @@
+[build]
+  publish = "dist"
+  command = "gridsome build"
+  functions = "functions"
+  
 [[headers]]
   for = "*.js" # js files should be set this way
   [headers.values]
     Cache-Control = "public, max-age=2592000"
+
 [[headers]]
   for = "*.css" # css files too
   [headers.values]
     Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type"

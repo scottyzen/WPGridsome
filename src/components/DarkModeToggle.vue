@@ -25,7 +25,7 @@ export default {
         : document.querySelector("html").classList.remove("dark");
     },
   },
-  mounted() {
+  beforeMount() {
     const DM_LOCAL = JSON.parse(localStorage.getItem("DARK_MODE_ENABLED"));
     if (DM_LOCAL === null) {
       this.applyTheme(
