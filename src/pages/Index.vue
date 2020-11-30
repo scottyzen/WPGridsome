@@ -52,6 +52,9 @@
               <li>
                 WPGraphQL Yoast SEO Addon (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/ashhitch/wp-graphql-yoast-seo" target="_blank">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/add-wpgraphql-seo/" target="_blank">Plugin</a>)
               </li>
+              <li>
+                WPGraphQL Send Email Plugin (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/ashhitch/wp-graphql-send-mail" target="_blank">Githib</a>)
+              </li>
             </ul>
           </div>
           <div>

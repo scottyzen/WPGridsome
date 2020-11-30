@@ -7,9 +7,9 @@
           <input type="text" class="w-6/12 mr-4" name="name" v-model="name" placeholder="Full Name " />
           <input type="text" class="flex-1" name="subject" v-model="subject" placeholder="Subject" />
           <input type="email" class="w-full" name="email" v-model="email" placeholder="Email Address" />
-          <textarea class="w-full" v-model="message" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+          <textarea class="w-full outline-none" v-model="message" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
           <input class="text-white duration-300 bg-indigo-500 border-indigo-700 cursor-pointer hover:bg-indigo-700" type="submit" value="Send Message" />
-          <span class="flex-1 p-3 mt-4 text-yellow-500 dark:text-yellow-300">{{status}}</span>
+          <span class="flex-1 p-3 mt-4 font-light" :class="{'text-red-500': status.type == 'error', 'text-yellow-500': status.type == 'warning', 'text-green-500': status.type == 'success'}">{{status.message}}</span>
         </form>
       </div>
     </div>
@@ -27,7 +27,10 @@ export default {
       subject: null,
       message: null,
       email: null,
-      status: null,
+      status: {
+        message: "",
+        type: "",
+      },
     };
   },
   components: {
@@ -35,7 +38,7 @@ export default {
   },
   methods: {
     sendform() {
-      this.status = "Sending...";
+      this.displayMessage("Sending...", "warning");
       if (!this.formIsValididated()) return;
 
       axios
@@ -50,18 +53,23 @@ export default {
           { headers: { "Content-Type": "application/json" } }
         )
         .then((res) => {
-          this.status = res.data.sendEmail.sent
-            ? "Message Sent"
-            : "Sending Failed!";
+          console.log(res.data.sendEmail);
+          res.data.sendEmail.sent
+            ? this.displayMessage("Message Sent", "success")
+            : this.displayMessage("Sending Failed", "erros");
         })
         .catch((error) => console.log(error));
     },
     formIsValididated() {
       if (!this.name || !this.subject || !this.email || !this.message) {
-        this.status = "Some fields are missing";
+        this.displayMessage("Some fields are missing", "error");
         return false;
       }
       return true;
+    },
+    displayMessage(message, type) {
+      this.status.message = message;
+      this.status.type = type;
     },
   },
 };
@@ -71,10 +79,12 @@ export default {
 input,
 textarea {
   @apply border-b p-3 px-5 rounded-md mt-4 outline-none shadow border-indigo-300;
+  outline: none !important;
 }
 
-input:not([type="submit"]):active,
-input:not([type="submit"]):focus {
-  @apply ring;
+input:not([type="submit"]),
+input:not([type="submit"]),
+textarea {
+  @apply focus:outline-none focus:ring-2 focus:ring-yellow-400;
 }
 </style>
