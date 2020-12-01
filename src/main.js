@@ -13,7 +13,7 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   const store = {
     plugins: [],
     state: {
-      enableDarkMode: true
+      enableDarkMode: null
     },
     mutations: {
       SET_THEME(state, theme) {
