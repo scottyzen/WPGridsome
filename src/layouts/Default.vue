@@ -1,6 +1,6 @@
 <template >
   <div :class="{'dark' : this.$store.state.enableDarkMode}">
-    <div class="text-gray-800 dark:bg-gray-700 dark:text-white">
+    <div class="text-gray-800 dark:bg-gray-700 dark:text-white shape">
       <header class="absolute inset-x-0 top-0 mb-8 border-b dark:border-gray-700">
         <div class="container flex items-center justify-between">
           <g-link class="font-bold" to="/">{{$static.metadata.siteName}}</g-link>
@@ -31,7 +31,7 @@ export default {
     Nav,
     Footer,
   },
-  beforeMount() {
+  mounted() {
     if (this.$store.state.enableDarkMode === null) {
       this.$store.commit(
         "SET_THEME",

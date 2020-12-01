@@ -9,8 +9,9 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   Vue.component('Layout', DefaultLayout)
   Vue.use(Vuex)
 
-  appOptions.store = new Vuex.Store({
-    plugins: [createPersistedState()],
+
+  const store = {
+    plugins: [],
     state: {
       enableDarkMode: true
     },
@@ -19,7 +20,12 @@ export default function (Vue, { router, head, isClient, appOptions }) {
           state.enableDarkMode = theme;
       }
   },
-  })
+  }
+  
+  if (process.isClient) { store.plugins.push(createPersistedState({})) }
+
+  
+  appOptions.store = new Vuex.Store(store)
 
   head.link.push({
     rel: "icon",
