@@ -47,11 +47,6 @@ export default {
     Pagination,
     PageTitle,
   },
-  data() {
-    return {
-      perPage: process.env.GRIDSOME_POSTS_PER_PAGE,
-    };
-  },
 };
 </script>
 
