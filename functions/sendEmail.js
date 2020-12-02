@@ -2,6 +2,12 @@ require("dotenv").config()
 const fetch = require("node-fetch");
 
 exports.handler = function (event, context, callback) {
+
+    if (event.httpMethod !== "POST") {
+        return { statusCode: 405, body: "Method Not Allowed" };
+      }
+
+      
     const {name, email, subject, message} = JSON.parse(event.body);
     const body = `
     Name: <strong>${name}</strong>
