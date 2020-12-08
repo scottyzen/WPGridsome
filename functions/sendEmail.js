@@ -14,8 +14,7 @@ exports.handler = function (event, context, callback) {
     Message: ${message}
     `
 
-    const mutation = `
-    mutation SEND_EMAIL ($subject: String, $body: String, $from: String) {
+    const mutation = `mutation ($subject: String, $body: String, $from: String) {
     sendEmail(
         input: {
             from: $from
