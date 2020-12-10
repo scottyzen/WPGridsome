@@ -7,12 +7,12 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "autoprefixer": "^10.0.4",
+    "autoprefixer": "^10.1.0",
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.23",
     "gridsome-source-graphql": "^1.0.2",
     "node-fetch": "^2.6.1",
-    "postcss": "^8.1.13",
+    "postcss": "^8.2.1",
     "postcss-cli": "^8.3.0",
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",
@@ -20,7 +20,6 @@
     "vue-code-highlight": "^0.7.6"
   },
   "devDependencies": {
-    "axios": "^0.21.0",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "vue": "^2.6.12",
     "vue-server-renderer": "^2.6.12",

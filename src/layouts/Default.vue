@@ -32,15 +32,13 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style>
 a,
 button {
   cursor: pointer;
   outline: none !important;
 }
-* {
-  transition: background 600ms ease, border 600ms ease;
-}
+
 .shape {
   background-image: url("../../src/assets/images/shape.svg");
   background-repeat: no-repeat;
