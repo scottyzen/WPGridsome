@@ -4,8 +4,8 @@
       <PageTitle title="Contact" />
       <div class="flex flex-col items-center justify-center">
         <form @submit.prevent="submitForm" class="flex flex-wrap justify-between max-w-3xl gap-4 text-indigo-600">
-          <input type="text" class="w-full lg:w-5/12" name="name" v-model="formData.name" placeholder="Full Name " required />
-          <input type="email" class="w-full lg:w-7/12" name="email" v-model="formData.email" placeholder="Email Address" required />
+          <input type="text" class="w-full md:w-5/12" name="name" v-model="formData.name" placeholder="Full Name " required />
+          <input type="email" class="w-full md:flex-1" name="email" v-model="formData.email" placeholder="Email Address" required />
           <textarea class="w-full outline-none" v-model="formData.comment" cols="30" rows="10" placeholder="Message" required></textarea>
           <input class="text-white duration-300 bg-indigo-500 border-indigo-700 cursor-pointer hover:bg-indigo-700" type="submit" value="Send Message" />
 
@@ -51,7 +51,7 @@ export default {
 <style lang="postcss">
 input,
 textarea {
-  @apply border-b p-3 px-5 rounded-md mt-4 outline-none shadow border-indigo-300;
+  @apply border-b p-3 px-5 rounded-md outline-none shadow border-indigo-300;
   outline: none !important;
 }
 
