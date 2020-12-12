@@ -1,5 +1,5 @@
 <template>
-  <button class="hamburger hamburger--collapse" :class="{'is-active': menuIsOpen}" type="button">
+  <button class="hamburger hamburger--collapse" :class="{'is-active': menuIsOpen}" type="button" aria-label="Menu">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>

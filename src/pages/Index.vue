@@ -6,7 +6,7 @@
       <div class="md:bg-white md:dark:bg-gray-700 md:p-12">
         <h2 class="mt-2 mb-2 text-xl font-bold text-center md:text-4xl">Why Jamstack?</h2>
         <div class="max-w-lg mx-auto mb-12 font-light leading-tight text-center text-gray-700 dark:text-gray-300 md:text-lg">A Jamstack architecture can bring all sorts of benefits to the sites and to project workflows</div>
-        <g-image class="object-cover h-56 mb-16 rounded md:h-auto" src="~/assets/images/speed.jpg" width="1600" height="425" alt="Cheetah by @caraventurera"></g-image>
+        <g-image class="object-cover h-56 mb-16 rounded md:h-auto" src="~/assets/images/speed.jpg" width="1120" height="300" alt="Cheetah by @caraventurera"></g-image>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
@@ -40,20 +40,20 @@
             <h3 class="mb-2 text-lg font-bold">Plugins</h3>
             <ul class="mb-12 font-light list-disc list-inside">
               <li>
-                WP GraphQL (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql" target="_blank">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/wp-graphql/" target="_blank">Plugin</a>)
+                WP GraphQL (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql" target="_blank" rel="noopener noreferrer">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/wp-graphql/" target="_blank" rel="noopener noreferrer">Plugin</a>)
               </li>
 
               <li>
-                WPGraphQL for Advanced Custom Fields (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql-acf" target="_blank">Githib</a>)
+                WPGraphQL for Advanced Custom Fields (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql-acf" target="_blank" rel="noopener noreferrer">Githib</a>)
               </li>
               <li>
-                WPGraphQL Offset Pagination (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/valu-digital/wp-graphql-offset-pagination" target="_blank">Githib</a>)
+                WPGraphQL Offset Pagination (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/valu-digital/wp-graphql-offset-pagination" target="_blank" rel="noopener noreferrer">Githib</a>)
               </li>
               <li>
-                WPGraphQL Yoast SEO Addon (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/ashhitch/wp-graphql-yoast-seo" target="_blank">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/add-wpgraphql-seo/" target="_blank">Plugin</a>)
+                WPGraphQL Yoast SEO Addon (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/ashhitch/wp-graphql-yoast-seo" target="_blank" rel="noopener noreferrer">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/add-wpgraphql-seo/" target="_blank" rel="noopener noreferrer">Plugin</a>)
               </li>
               <li>
-                WPGraphQL Send Email Plugin (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/ashhitch/wp-graphql-send-mail" target="_blank">Githib</a>)
+                WPGraphQL Send Email Plugin (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/ashhitch/wp-graphql-send-mail" target="_blank" rel="noopener noreferrer">Githib</a>)
               </li>
             </ul>
           </div>
