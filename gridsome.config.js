@@ -34,7 +34,7 @@ module.exports = {
             statusBarStyle: 'default',
             themeColor: '#666600',
             backgroundColor: '#ffffff',
-            icon: '',
+            icon: 'static/favicon.svg',
             shortName: 'WPGridsome',            // Optional
             description: 'Gridsome is awesome!',// Optional
             categories: ['development'],        // Optional
