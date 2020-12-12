@@ -6,8 +6,7 @@
       <div class="md:bg-white md:dark:bg-gray-700 md:p-12">
         <h2 class="mt-6 mb-2 text-xl font-bold text-center md:text-4xl">Why Jamstack?</h2>
         <div class="max-w-lg mx-auto mb-16 font-light leading-tight text-center text-gray-700 dark:text-gray-200 md:text-lg">A Jamstack architecture can bring all sorts of benefits to the sites and to project workflows</div>
-        <!-- <g-image class="object-cover h-56 mb-16 rounded md:h-auto" src="~/assets/images/speed.jpg" width="1120" height="300" alt="Cheetah by @caraventurera"></g-image> -->
-        <img class="object-cover h-56 mb-16 rounded md:h-auto" src="../assets/images/speed.jpg" width="1120" height="300" alt="Cheetah by @caraventurera" loading="lazy">
+        <g-image class="object-cover h-56 mb-16 rounded md:h-auto" src="~/assets/images/speed.jpg" width="1120" height="300" alt="Cheetah by @caraventurera"></g-image>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
@@ -99,7 +98,7 @@ import PageTitle from "../components/PageTitle";
 export default {
   components: {
     VueCodeHighlight,
-    PageTitle,
+    PageTitle: () => import("../components/PageTitle"),
   },
 };
 </script>

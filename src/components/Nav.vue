@@ -20,9 +20,6 @@
 </template>
 
 <script>
-import MobileMenuToggle from "../components/MobileMenuToggle";
-import DarkModeToggle from "../components/DarkModeToggle";
-
 export default {
   data() {
     return {
@@ -30,8 +27,8 @@ export default {
     };
   },
   components: {
-    MobileMenuToggle,
-    DarkModeToggle,
+    MobileMenuToggle: () => import("../components/MobileMenuToggle"),
+    DarkModeToggle: () => import("../components/DarkModeToggle"),
   },
 };
 </script>

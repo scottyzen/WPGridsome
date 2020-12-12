@@ -5,11 +5,10 @@
 </template>
 
 <script>
-import Card from "./Card";
 export default {
   props: ["posts"],
   components: {
-    Card,
+    Card: () => import("../components/Card"),
   },
 };
 </script>
