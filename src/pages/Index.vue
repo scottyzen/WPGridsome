@@ -132,7 +132,7 @@ pre {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: slategray;
+  color: #8ea2b6;
 }
 
 .token.punctuation {
@@ -153,7 +153,7 @@ pre {
 
 .token.boolean,
 .token.number {
-  color: #ae81ff;
+  color: #b389ff;
 }
 
 .token.selector,
