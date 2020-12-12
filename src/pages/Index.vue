@@ -94,10 +94,11 @@ add_filter('graphql_post_object_connection_query_args', function ($query_args, $
 
 <script>
 import { component as VueCodeHighlight } from "vue-code-highlight";
+import PageTitle from "../components/PageTitle";
 export default {
   components: {
     VueCodeHighlight,
-    PageTitle: () => import("../components/PageTitle"),
+    PageTitle,
   },
 };
 </script>
