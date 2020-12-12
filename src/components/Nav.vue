@@ -11,7 +11,7 @@
         <g-link class="inline-block py-2 md:py-8 md:mr-10" to="/contact">Contact</g-link>
         <a class="inline-block w-full px-3 py-2 text-white bg-indigo-500 rounded md:w-auto md:px-4 hover:bg-indigo-700" href="https://github.com/scottyzen/WPGridsome" target="_blank" rel="noopener noreferrer">
           <span class="flex justify-center">Repo
-            <g-image width="16" height="16" class="ml-2" src="~/assets/images/github.svg"></g-image>
+            <g-image width="16" height="16" class="ml-2" src="~/assets/images/github.svg" alt="github icon"></g-image>
           </span>
         </a>
       </ul>

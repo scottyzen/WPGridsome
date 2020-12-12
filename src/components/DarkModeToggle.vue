@@ -1,7 +1,7 @@
 <template>
-  <button class="inline-block mr-6 md:mr-10" @click="toggleTheme">
-    <g-image v-if="darkmode" class="inline" width="24" height="24" src="~/assets/images/sunny.svg"></g-image>
-    <g-image v-else class="inline" width="24" height="24" src="~/assets/images/moon.svg"></g-image>
+  <button class="inline-block mr-6 md:mr-10" @click="toggleTheme" aria-label="Dark Mode Toggle">
+    <g-image v-if="darkmode" class="inline" width="24" height="24" src="~/assets/images/sunny.svg" alt="sun icon"></g-image>
+    <g-image v-else class="inline" width="24" height="24" src="~/assets/images/moon.svg" alt="moon icon"></g-image>
   </button>
 </template>
 

@@ -10,5 +10,10 @@ export default function (Vue, { router, head, isClient }) {
     rel: "icon",
     href: "/favicon.svg"
   });
-  
+
+  // Add a meta tag
+  head.meta.push({
+    name: 'description',
+    content: 'A starter for Gridsome using WordPress and WPGraphQL'
+  })
 }
