@@ -37,10 +37,12 @@ query Categories($databaseId: Int){
 </page-query>
 
 <script>
+import PostGrid from "../components/PostGrid";
+import PageTitle from "../components/PageTitle";
 export default {
   components: {
-    PostGrid: () => import("../components/PostGrid"),
-    PageTitle: () => import("../components/PageTitle"),
+    PostGrid,
+    PageTitle,
   },
 };
 </script>
