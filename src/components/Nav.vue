@@ -43,7 +43,8 @@ export default {
 }
 @media (max-width: 768px) {
   .main-menu {
-    @apply shadow-lg absolute left-0 right-0 top-20 p-8 mx-auto gap-4 bg-white rounded w-11/12 flex flex-col items-center transition-all duration-300;
+    @apply shadow-lg absolute left-0 right-0 top-20 p-8 mx-auto gap-4 bg-white rounded w-11/12 flex flex-col items-center transition-transform duration-300;
+    will-change: transform;
   }
   .dark .main-menu {
     @apply bg-gray-700;
