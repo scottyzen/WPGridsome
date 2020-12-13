@@ -44,7 +44,7 @@ module.exports = {
             gcmSenderId: undefined,             // Optional
 
             // Standard Meta Tags
-            svgFavicon: 'static/favicon.svg',          // Optional. Requires favicon.ico fallback
+            svgFavicon: 'favicon.svg',          // Optional. Requires favicon.ico fallback
 
             // Microsoft Windows Meta Tags
             msTileColor: '#666600',             // Optional
