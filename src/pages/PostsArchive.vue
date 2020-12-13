@@ -1,7 +1,7 @@
 <template>
   <Layout class="shape">
     <div class="container">
-      <PageTitle title="Blog" />
+      <PageTitle title="Posts" />
       <PostGrid :posts="$page.posts.edges" />
       <Pagination :perPage="$context.perPage" :pageInfo="$context.pageInfo" />
     </div>

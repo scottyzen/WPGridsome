@@ -6,9 +6,12 @@
         <Nav />
       </div>
     </header>
-    <section class="min-h-screen pt-32 pb-12">
-      <slot />
-    </section>
+    <transition name="fade" appear>
+      <main class="min-h-screen pt-32 pb-12">
+        <!-- a wrapper for slot is needed -->
+        <slot /> <!-- the content -->
+      </main>
+    </transition>]
     <Footer />
   </div>
 </template>
@@ -52,5 +55,15 @@ button {
   .shape {
     background-size: contain;
   }
+}
+
+.fade-enter-active {
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.975);
 }
 </style>
