@@ -61,7 +61,7 @@
             <h3 class="mb-2 text-lg font-bold">Environment Variables</h3>
             <div class="font-light">
               <span class="inline-block w-40">GRAPHQL_URL</span>
-              <span class="text-gray-500 dark:text-gray-400">https:yourwebsite.com/graphql</span>
+              <span class="text-gray-500 dark:text-gray-200">https:yourwebsite.com/graphql</span>
             </div>
           </div>
         </div>
