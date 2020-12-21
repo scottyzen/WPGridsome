@@ -8,10 +8,9 @@
     </header>
     <transition name="fade" appear>
       <main class="min-h-screen pt-32 pb-12">
-        <!-- a wrapper for slot is needed -->
         <slot /> <!-- the content -->
       </main>
-    </transition>]
+    </transition>
     <Footer />
   </div>
 </template>
