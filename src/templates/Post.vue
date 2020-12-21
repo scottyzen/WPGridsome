@@ -1,10 +1,13 @@
 <template>
   <Layout>
     <article class="content">
-      <div v-if="$page.post.featuredImage" class="h-64 mb-12 -mt-10 bg-center bg-cover featured-image" :style="{
+
+      <h1 class="px-8 mx-auto mt-12 mb-20 text-5xl leading-none text-center">{{ $page.post.title }}</h1>
+
+      <div v-if="$page.post.featuredImage" class="max-w-4xl mx-auto mb-12 bg-center bg-cover h-80 featured-image" :style="{
           backgroundImage: `url(${$page.post.featuredImage.node.mediaItemUrl})`,
         }"></div>
-      <h1 class="px-8 mx-auto text-4xl leading-none text-center ">{{ $page.post.title }}</h1>
+
       <div class="max-w-2xl px-8 py-4 m-auto mt-8 font-light post-content" v-html="$page.post.content"></div>
     </article>
   </Layout>
