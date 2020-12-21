@@ -13,6 +13,14 @@ module.exports = function (api) {
           }
         }
       }
+      products {
+        edges {
+          node {
+            databaseId
+            slug
+          }
+        }
+      }
       categories {
         edges {
           node {
@@ -48,10 +56,20 @@ module.exports = function (api) {
 
     // Single Post 
     data.posts.edges.forEach(({ node }) => {
-      // console.log(`Creating Single Post: /post/${node.slug}`);
       createPage({
         path: `/post/${node.slug}`,
         component: './src/templates/Post.vue',
+        context: {
+          databaseId: node.databaseId
+        }
+      })
+    })
+
+    // Single Product 
+    data.products.edges.forEach(({ node }) => {
+      createPage({
+        path: `/product/${node.slug}`,
+        component: './src/templates/Product.vue',
         context: {
           databaseId: node.databaseId
         }
