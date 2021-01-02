@@ -39,13 +39,9 @@ query Products ($databaseId: ID!){
 </page-query>
 
 <script>
-import PageTitle from "../components/PageTitle";
 import { runMutation } from "../mixins/runMutation";
 
 export default {
-  components: {
-    PageTitle,
-  },
   mixins: [runMutation],
   methods: {
     async addToCart() {

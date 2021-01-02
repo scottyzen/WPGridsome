@@ -11,9 +11,6 @@
 import { runMutation } from "../mixins/runMutation";
 
 export default {
-  components: {
-    PageTitle: () => import("../components/PageTitle"),
-  },
   mixins: [runMutation],
   methods: {
     fire() {

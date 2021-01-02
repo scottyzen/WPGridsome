@@ -3,18 +3,21 @@
     <div class="container">
       <PageTitle title="All Products" />
       <div class="grid grid-cols-1 gap-8 py-12 xl:gap-16 md:grid-cols-2 lg:grid-cols-3">
-        <div v-for="{node} in $page.products.edges" :key="node.id">
+        <div v-for="{node} in $page.products.edges" :key="node.id" class="block bg-white border-b border-gray-300 rounded-md shadow-lg dark:border-gray-900 dark:bg-gray-800">
 
-          <g-link :to="`/product/${node.slug}`" class="block h-full bg-white border-b border-gray-300 rounded-md shadow-lg dark:border-gray-900 dark:bg-gray-800">
-            <g-image v-if="node.featuredImage" :src="node.featuredImage.node.sourceUrl" class="object-cover w-full h-200 rounded-t-md"></g-image>
-            <g-image v-else src="~/assets/images/no-img-found.jpg" class="object-cover w-full h-200 rounded-t-md"></g-image>
-
-            <div class="flex flex-col p-4">
-              <h2 class="mb-2 overflow-scroll leading-tight whitespace-nowrap hide-scrollbar">{{ node.name }}</h2>
-              <span class="mb-2 text-lg font-light text-indigo-500 dark:text-yellow-400">{{node.price}}</span>
-              <p class="flex-1 mb-3 text-sm font-light leading-tight text-gray-500 dark:text-gray-300" v-html="node.shortDescription.slice(0, 130) + '...'"></p>
-            </div>
+          <g-link :to="`/product/${node.slug}`">
+            <g-image v-if="node.featuredImage" :src="node.featuredImage.node.sourceUrl" class="object-cover w-full h-56 rounded-t-md"></g-image>
+            <g-image v-else src="~/assets/images/no-img-found.jpg" class="object-cover w-full h-56 rounded-t-md"></g-image>
           </g-link>
+
+          <div class="flex flex-col items-start p-4">
+            <g-link :to="`/product/${node.slug}`">
+              <h2 class="mb-2 overflow-scroll leading-tight whitespace-nowrap hide-scrollbar">{{ node.name }}</h2>
+            </g-link>
+            <span class="mb-2 text-lg font-light text-indigo-500 dark:text-yellow-400">{{node.price}}</span>
+            <p class="h-full mb-3 text-sm font-light leading-tight text-gray-500 dark:text-gray-300 line-clamp-3" v-html="node.shortDescription"></p>
+            <AddToCart :productId="node.databaseId" />
+          </div>
 
         </div>
       </div>
@@ -29,7 +32,7 @@ query AllProducts {
       node {
         catalogVisibility
         name
-        shortDescription
+        shortDescription(format: RAW)
         slug
         ... on WordPress_SimpleProduct {
           id
@@ -59,14 +62,24 @@ query AllProducts {
 </page-query>
 
 <script>
-import PageTitle from "../components/PageTitle";
+import AddToCart from "../components/UI/AddToCart";
 
 export default {
   components: {
-    PageTitle,
+    AddToCart,
   },
 };
 </script>
 
 <style>
+.line-clamp-3 {
+  --lines: 3;
+  --line-height: 1.125rem;
+  -webkit-line-clamp: var(--lines);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  line-height: var(--line-height);
+  height: calc(var(--line-height) * var(--lines));
+}
 </style>
