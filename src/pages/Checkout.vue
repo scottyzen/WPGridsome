@@ -44,27 +44,16 @@
               <li v-for="{node} in cart.cart.contents.edges" :key="node.product.node.id" class="flex items-center mb-4">
                 <img class="mr-8 border-2 border-white shadow" width="64" :src="node.product.node.image.sourceUrl">
                 <div>
-                  <div class="">{{node.product.node.name}}</div>
+                  <div class="mb-1 text-sm leading-none">{{node.product.node.name}}</div>
                   <div class="text-sm text-indigo-500">{{node.product.node.price}}</div>
                 </div>
               </li>
             </ul>
-            <!-- <pre class="text-xs text-light">{{cart}}</pre> -->
 
           </div>
           <div v-else>
             <!-- Loading Icon  -->
-            <svg class="w-20" version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-              <circle fill="#111" stroke="none" cx="6" cy="50" r="6">
-                <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1" />
-              </circle>
-              <circle fill="#111" stroke="none" cx="26" cy="50" r="6">
-                <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2" />
-              </circle>
-              <circle fill="#111" stroke="none" cx="46" cy="50" r="6">
-                <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3" />
-              </circle>
-            </svg>
+            <LoadingIcon />
           </div>
         </div>
 
@@ -77,12 +66,16 @@
 
 <script>
 import { runMutation } from "../mixins/runMutation";
+import LoadingIcon from "../components/UI/LoadingIcon";
 
 export default {
   data() {
     return {
       cart: null,
     };
+  },
+  components: {
+    LoadingIcon,
   },
   mixins: [runMutation],
   methods: {
@@ -116,8 +109,8 @@ export default {
             }
             }`
       );
-      console.log(res);
-      this.cart = await res;
+      console.log({ res });
+      this.cart = await res.data.data;
     },
   },
   mounted() {
