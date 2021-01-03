@@ -1,15 +1,16 @@
 <template>
   <Layout>
     <div class="container">
-      <PageTitle :title="$page.product.name" :subTitle="$page.product.price" />
-      <div class="grid grid-cols-2 gap-8">
+      <div class="grid grid-cols-2 gap-8 ">
         <div>
           <g-image class="rounded shadow-custom" :src="$page.product.featuredImage.node.sourceUrl"></g-image>
         </div>
         <div class="p-4">
           <h2 class="mb-4 text-3xl font-medium">{{$page.product.name}}</h2>
+          <div class="mb-4 text-lg text-indigo-500 dark:text-indigo-300">{{$page.product.price}}</div>
           <p class="mb-8 font-light">{{$page.product.shortDescription}}</p>
-          <button @click="addToCart" class="inline-block px-3 py-2 text-white bg-indigo-500 rounded md:w-auto md:px-4 hover:bg-indigo-700">Add to cart</button>
+
+          <AddToCart :productId="this.$context.databaseId" />
         </div>
       </div>
     </div>
@@ -40,9 +41,13 @@ query Products ($databaseId: ID!){
 
 <script>
 import { runMutation } from "../mixins/runMutation";
+import AddToCart from "../components/UI/AddToCart";
 
 export default {
   mixins: [runMutation],
+  components: {
+    AddToCart,
+  },
   methods: {
     async addToCart() {
       const res = await this.runMutation(`mutation {

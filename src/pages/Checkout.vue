@@ -4,37 +4,37 @@
       <PageTitle title="Checkout" />
 
       <div class="flex items-start justify-around overflow-visible">
-        <form class="flex flex-wrap justify-between w-full max-w-2xl p-8 bg-indigo-400 border-b border-indigo-300 rounded shadow-md dark:bg-gray-800 dark:border-gray-900 ">
-          <h2 class="mb-6 text-3xl text-white">Billing Details</h2>
-
-          <span class="w-full mb-3 ">
-            <label for="address1">Address Line 1</label>
-            <input placeholder="5998 Sunset Blvd" class="w-full" type="text" name="address1" id="address1" required>
-          </span>
-          <div class="w-full mb-3">
-            <label for="address2">Address Line 2</label>
-            <input placeholder="Los Angeles" class="w-full" type="text" name="address2" id="address2" required>
-          </div>
-          <div class="w-1/2 pr-2 mb-3">
-            <label for="city">City</label>
-            <input placeholder="California" class="w-full" type="text" name="city" id="city" required>
-          </div>
-          <div class="w-1/2 pl-2 mb-3">
-            <label for="country">Country</label>
-            <input placeholder="USA" class="w-full" type="text" name="country" id="country" required>
-          </div>
-          <div class="w-full mb-3">
-            <label for="email">Email</label>
-            <input placeholder="johndow@email.com" class="w-full" type="text" name="email" id="email" required>
-          </div>
+        <form class="flex flex-wrap justify-between w-full max-w-2xl p-8 text-gray-800 bg-indigo-400 border-b border-indigo-300 rounded shadow-md dark:bg-gray-800 dark:border-gray-900">
+          <h2 class="w-full mb-6 text-3xl text-white">Billing Details</h2>
           <div class="w-1/2 pr-2 mb-3">
             <label for="first-name">First Name</label>
-            <input placeholder="John" class="w-full" type="text" name="first-name" id="first-name" required>
+            <input placeholder="John" class="w-full" type="text" name="first-name" id="first-name" required v-model="billing.firstname">
           </div>
           <div class="w-1/2 pl-2 mb-3">
             <label for="last-name">Last Name</label>
-            <input placeholder="Doe" class="w-full" type="text" name="last-name" id="last-name" required>
+            <input placeholder="Doe" class="w-full" type="text" name="last-name" id="last-name" required v-model="billing.lastname">
           </div>
+          <div class="w-full mb-3 ">
+            <label for=" email">Email</label>
+            <input placeholder="johndoe@email.com" class="w-full" type="text" name="email" id="email" required v-model="billing.email">
+          </div>
+          <span class="w-full mb-3 ">
+            <label for="address1">Address Line 1</label>
+            <input placeholder="5998 Sunset Blvd" class="w-full" type="text" name="address1" id="address1" required v-model="billing.address1">
+          </span>
+          <div class="w-full mb-3">
+            <label for="address2">Address Line 2</label>
+            <input placeholder="Los Angeles" class="w-full" type="text" name="address2" id="address2" required v-model="billing.address2">
+          </div>
+          <div class="w-1/2 pr-2 mb-3">
+            <label for="city">City</label>
+            <input placeholder="California" class="w-full" type="text" name="city" id="city" required v-model="billing.city">
+          </div>
+          <div class="w-1/2 pl-2 mb-3">
+            <label for="country">Country</label>
+            <CountrySelect :defaultValue="billing.country" class="w-full h-12" v-model="billing.country" />
+          </div>
+
         </form>
 
         <div class="sticky block mt-8 ml-12 top-8 w-96">
@@ -49,6 +49,7 @@
                 </div>
               </li>
             </ul>
+            <button class="inline-block px-3 py-2 text-white bg-indigo-500 rounded md:w-auto md:px-4 hover:bg-indigo-700" @click="runCheckout">Pay with PayPal</button>
 
           </div>
           <div v-else>
@@ -67,15 +68,20 @@
 <script>
 import { runMutation } from "../mixins/runMutation";
 import LoadingIcon from "../components/UI/LoadingIcon";
+import CountrySelect from "../components/UI/CountrySelect";
 
 export default {
   data() {
     return {
       cart: null,
+      billing: {
+        country: "IE",
+      },
     };
   },
   components: {
     LoadingIcon,
+    CountrySelect,
   },
   mixins: [runMutation],
   methods: {
@@ -109,8 +115,25 @@ export default {
             }
             }`
       );
-      console.log({ res });
       this.cart = await res.data.data;
+    },
+    async runCheckout() {
+      const res = await this.runMutation(`
+      mutation Checkout {
+        checkout(input: {paymentMethod: "paypal", billing: {address1: "${this.billing.address1}", address2: "${this.billing.address2}", city: "${this.billing.city}", country: "${this.billing.country}", email: "${this.billing.email}", firstName: "${this.billing.firstname}", lastName: "${this.billing.lastname}", phone: "0871234567", postcode: "R95P860", state: "Leinster"}}) {
+          redirect
+          order {
+            needsPayment
+            needsProcessing
+            status
+          }
+          result
+        }
+      }`);
+      console.log(res);
+      if (res.data.data.checkout.result && res.data.data.checkout.redirect) {
+        window.location.href = res.data.data.checkout.redirect;
+      }
     },
   },
   mounted() {
@@ -121,7 +144,8 @@ export default {
 
 <style lang="postcss">
 input,
-textarea {
+textarea,
+select {
   @apply border-b p-3 rounded-md outline-none shadow border-indigo-300;
   outline: none !important;
 }

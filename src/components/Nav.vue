@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="postcss">
+.main-menu a {
+  @apply md:border-b-2 border-transparent;
+}
 .main-menu .active--exact,
 .main-menu a:hover {
   @apply md:border-b-2 border-indigo-500;

@@ -12,7 +12,7 @@
 
           <div class="flex flex-col items-start p-4">
             <g-link :to="`/product/${node.slug}`">
-              <h2 class="mb-2 overflow-scroll leading-tight whitespace-nowrap hide-scrollbar">{{ node.name }}</h2>
+              <h2 class="mb-2 overflow-scroll leading-tight">{{ node.name }}</h2>
             </g-link>
             <span class="mb-2 text-lg font-light text-indigo-500 dark:text-yellow-400">{{node.price}}</span>
             <p class="h-full mb-2 text-sm font-light leading-tight text-gray-500 dark:text-gray-300 line-clamp-3" v-html="node.shortDescription"></p>
