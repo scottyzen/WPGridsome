@@ -13,9 +13,9 @@
     "gridsome-plugin-pwa": "0.0.18",
     "gridsome-source-graphql": "^1.0.2",
     "node-fetch": "^2.6.1",
-    "postcss": "^8.2.1",
+    "postcss": "^8.2.2",
     "postcss-cli": "^8.3.1",
-    "postcss-import": "^13.0.0",
+    "postcss-import": "^14.0.0",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue-code-highlight": "^0.7.6"
