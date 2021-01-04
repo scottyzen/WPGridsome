@@ -1,7 +1,6 @@
 require("dotenv").config()
 const fetch = require("node-fetch");
-const TOKEN = Buffer.from(`${process.env.ADMIN_USERNAME}:${process.env.ADMIN_PASSWORD}`).toString('base64');
-// const session =  localStorage.getItem( "woo-session" );
+// const TOKEN = Buffer.from(`${process.env.ADMIN_USERNAME}:${process.env.ADMIN_PASSWORD}`).toString('base64');
 
 exports.handler = function (event, context, callback) {
 
@@ -19,7 +18,7 @@ exports.handler = function (event, context, callback) {
           headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Basic ${TOKEN}`,
+                // 'Authorization': `Basic ${TOKEN}`,
                 'woocommerce-session': `Session ${session}`
             },
             body: JSON.stringify({query})
