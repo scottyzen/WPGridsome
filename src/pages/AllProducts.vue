@@ -63,10 +63,26 @@ query AllProducts {
 
 <script>
 import AddToCart from "../components/UI/AddToCart";
+import { runMutation } from "../mixins/runMutation";
 
 export default {
   components: {
     AddToCart,
+  },
+  mixins: [runMutation],
+  async mounted() {
+    if (!localStorage.getItem("woo-session")) {
+      const res = await this.runMutation(`query GetSession {
+        cart {
+          isEmpty
+        }
+      }`);
+      if (res.session) {
+        if (localStorage.getItem("woo-session") !== res.session) {
+          localStorage.setItem("woo-session", res.session);
+        }
+      }
+    }
   },
 };
 </script>
