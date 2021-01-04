@@ -1,5 +1,5 @@
 <template>
-  <button @click="addToCart" :class="{'added': added === true, 'loading': added == 'loading'}" class="p-1 px-3 text-white bg-indigo-500 rounded">
+  <button @click="(added !== true) ? addToCart(): null" :class="{'added': added === true, 'loading': added == 'loading'}" class="p-1 px-3 text-white bg-indigo-500 rounded">
     <span v-if="added !== true">Add to cart</span>
     <span v-else>
       <g-link to="/cart">View Cart</g-link>
