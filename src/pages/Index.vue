@@ -40,7 +40,7 @@
             <h3 class="mb-2 text-lg font-bold">Plugins</h3>
             <ul class="mb-12 font-light list-disc list-inside">
               <li>
-                WP GraphQL (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql" target="_blank" rel="noopener noreferrer">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/wp-graphql/" target="_blank" rel="noopener noreferrer">Plugin</a>)
+                WPGraphQL (<a class="text-indigo-600 dark:text-indigo-300" href="https://github.com/wp-graphql/wp-graphql" target="_blank" rel="noopener noreferrer">Githib</a>) (<a class="text-indigo-600 dark:text-indigo-300" href="https://wordpress.org/plugins/wp-graphql/" target="_blank" rel="noopener noreferrer">Plugin</a>)
               </li>
 
               <li>
@@ -94,11 +94,10 @@ add_filter('graphql_post_object_connection_query_args', function ($query_args, $
 
 <script>
 import { component as VueCodeHighlight } from "vue-code-highlight";
-import PageTitle from "../components/PageTitle";
+
 export default {
   components: {
     VueCodeHighlight,
-    PageTitle,
   },
 };
 </script>

@@ -41,6 +41,7 @@ export default {
           message
         }
       }`);
+      console.log(res);
 
       this.status = res.sendEmail.message;
     },

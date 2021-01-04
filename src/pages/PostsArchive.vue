@@ -39,13 +39,11 @@ query ($offset: Int, $perPage: Int) {
 <script>
 import PostGrid from "../components/PostGrid";
 import Pagination from "../components/Pagination";
-import PageTitle from "../components/PageTitle";
 
 export default {
   components: {
     PostGrid,
     Pagination,
-    PageTitle,
   },
 };
 </script>

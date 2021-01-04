@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col items-center justify-center mt-12 mb-48 text-center">
+  <div class="flex flex-col items-center justify-center mt-20 mb-40 text-center">
     <h1 class="mb-2 text-4xl font-bold md:text-7xl">{{ title }}</h1>
-    <h2 class="text-xl text-gray-700 dark:text-gray-300">{{ subTitle }}</h2>
+    <h2 class="text-xl font-light text-gray-700 dark:text-gray-300">{{ subTitle }}</h2>
   </div>
 </template>
 

@@ -65,4 +65,9 @@ button {
   opacity: 0;
   transform: scale(0.975);
 }
+
+.shadow-custom {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 30px 60px -10px,
+    rgba(0, 0, 0, 0.25) 0px 18px 36px -18px;
+}
 </style>
