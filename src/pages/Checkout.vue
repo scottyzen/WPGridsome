@@ -4,7 +4,7 @@
       <PageTitle title="Checkout" />
 
       <div class="flex items-start justify-around overflow-visible">
-        <form class="flex flex-wrap justify-between w-full max-w-2xl p-8 text-gray-800 bg-indigo-400 border-b border-indigo-300 rounded shadow-md dark:bg-gray-800 dark:border-gray-900">
+        <form class="flex flex-wrap justify-between w-full max-w-2xl p-8 text-gray-800 bg-indigo-400 border-b border-indigo-300 rounded shadow-md dark:bg-gray-800 dark:border-gray-900" @submit.prevent="runCheckout">
           <h2 class="w-full mb-6 text-3xl text-white">Billing Details</h2>
           <div class="w-1/2 pr-2 mb-3">
             <label for="first-name">First Name</label>
@@ -35,6 +35,18 @@
             <CountrySelect :defaultValue="billing.country" class="w-full h-12" v-model="billing.country" />
           </div>
 
+          <div class="mt-4 ">
+
+            <label class="inline-block p-3 mr-3 text-base border border-gray-900 rounded-md " for="paypal">PayPal <input type="radio" id="paypal" name="paymentmethod" value="paypal" checked v-model="billing.paymentMethod"></label>
+
+            <label class="inline-block p-3 mr-3 text-base border border-gray-900 rounded-md " for="cod">Cash on delivery <input type="radio" id="cod" name="paymentmethod" value="cod" v-model="billing.paymentMethod"></label>
+
+          </div>
+          <div class="w-full">
+
+            <input value="Checkout" type="submit" class="block w-full h-12 px-4 py-2 mt-8 text-white bg-indigo-500 border-b border-indigo-800 rounded md:px-4 hover:bg-indigo-700">
+          </div>
+
         </form>
 
         <div class="sticky block mt-8 ml-12 top-8 w-96">
@@ -49,7 +61,6 @@
                 </div>
               </li>
             </ul>
-            <button class="inline-block px-3 py-2 text-white bg-indigo-500 rounded md:w-auto md:px-4 hover:bg-indigo-700" @click="runCheckout">Pay with PayPal</button>
 
           </div>
           <div v-else>
@@ -120,18 +131,35 @@ export default {
     async runCheckout() {
       const res = await this.runMutation(`
       mutation Checkout {
-        checkout(input: {paymentMethod: "paypal", billing: {address1: "${this.billing.address1}", address2: "${this.billing.address2}", city: "${this.billing.city}", country: "${this.billing.country}", email: "${this.billing.email}", firstName: "${this.billing.firstname}", lastName: "${this.billing.lastname}", phone: "0871234567", postcode: "R95P860", state: "Leinster"}}) {
+        checkout(input: {
+          paymentMethod: "${this.billing.paymentMethod}", 
+          billing: {address1: "${this.billing.address1}", 
+          address2: "${this.billing.address2}", 
+          city: "${this.billing.city}", 
+          country: ${this.billing.country}, 
+          email: "${this.billing.email}", 
+          firstName: "${this.billing.firstname}", 
+          lastName: "${this.billing.lastname}", 
+          phone: "0871234567", 
+          postcode: "R95P860", 
+          state: "Leinster"
+          }}) {
           redirect
           order {
             needsPayment
             needsProcessing
             status
+            databaseId
+            orderKey
           }
           result
         }
       }`);
       console.log(res);
-      if (res.data.data.checkout.result && res.data.data.checkout.redirect) {
+      if (
+        res.data.data.checkout.order.needsPayment &&
+        res.data.data.checkout.redirect
+      ) {
         window.location.href = res.data.data.checkout.redirect;
       }
     },
