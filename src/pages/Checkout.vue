@@ -3,8 +3,8 @@
     <div class="container">
       <PageTitle title="Checkout" />
 
-      <div class="flex items-start justify-around overflow-visible">
-        <form class="flex flex-wrap justify-between w-full max-w-2xl p-8 text-gray-800 bg-indigo-400 border-b border-indigo-300 rounded shadow-md dark:bg-gray-800 dark:border-gray-900" @submit.prevent="runCheckout">
+      <div class="flex flex-col-reverse items-start justify-around overflow-visible md:flex-row">
+        <form class="flex flex-wrap justify-between w-full max-w-2xl p-8 text-gray-800 bg-gray-200 border-b border-indigo-300 rounded shadow-md dark:bg-gray-800 dark:border-gray-900" @submit.prevent="runCheckout">
           <h2 class="w-full mb-6 text-3xl text-white">Billing Details</h2>
           <div class="w-1/2 pr-2 mb-3">
             <label for="first-name">First Name</label>
@@ -35,21 +35,23 @@
             <CountrySelect :defaultValue="billing.country" class="w-full h-12" v-model="billing.country" />
           </div>
 
-          <div class="mt-4 ">
+          <div class="mt-4 overflow-hidden bg-white border-b border-indigo-300 divide-x divide-gray-200 rounded-md shadow">
 
-            <label class="inline-block p-3 mr-3 text-base border border-gray-900 rounded-md " for="paypal">PayPal <input type="radio" id="paypal" name="paymentmethod" value="paypal" checked v-model="billing.paymentMethod"></label>
+            <label class="h-12 px-5 py-3 m-0 text-base text-gray-600 capitalize hover:bg-gray-100 dark:text-gray-800" for="paypal"><input class="mr-2" type="radio" id="paypal" name="paymentmethod" value="paypal" checked v-model="billing.paymentMethod"> PayPal</label>
 
-            <label class="inline-block p-3 mr-3 text-base border border-gray-900 rounded-md " for="cod">Cash on delivery <input type="radio" id="cod" name="paymentmethod" value="cod" v-model="billing.paymentMethod"></label>
+            <label class="h-12 px-5 py-3 m-0 text-base text-gray-600 capitalize hover:bg-gray-100 dark:text-gray-800" for="cod"><input class="mr-2" type="radio" id="cod" name="paymentmethod" value="cod" v-model="billing.paymentMethod"> Cash on delivery</label>
+
+            <label class="h-12 px-5 py-3 m-0 text-base text-gray-600 capitalize hover:bg-gray-100 dark:text-gray-800" for="cheque"><input class="mr-2" type="radio" id="cheque" name="paymentmethod" value="cod" v-model="billing.paymentMethod"> Check payments</label>
 
           </div>
-          <div class="w-full">
 
+          <div class="w-full">
             <input value="Checkout" type="submit" class="block w-full h-12 px-4 py-2 mt-8 text-white bg-indigo-500 border-b border-indigo-800 rounded md:px-4 hover:bg-indigo-700">
           </div>
 
         </form>
 
-        <div class="sticky block mt-8 ml-12 top-8 w-96">
+        <div class="sticky block w-full p-2 mb-8 md:mt-8 md:ml-12 top-8 md:w-96">
           <h2 class="inline-block pb-2 mb-6 text-2xl border-b-2 border-indigo-500">Your Basket</h2>
           <div v-if="cart !== null">
             <ul class="items">
@@ -80,6 +82,7 @@
 import { runMutation } from "../mixins/runMutation";
 import LoadingIcon from "../components/UI/LoadingIcon";
 import CountrySelect from "../components/UI/CountrySelect";
+import getCartQuery from "../gql/queries/getCart.gql";
 
 export default {
   data() {
@@ -97,35 +100,7 @@ export default {
   mixins: [runMutation],
   methods: {
     async getCartItems() {
-      const res = await this.runMutation(
-        `query getcart {
-            cart {
-                isEmpty
-                total
-                contents {
-                itemCount
-                edges {
-                    node {
-                    product {
-                        node {
-                        id
-                        name
-                        image {
-                            sourceUrl(size: SHOP_THUMBNAIL)
-                        }
-                        ... on SimpleProduct {
-                            price(format: FORMATTED)
-                        }
-                        }
-                    }
-                    total
-                    }
-                }
-                productCount
-                }
-            }
-            }`
-      );
+      const res = await this.runMutation(getCartQuery);
       this.cart = await res.data.data;
     },
     async runCheckout() {

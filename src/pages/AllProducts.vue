@@ -72,7 +72,7 @@ export default {
   mixins: [runMutation],
   async mounted() {
     if (!localStorage.getItem("woo-session")) {
-      const res = await this.runMutation(`query GetSession {
+      const res = await this.runMutation(`query {
         cart {
           isEmpty
         }

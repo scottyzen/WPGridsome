@@ -45,6 +45,7 @@
 <script>
 import { runMutation } from "../mixins/runMutation";
 import LoadingIcon from "../components/UI/LoadingIcon";
+import getCartQuery from "../gql/queries/getCart.gql";
 
 export default {
   data() {
@@ -60,35 +61,7 @@ export default {
   mixins: [runMutation],
   methods: {
     async getCartItems() {
-      const res = await this.runMutation(
-        `query getcart {
-          cart {
-            isEmpty
-            total
-            contents {
-              itemCount
-              edges {
-                node {
-                  quantity
-                  key
-                  product {
-                    node {
-                      id
-                      name
-                      image {
-                        sourceUrl(size: SHOP_THUMBNAIL)
-                      }
-                      ... on SimpleProduct {
-                        price(format: FORMATTED)
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`
-      );
+      const res = await this.runMutation(getCartMutation);
       this.cart = await res.data.data.cart;
       this.totalAmount = await res.data.data.cart.total;
     },
