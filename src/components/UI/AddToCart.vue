@@ -41,6 +41,10 @@ export default {
 
       if (res.data.data.addToCart) {
         this.added = !res.data.data.addToCart.cart.isEmpty;
+        localStorage.setItem(
+          "cartIsEmpty",
+          res.data.data.addToCart.cart.isEmpty
+        );
       }
     },
   },

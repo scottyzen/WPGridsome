@@ -3,7 +3,9 @@
     <div class="container">
       <PageTitle title="Cart" />
 
-      <div class="flex justify-center overflow-visible">
+      <EmptyCart v-if="sessionIsMade == null || cartIsEmpty === true" />
+
+      <div v-else class="flex justify-center overflow-visible">
 
         <div class="px-8 py-4 bg-white border-b border-indigo-200 shadow-lg dark:bg-gray-700 dark:border-gray-800" style="width: 800px">
           <div v-if="cart !== null">
@@ -46,6 +48,7 @@
 import { runMutation } from "../mixins/runMutation";
 import LoadingIcon from "../components/UI/LoadingIcon";
 import getCartQuery from "../gql/queries/getCart.gql";
+import EmptyCart from "../components/EmptyCart";
 
 export default {
   data() {
@@ -57,13 +60,16 @@ export default {
   },
   components: {
     LoadingIcon,
+    EmptyCart,
   },
   mixins: [runMutation],
   methods: {
     async getCartItems() {
-      const res = await this.runMutation(getCartMutation);
-      this.cart = await res.data.data.cart;
-      this.totalAmount = await res.data.data.cart.total;
+      if (this.sessionIsMade) {
+        const res = await this.runMutation(getCartQuery);
+        this.cart = await res.data.data.cart;
+        this.totalAmount = await res.data.data.cart.total;
+      }
     },
     async updateQuantity(data, e) {
       this.increasedTotal = "updating";
@@ -105,6 +111,14 @@ export default {
   watch: {
     totalAmount(newTotal, oldTotal) {
       this.increasedTotal = newTotal > oldTotal ? true : false;
+    },
+  },
+  computed: {
+    sessionIsMade() {
+      return localStorage.getItem("woo-session");
+    },
+    cartIsEmpty() {
+      return localStorage.getItem("cartIsEmpty");
     },
   },
 };

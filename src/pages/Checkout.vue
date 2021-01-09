@@ -3,7 +3,9 @@
     <div class="container">
       <PageTitle title="Checkout" />
 
-      <div class="flex flex-col-reverse items-start justify-around overflow-visible md:flex-row">
+      <EmptyCart v-if="sessionIsMade == null || cartIsEmpty === true" />
+
+      <div v-else class="flex flex-col-reverse items-start justify-around overflow-visible md:flex-row">
         <form class="flex flex-wrap justify-between w-full max-w-2xl p-8 text-gray-800 bg-gray-200 border-b border-indigo-300 rounded shadow-md dark:bg-gray-800 dark:border-gray-900" @submit.prevent="runCheckout">
           <h2 class="w-full mb-6 text-3xl text-white">Billing Details</h2>
           <div class="w-1/2 pr-2 mb-3">
@@ -51,7 +53,7 @@
 
         </form>
 
-        <div class="sticky block w-full p-2 mb-8 md:mt-8 md:ml-12 top-8 md:w-96">
+        <div class="block w-full p-2 mb-8 md:sticky md:mt-8 md:ml-12 top-8 md:w-96">
           <h2 class="inline-block pb-2 mb-6 text-2xl border-b-2 border-indigo-500">Your Basket</h2>
           <div v-if="cart !== null">
             <ul class="items">
@@ -83,6 +85,7 @@ import { runMutation } from "../mixins/runMutation";
 import LoadingIcon from "../components/UI/LoadingIcon";
 import CountrySelect from "../components/UI/CountrySelect";
 import getCartQuery from "../gql/queries/getCart.gql";
+import EmptyCart from "../components/EmptyCart";
 
 export default {
   data() {
@@ -96,6 +99,7 @@ export default {
   components: {
     LoadingIcon,
     CountrySelect,
+    EmptyCart,
   },
   mixins: [runMutation],
   methods: {
@@ -141,6 +145,14 @@ export default {
   },
   mounted() {
     this.getCartItems();
+  },
+  computed: {
+    sessionIsMade() {
+      return localStorage.getItem("woo-session");
+    },
+    cartIsEmpty() {
+      return localStorage.getItem("cartIsEmpty");
+    },
   },
 };
 </script>
