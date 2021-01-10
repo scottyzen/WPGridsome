@@ -7,13 +7,13 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "autoprefixer": "^10.1.0",
+    "autoprefixer": "^10.2.1",
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.23",
     "gridsome-plugin-pwa": "0.0.18",
     "gridsome-source-graphql": "^1.0.2",
     "node-fetch": "^2.6.1",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.0",
     "postcss-preset-env": "^6.7.0",

@@ -115,10 +115,10 @@ export default {
   },
   computed: {
     sessionIsMade() {
-      return localStorage.getItem("woo-session");
+      if (process.isClient) return localStorage.getItem("woo-session");
     },
     cartIsEmpty() {
-      return localStorage.getItem("cartIsEmpty");
+      if (process.isClient) return localStorage.getItem("cartIsEmpty");
     },
   },
 };
