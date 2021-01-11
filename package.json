@@ -18,7 +18,8 @@
     "postcss-import": "^14.0.0",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-    "vue-code-highlight": "^0.7.6"
+    "vue-code-highlight": "^0.7.6",
+    "vue-stripe-elements-plus": "^0.3.2"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^4.1.1",

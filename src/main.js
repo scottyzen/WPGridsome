@@ -18,4 +18,9 @@ export default function (Vue, { router, head, isClient }) {
     name: 'description',
     content: 'A starter for Gridsome using WordPress and WPGraphQL'
   })
+
+  // Add an external JavaScript before the closing </body> tag
+  head.script.push({
+    src: 'https://js.stripe.com/v3/'
+  })
 }
