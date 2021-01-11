@@ -69,6 +69,9 @@ export default {
   components: {
     AddToCart,
   },
+  metaInfo: {
+    title: "Shop",
+  },
   mixins: [runMutation],
   async mounted() {
     if (!localStorage.getItem("woo-session")) {
