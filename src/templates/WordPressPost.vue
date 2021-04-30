@@ -5,7 +5,7 @@
         v-if="$page.wordPressPost.featuredMedia"
         class="w-full -mb-24 bg-center bg-cover h-90vh featured-image shadow-custom"
         :style="{
-          backgroundImage: `url(${$page.wordPressPost.featuredMedia.imageDownloaded})`,
+          backgroundImage: `url(${$page.wordPressPost.featuredMedia.imageDownloaded.src})`,
         }"
       ></div>
       <div
