@@ -24,12 +24,12 @@
 export default {
   props: {
     title: {
-      default: 'WPGridsome',
+      default: "WPGridsome",
       type: String,
     },
     subTitle: {
       type: String,
     },
   },
-}
+};
 </script>
