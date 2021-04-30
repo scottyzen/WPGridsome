@@ -1,4 +1,6 @@
 [build]
+  publish = "dist"
+  command = "gridsome build"
   functions = "functions"
 
 [template.environment]
