@@ -1,6 +1,5 @@
 {
-  "name": "woogridsome",
-  "version": "0.7",
+  "name": "wpgridsome",
   "private": true,
   "scripts": {
     "build": "gridsome build",
