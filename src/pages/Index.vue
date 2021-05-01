@@ -52,7 +52,7 @@
         </a>
         <a
           class="block w-full py-6 transition-all duration-150 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-indigo-500 hover:text-white hover:border-indigo-500 dark:border-gray-900 dark:bg-gray-800 external-link"
-          href="https://gtmetrix.com/reports/woogridsome.com/TMB7at2w"
+          href="https://gtmetrix.com/reports/wpgridsome.com/W5eMBSOs/"
           target="_blank"
           rel="noopener noreferrer"
           >GTmetrix</a
