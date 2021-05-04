@@ -24,8 +24,8 @@
 </template>
 
 <page-query>
-query Post($path: String!) {
-  wordPressPost(path: $path) {
+query Post($id: ID!) {
+  wordPressPost(id: $id) {
     title
     content
     featuredMedia {
@@ -43,8 +43,26 @@ query Post($path: String!) {
       title
     }
   }
+  post(id: $id, idType: DATABASE_ID) {
+    title(format: RENDERED)
+    seo {
+      # fullHead
+      metaDesc
+    }
+  }
 }
 </page-query>
+
+<script>
+export default {
+  metaInfo() {
+    return {
+      title: this.$page.post.seo.title,
+      meta: [{ name: "description", content: this.$page.post.seo.metaDesc }],
+    };
+  },
+};
+</script>
 
 <style>
 .h-90vh {
