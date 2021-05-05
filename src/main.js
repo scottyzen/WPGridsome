@@ -21,10 +21,10 @@ export default function (Vue, { router, head, isClient, appOptions }) {
     href: "https://fonts.gstatic.com",
   });
 
-  head.link.push({
-    rel: "icon",
-    href: "/favicon.svg",
-  });
+  // head.link.push({
+  //   rel: "icon",
+  //   href: "/favicon.svg",
+  // });
 
   // Add a meta tag
   head.meta.push({
