@@ -1,13 +1,24 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 module.exports = {
-  darkMode: 'class', // or 'media' or 'class'
+  // darkMode: 'class', // or 'media' or 'class'
   theme: {
     container: {
       center: true,
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "1024px",
+        xl: "1180px",
+      },
     },
     colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
+      primary: {
+        light: "#1aaaed",
+        DEFAULT: "#4493e7",
+        dark: "#244f8c",
+      },
+      transparent: "transparent",
+      current: "currentColor",
       black: colors.black,
       white: colors.white,
       gray: colors.blueGray,
@@ -18,14 +29,18 @@ module.exports = {
       pink: colors.pink,
       green: colors.green,
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Work Sans"],
+      },
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require("@tailwindcss/typography")],
   purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
+    enabled: process.env.NODE_ENV === "production",
+    content: ["./src/**/*.{vue,js,ts,jsx,tsx}"],
   },
-}
+};

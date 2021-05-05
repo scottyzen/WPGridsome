@@ -43,13 +43,6 @@ query Post($id: ID!) {
       title
     }
   }
-  post(id: $id, idType: DATABASE_ID) {
-    title(format: RENDERED)
-    seo {
-      # fullHead
-      metaDesc
-    }
-  }
 }
 </page-query>
 
@@ -57,8 +50,8 @@ query Post($id: ID!) {
 export default {
   metaInfo() {
     return {
-      title: this.$page.post.seo.title,
-      meta: [{ name: "description", content: this.$page.post.seo.metaDesc }],
+      // title: this.$page.post.seo.title,
+      // meta: [{ name: "description", content: this.$page.post.seo.metaDesc }],
     };
   },
 };

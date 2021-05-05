@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center px-3 py-1 bg-gray-100 border rounded-lg md:mx-auto glass-border-color dark:bg-gray-800 dark:text-white"
+    class="flex items-center px-3 py-1 bg-gray-100 border rounded-lg md:mx-auto dark:bg-gray-800 dark:text-white"
   >
     <!-- Hidedn label  -->
     <label for="search" class="ax-hidden">Search</label>

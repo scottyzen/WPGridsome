@@ -2,10 +2,10 @@
 // Learn more: https://gridsome.org/docs/config
 
 module.exports = {
-  siteName: 'WPGridsome',
+  siteName: 'Surface Magic',
   siteUrl: `https://${process.env.DOMAIN}`,
-  siteDescription: 'Full featured WordPress started for Gridsome!',
-  titleTemplate: '%s - WPGrridsome',
+  siteDescription: `Surface Magic are Ireland's Number One Surface Repair`,
+  titleTemplate: '%s - Surface Magic',
   icon: {
     favicon: './src/favicon.png',
     touchicon: './src/favicon.png',

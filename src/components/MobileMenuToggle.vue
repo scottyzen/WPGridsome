@@ -1,5 +1,10 @@
 <template>
-  <button class="-mt-1 hamburger hamburger--collapse" :class="{'is-active': menuIsOpen}" type="button" aria-label="Menu">
+  <button
+    class="-mt-1 hamburger hamburger--collapse"
+    :class="{ 'is-active': menuIsOpen }"
+    type="button"
+    aria-label="Menu"
+  >
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
@@ -44,11 +49,6 @@ export default {
   transition-property: transform;
   transition-duration: 0.15s;
   transition-timing-function: ease;
-}
-.dark .hamburger-inner,
-.dark .hamburger-inner::before,
-.dark .hamburger-inner::after {
-  background-color: #fff;
 }
 
 .hamburger-inner::before,

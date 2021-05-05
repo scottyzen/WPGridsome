@@ -1,40 +1,11 @@
 <template>
-  <picture class="w-full overflow-hidden h-70-screen">
-    <source
-      srcset="/gast-lg.avif"
-      type="image/avif"
-      media="(min-width: 1025px)"
-      width="1600"
-      height="913"
-      class="w-full bg-gray-900 h-70-screen"
-      alt="Image of a cheetah"
-      loading="lazy"
-    />
-    <source
-      srcset="/gast.avif"
-      type="image/avif"
-      media="(min-width: 480px)"
-      width="1024 "
-      height="584"
-      class="w-full bg-gray-900 md:hidden h-70-screen"
-      alt="Image of a cheetah"
-      loading="lazy"
-    />
-    <source
-      srcset="/gast-sm.avif"
-      type="image/avif"
-      width="480 "
-      height="522"
-      class="object-cover w-full bg-gray-900 h-70-screen md:hidden"
-      alt="Image of a cheetah"
-      loading="lazy"
-    />
-    <source
+  <picture class="w-full overflow-hidden hero-height">
+    <!-- <source
       media="(min-width: 1025px)"
       srcset="../../assets/images/gast-lg.jpg"
       width="1600"
       height="913"
-      class="w-full bg-gray-900 h-70-screen"
+      class="w-full bg-gray-900 hero-height"
       alt="Image of a cheetah"
       loading="lazy"
     />
@@ -43,38 +14,38 @@
       srcset="../../assets/images/gast.jpg"
       width="1024 "
       height=" 584"
-      class="w-full bg-gray-900 h-70-screen"
+      class="w-full bg-gray-900 hero-height"
       alt="Image of a cheetah"
       loading="lazy"
-    />
+    /> -->
     <img
       alt="Image of a cheetah"
-      src="../../assets/images/gast-sm.jpg"
+      src="../../assets/images/hero.jpg"
       width="480 "
       height="522"
-      class="object-cover w-full bg-gray-900 h-70-screen"
+      class="object-cover w-full bg-gray-900 hero-height"
       loading="lazy"
     />
   </picture>
 </template>
 
 <style>
-.h-70-screen {
-  height: 480px;
+.hero-height {
+  height: 420px;
 }
 @media (min-width: 768px) {
-  .h-70-screen {
-    height: 600px;
+  .hero-height {
+    height: 540px;
   }
 }
 @media (min-width: 960px) {
-  .h-70-screen {
-    height: 640px;
+  .hero-height {
+    height: 540px;
   }
 }
 @media (min-width: 1180px) {
-  .h-70-screen {
-    height: 700px;
+  .hero-height {
+    height: 600px;
   }
 }
 </style>

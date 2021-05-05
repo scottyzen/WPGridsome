@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pb-12 pt-28 md:pb-16 md:pt-36 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-indigo-800 dark:to-indigo-600"
+    class="pb-12 pt-28 md:pb-16 md:pt-36 bg-gradient-to-r from-gray-900 to-gray-700"
   >
     <div
       class="container relative z-10 flex flex-col items-center justify-center"

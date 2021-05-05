@@ -37,9 +37,7 @@
             value="Send Message"
           />
 
-          <span class="flex-1 p-3 font-light dark:text-indigo-100">{{
-            status
-          }}</span>
+          <span class="flex-1 p-3 font-light">{{ status }}</span>
         </form>
       </div>
     </div>
@@ -47,43 +45,43 @@
 </template>
 
 <script>
-import { runMutation } from '../mixins/runMutation'
+import { runMutation } from "../mixins/runMutation";
 
 export default {
   data() {
     return {
       formData: {},
-      status: '',
-    }
+      status: "",
+    };
   },
   components: {
-    PageTitle: () => import('../components/PageTitle'),
+    PageTitle: () => import("../components/PageTitle"),
   },
   mixins: [runMutation],
   methods: {
     async submitForm() {
-      const formData = JSON.parse(JSON.stringify(this.formData))
+      const formData = JSON.parse(JSON.stringify(this.formData));
       const res = await this.runMutation(`mutation {
         sendEmail(input: { subject: "Message from WPGridsome", body: "${formData}", replyTo: "${formData.name} <${formData.email}>" }) {
           sent
           message
         }
-      }`)
+      }`);
 
-      this.status = res.data.data.sendEmail.message
+      this.status = res.data.data.sendEmail.message;
     },
   },
-}
+};
 </script>
 
 <style lang="postcss">
-input:not([type='search']),
+input:not([type="search"]),
 textarea {
   @apply border-b p-3 px-5 rounded-md outline-none shadow border-indigo-300;
   outline: none !important;
 }
 
-input:not([type='search'], [type='submit']),
+input:not([type="search"], [type="submit"]),
 textarea {
   @apply focus:outline-none focus:ring-2 focus:ring-indigo-400;
 }

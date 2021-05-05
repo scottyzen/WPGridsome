@@ -23,14 +23,5 @@
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "vue-fuse": "^3.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.25.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-gridsome": "^1.6.2",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-vue": "^7.9.0",
-    "prettier": "^2.2.1",
-    "vue": "^2.6.12"
   }
 }

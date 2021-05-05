@@ -1,7 +1,7 @@
 <template>
   <g-link
     :to="`/post/${node.slug}`"
-    class="block bg-white border-b border-gray-300 rounded-md shadow-lg dark:border-gray-900 dark:bg-gray-800"
+    class="block bg-white border-b border-gray-300 rounded-md shadow-lg"
   >
     <g-image
       v-if="node.featuredMedia"
@@ -20,7 +20,7 @@
         {{ node.title }}
       </h2>
       <p
-        class="flex-1 mb-3 text-sm font-light leading-tight text-gray-500 dark:text-gray-300 line-clamp-3"
+        class="flex-1 mb-3 text-sm font-light leading-tight text-gray-500 line-clamp-3"
         v-html="node.excerpt"
       ></p>
       <div
@@ -29,7 +29,7 @@
       >
         <span v-for="node in categories" :key="node.slug">
           <g-link
-            class="inline-block p-1 px-3 text-xs text-indigo-700 rounded-full bg-indigo-50 dark:bg-indigo-500 dark:text-indigo-100"
+            class="inline-block p-1 px-3 text-xs text-indigo-700 rounded-full bg-indigo-50 dark:bg-indigo-500"
             :to="`/category/${node.slug}`"
             >{{ node.title }}</g-link
           >
@@ -41,14 +41,16 @@
 
 <script>
 export default {
-  props: ['node'],
+  props: ["node"],
   computed: {
     categories() {
       // Exclude uncategorized
-      return this.node.categories.filter((item) => item.slug != 'uncategorized')
+      return this.node.categories.filter(
+        (item) => item.slug != "uncategorized"
+      );
     },
   },
-}
+};
 </script>
 
 <style>

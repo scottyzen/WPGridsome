@@ -1,23 +1,18 @@
 <template>
-  <div class="w-full md:w-auto">
+  <div class="w-full">
     <div class="flex items-center justify-end w-full md:justify-between">
-      <div class="flex main-menu" :class="{ 'hide-mobile-menu': !menuIsOpen }">
-        <DarkModeToggle class="order-1 py-4 md:order-none md:ml-8" />
-        <g-link class="inline-block py-4 md:text-sm md:py-6 md:ml-8" to="/posts"
-          >Posts</g-link
-        >
-        <g-link
-          class="inline-block py-4 md:text-sm md:py-6 md:ml-8"
-          to="/gettng-started"
-          >Getting Started</g-link
-        >
-        <g-link
-          class="inline-block py-4 md:text-sm md:py-6 md:ml-8"
-          to="/contact"
-          >Contact</g-link
-        >
+      <div
+        class="flex items-center justify-end w-full uppercase main-menu gap-x-12 text-primary-dark"
+        :class="{ 'hide-mobile-menu': !menuIsOpen }"
+      >
+        <g-link class="inline-block" to="/">Home</g-link>
+        <g-link class="inline-block" to="/about-us">About Us</g-link>
+        <g-link class="inline-block" to="/services">Services</g-link>
+        <g-link class="inline-block" to="/sectors">Sectors</g-link>
+        <g-link class="inline-block" to="/gallery">Gallery</g-link>
+        <g-link class="inline-block" to="/posts">News</g-link>
+        <g-link class="button" to="/contact">Contact us</g-link>
       </div>
-      <Search class="inline md:ml-12" />
       <div class="py-4 md:hidden">
         <MobileMenuToggle
           class="ml-4"
@@ -25,46 +20,36 @@
           :menuIsOpen="menuIsOpen"
         />
       </div>
-      <!-- <UserAvatar /> -->
     </div>
   </div>
 </template>
 
 <script>
-import MobileMenuToggle from '../components/MobileMenuToggle'
-import DarkModeToggle from '../components/DarkModeToggle'
-import Search from '../components/Search'
-
+import MobileMenuToggle from "../components/MobileMenuToggle";
 export default {
   data() {
     return {
       menuIsOpen: false,
-    }
+    };
   },
   components: {
     MobileMenuToggle,
-    DarkModeToggle,
-    Search,
-    // UserAvatar,
   },
-}
+};
 </script>
 
 <style lang="postcss">
 .main-menu a {
-  @apply md:border-b-2 border-transparent font-semibold;
+  @apply font-semibold;
 }
 .main-menu .active--exact,
 .main-menu a:hover {
-  @apply md:border-b-2 border-indigo-500;
+  @apply text-primary;
 }
 @media (max-width: 768px) {
   .main-menu {
-    @apply shadow-lg absolute left-0 right-0 top-20 p-8 mx-auto gap-4 bg-white rounded w-11/12 flex flex-col items-center transition-all duration-300;
-    will-change: transform, opacity;
-  }
-  .dark .main-menu {
-    @apply bg-gray-700;
+    @apply mx-auto absolute  gap-4 bg-white rounded w-full flex flex-col items-center transition-all duration-300;
+    will-change: transform, opacity z-20;
   }
   .hide-mobile-menu {
     transform: translateY(-100vh);
