@@ -9,7 +9,7 @@
 </template>
 
 <static-query>
-query WordPressMenus{
+query{
   menus {
     edges {
       node {
