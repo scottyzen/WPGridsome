@@ -1,11 +1,14 @@
 <template>
-  <header class="p-4 mx-auto bg-white">
-    <div class="flex items-center justify-between">
+  <header class="px-6 py-4 md:p-4">
+    <div class="flex items-center justify-between mx-auto">
       <g-link class="font-bold" to="/"
-        ><g-image src="~/assets/images/logo.png"></g-image
+        ><g-image
+          class="w-28 md:w-auto"
+          src="~/assets/images/logo.png"
+        ></g-image
       ></g-link>
       <div>
-        <SmallNav />
+        <SmallNav class="hidden md:flex" />
         <Nav />
       </div>
     </div>
@@ -24,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-header {
+header > div {
   max-width: 1420px;
 }
 </style>

@@ -1,12 +1,11 @@
 <template>
   <div>
-    <Header class="z-10" />
-    <!-- <transition name="fade" appear mode="out-in"> -->
-    <main class="min-h-screen">
-      <slot />
-      <!-- the content -->
-    </main>
-    <!-- </transition> -->
+    <Header class="relative z-10 w-full bg-white" />
+    <transition name="fade" appear mode="out-in">
+      <main class="min-h-screen">
+        <slot />
+      </main>
+    </transition>
     <Footer />
   </div>
 </template>
@@ -34,6 +33,12 @@ export default {
 * {
   scroll-behavior: smooth;
 }
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 
 a,
 button {
@@ -46,7 +51,7 @@ button {
 }
 
 .fade-enter-active {
-  transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
   will-change: opacity, transform;
 }
 

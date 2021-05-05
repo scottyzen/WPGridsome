@@ -1,14 +1,8 @@
 <template>
-  <footer class="py-4 mt-12">
+  <footer class="py-4 mt-12 text-white bg-primary-dark">
     <p class="p-4 text-sm text-center">
-      © 2021 WPGridsome.com by
-      <a
-        href="https://scottyzen.com?ref=wpgridsome"
-        target="_blank"
-        rel="noopener"
-        class="text-gray-900 dark:text-white"
-        >Scott Kennedy</a
-      >
+      Copyright 2021 Surface Magic | All Rights Reserved | Web Design by
+      <a href="https://2cubed.ie" target="_blank" rel="noopener">2Cubed.ie</a>
     </p>
   </footer>
 </template>

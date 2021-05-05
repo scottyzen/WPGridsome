@@ -1,5 +1,5 @@
 <template>
-  <Layout class="shape">
+  <Layout>
     <PageTitle title="Contact" />
     <div class="container my-12">
       <div class="flex flex-col items-center justify-center">
