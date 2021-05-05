@@ -10,7 +10,7 @@
         <g-link class="inline-block" to="/services">Services</g-link>
         <g-link class="inline-block" to="/sectors">Sectors</g-link>
         <g-link class="inline-block" to="/gallery">Gallery</g-link>
-        <g-link class="inline-block" to="/posts">News</g-link>
+        <g-link class="inline-block" to="/news">News</g-link>
         <g-link class="button" to="/contact">Contact us</g-link>
       </div>
       <div class="py-4 md:hidden">

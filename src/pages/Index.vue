@@ -25,6 +25,8 @@
 query {
   metadata {
     siteUrl
+    siteDescription
+    siteName
   }
 }
 </static-query>
@@ -36,9 +38,8 @@ export default {
   metaInfo() {
     const pathUrl = `${this.$static.metadata.siteUrl}${this.$route.path}`;
     return {
-      title: "Next Generation Front-End for WooCommerce",
-      description:
-        "WooGridsome is a fully loaded ecommerce starter for Gridsome that is powered by WooCommerce",
+      title: "Home",
+      description: this.$static.metadata.siteDescription,
       link: [{ rel: "canonical", href: pathUrl }],
       meta: [{ key: "og:url", property: "og:url", content: pathUrl }],
     };
