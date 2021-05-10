@@ -13,7 +13,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^9.0.1",
     "gridsome": "^0.7.23",
     "gridsome-plugin-pwa": "0.0.18",
     "gridsome-plugin-tailwindcss": "^4.1.1",
