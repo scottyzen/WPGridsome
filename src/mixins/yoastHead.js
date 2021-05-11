@@ -19,11 +19,10 @@ export const yoastHead = {
   },
   methods: {
     fetchMetaDatas(yoastHead) {
-      yoastHead = yoastHead.toString();
-      yoastHead = yoastHead.replaceAll(
-        "http://surfacemagic.2cubedtest.com/",
-        "../assets/remoteImages/"
-      );
+      // yoastHead = yoastHead.toString();
+      // yoastHead = yoastHead.replaceAll( "http://surfacemagic.2cubedtest.com/",
+      //   "../assets/remoteImages/"
+      // );
 
       const cleanHtml = this.sanitize(yoastHead, {
         allowedTags: false,
