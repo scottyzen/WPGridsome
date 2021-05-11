@@ -19,6 +19,7 @@ export const yoastHead = {
   },
   methods: {
     fetchMetaDatas(yoastHead) {
+      yoastHead = yoastHead.toString();
       yoastHead = yoastHead.replaceAll(
         "http://surfacemagic.2cubedtest.com/",
         "../assets/remoteImages/"
