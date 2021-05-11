@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="flex flex-col">
     <Header class="relative z-10 w-full bg-white" />
-    <transition name="fade" appear mode="out-in">
-      <main class="min-h-screen">
+    <transition class="flex-1" name="fade" appear mode="out-in">
+      <main>
         <slot />
       </main>
     </transition>
@@ -48,6 +48,7 @@ button {
 
 .button {
   @apply inline-block px-6 py-3 font-semibold leading-none text-white bg-primary hover:bg-primary-dark capitalize;
+  color: #fff !important;
 }
 
 .fade-enter-active {

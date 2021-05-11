@@ -7,8 +7,8 @@
           src="~/assets/images/logo.png"
         ></g-image
       ></g-link>
-      <div>
-        <SmallNav class="hidden md:flex" />
+      <div class="flex flex-wrap justify-end">
+        <SmallNav class="hidden md:flex text-primary" />
         <Nav />
       </div>
     </div>

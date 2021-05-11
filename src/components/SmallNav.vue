@@ -1,8 +1,8 @@
 <template>
-  <div class="flex items-center justify-end mb-4 gap-x-12">
+  <div class="inline-flex flex-wrap items-center mb-4 gap-x-12">
     <a
       href="mailto:repairs@surfacemagic.ie"
-      class="flex items-center text-lg tracking-wide gap-x-2 text-primary"
+      class="flex items-center text-lg tracking-wide gap-x-2 y"
       ><svg
         width="18"
         height="18"
@@ -18,7 +18,7 @@
     >
     <a
       href="tel:0864072814"
-      class="flex items-center text-lg tracking-wide gap-x-2 text-primary"
+      class="flex items-center text-lg tracking-wide gap-x-2"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"

@@ -2,7 +2,9 @@
   <Layout>
     <div>
       <div class="relative">
-        <HeroImage />
+        <hero-image>
+          <GImage :src="$static.wordPressPage.featuredMedia.imageDownloaded" />
+        </hero-image>
 
         <div class="absolute top-0 flex items-center w-full h-full">
           <div class="container">
@@ -22,9 +24,11 @@
       </div>
 
       <div class="text-white bg-primary block-bg">
-        <div class="container flex gap-4 py-12 justify-evenly">
-          <div class="flex items-start max-w-xs">
-            <GImage class="mr-4" src="~/assets/images/clock.svg" />
+        <div
+          class="container flex flex-col items-center gap-4 py-12 md:flex-row justify-evenly"
+        >
+          <div class="flex items-start max-w-xs mb-8 md:m-0">
+            <GImage class="mr-8 md:mr-4" src="~/assets/images/clock.svg" />
             <div>
               <h3 class="font-bold tracking-wide">Save Time</h3>
               <p class="text-sm">
@@ -32,8 +36,8 @@
               </p>
             </div>
           </div>
-          <div class="flex items-start max-w-xs">
-            <GImage class="mr-4" src="~/assets/images/euro.svg" />
+          <div class="flex items-start max-w-xs mb-8 md:m-0">
+            <GImage class="mr-8 md:mr-4" src="~/assets/images/euro.svg" />
             <div>
               <h3 class="font-bold tracking-wide">Save Money</h3>
               <p class="text-sm">
@@ -42,7 +46,7 @@
             </div>
           </div>
           <div class="flex items-start max-w-xs">
-            <GImage class="mr-4" src="~/assets/images/env.svg" />
+            <GImage class="mr-8 md:mr-4" src="~/assets/images/env.svg" />
             <div>
               <h3 class="font-bold tracking-wide">Save The Enviornment</h3>
               <p class="text-sm">
@@ -53,10 +57,11 @@
         </div>
       </div>
 
+      <!-- ABOUT US  -->
       <div class="container grid items-center gap-8 my-12 md:grid-cols-2">
         <div>
           <h3 class="mb-2 text-xl font-bold text-primary">ABOUT US</h3>
-          <h4 class="max-w-md mb-8 text-3xl text-primary-dark">
+          <h4 class="max-w-md mb-8 text-3xl font-semibold text-primary-dark">
             Surface Magic Are Experts In Surface Repair
           </h4>
           <p class="max-w-md mb-8">
@@ -70,6 +75,36 @@
         </div>
         <g-image src="~/assets/images/about.jpg"></g-image>
       </div>
+
+      <!-- SERVICES -->
+      <div class="px-4 py-20 text-center bg-light">
+        <h3 class="mb-12 text-3xl font-bold text-primary-dark">Our Services</h3>
+        <ServiceCards />
+        <g-link to="/services" class="mt-12 button">View All Services</g-link>
+      </div>
+
+      <!-- OUR CLIENTS  -->
+      <div class="container my-24 text-center">
+        <h3 class="mb-12 text-3xl font-bold text-primary-dark">Our Clients</h3>
+        <ClientLogos />
+      </div>
+    </div>
+
+    <!-- GET IN TOUCH  -->
+    <div class="container grid items-center gap-8 my-12 mb-32 md:grid-cols-2">
+      <div>
+        <h3 class="mb-2 text-xl font-bold text-primary">GET IN TOUCH</h3>
+        <h4 class="max-w-md mb-8 text-3xl font-semibold text-primary-dark">
+          Book Your Professional Property Repairs Today
+        </h4>
+        <p class="max-w-md mb-8">
+          Surface Magic are a trusted & professional company with a great
+          reputation to uphold in the trades business. We are vat registered and
+          insured. We have experts in all areas of home repairs.
+        </p>
+        <SmallNav class="flex font-semibold text-primary" />
+      </div>
+      <ContactForm />
     </div>
   </Layout>
 </template>
@@ -81,11 +116,20 @@ query {
     siteDescription
     siteName
   }
+  wordPressPage(id: "10"){
+    featuredMedia{
+      imageDownloaded
+    }
+  }
 }
 </static-query>
 
 <script>
 import HeroImage from "../components/UI/HeroImage.vue";
+import ServiceCards from "../components/ServiceCards";
+import ClientLogos from "../components/ClientLogos";
+import SmallNav from "../components/SmallNav";
+import ContactForm from "../components/ContactForm";
 
 export default {
   metaInfo() {
@@ -99,6 +143,10 @@ export default {
   },
   components: {
     HeroImage,
+    ServiceCards,
+    ClientLogos,
+    SmallNav,
+    ContactForm,
   },
 };
 </script>
