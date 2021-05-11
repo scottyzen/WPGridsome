@@ -74,7 +74,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 input:not([type="search"]),
 textarea {
   @apply border-b p-3 px-5 rounded-md outline-none shadow border-indigo-300;

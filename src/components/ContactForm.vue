@@ -1,15 +1,10 @@
 <template>
   <form
-    name="contact"
-    method="post"
-    v-on:submit.prevent="handleSubmit"
-    action="/success/"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
+    @submit.prevent="submitForm"
     class="grid gap-4 p-12 text-white sm:grid-cols-2 bg-primary"
   >
     <div class="text-2xl font-semibold col-span-full">Contact Form</div>
-    <input type="hidden" name="form-name" value="contact" />
+    <input type="hidden" name="form-name" value="Contact Form" />
     <p hidden>
       <label> Don’t fill this out: <input name="bot-field" /> </label>
     </p>
@@ -47,35 +42,41 @@
     >
       Submit
     </button>
+    <span class="py-2">{{ status }}</span>
   </form>
 </template>
 
 <script>
+import { runMutation } from "../mixins/runMutation";
 export default {
   data() {
     return {
       formData: {},
+      status: "",
     };
   },
+  mixins: [runMutation],
   methods: {
-    encode(data) {
-      return Object.keys(data)
-        .map(
-          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-        )
-        .join("&");
-    },
-    handleSubmit(e) {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: this.encode({
-          "form-name": e.target.getAttribute("name"),
-          ...this.formData,
-        }),
-      })
-        .then(() => this.$router.push("/success"))
-        .catch((error) => alert(error));
+    async submitForm() {
+      const formData = JSON.parse(JSON.stringify(this.formData));
+      const emailTemplate = `Name: ${formData.name} <br> Phone Number: ${formData.phone} <br> Message: ${formData.message}`;
+
+      const res = await this.runMutation(`mutation {
+        sendEmail(input: { 
+            subject: "Message from Surface Magic", 
+            body: "${emailTemplate}", 
+            replyTo: "${formData.name} <${formData.email}>" 
+            }){
+                message
+            }
+        }`);
+
+      this.status = res.data.data.sendEmail.message;
+      if (this.status == "Email Sent") {
+        setTimeout(() => {
+          this.$router.push("/success");
+        }, 600);
+      }
     },
   },
 };

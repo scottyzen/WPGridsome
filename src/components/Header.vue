@@ -5,6 +5,7 @@
         ><g-image
           class="w-28 md:w-auto"
           src="~/assets/images/logo.png"
+          immediate="true"
         ></g-image
       ></g-link>
       <div class="flex flex-wrap justify-end">

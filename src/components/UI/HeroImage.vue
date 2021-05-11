@@ -16,12 +16,12 @@ img {
 }
 @media (min-width: 960px) {
   img {
-    height: 540px;
+    height: auto;
   }
 }
-@media (min-width: 1180px) {
+/* @media (min-width: 1180px) {
   img {
     height: 600px;
   }
-}
+} */
 </style>

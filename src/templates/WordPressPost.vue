@@ -43,6 +43,12 @@ query Post($id: ID!) {
       title
     }
   }
+  post(id: $id, idType: DATABASE_ID) {
+    title(format: RENDERED)
+    seo {
+      metaDesc
+    }
+  }
 }
 </page-query>
 

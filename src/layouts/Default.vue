@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col min-h-screen">
     <Header class="relative z-10 w-full bg-white" />
-    <transition class="flex-1" name="fade" appear mode="out-in">
-      <main>
+    <transition name="fade" appear mode="out-in">
+      <main class="flex-1">
         <slot />
       </main>
     </transition>

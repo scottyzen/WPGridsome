@@ -10,7 +10,9 @@
           <div class="container">
             <div class="w-full max-w-2xl text-white 0 lg:max-w-2xl fade-in-up">
               <h1 class="mb-2 font-semibold">SURFACE MAGIC</h1>
-              <h2 class="max-w-lg mb-4 text-3xl font-bold md:text-5xl">
+              <h2
+                class="max-w-lg mb-4 text-3xl font-bold md:text-4xl xl:text-5xl"
+              >
                 Surface Magic Are Ireland’s Number One Surface Repair
               </h2>
               <p class="max-w-lg mb-12">
@@ -117,6 +119,7 @@ query {
     siteName
   }
   wordPressPage(id: "10"){
+    yoastHead
     featuredMedia{
       imageDownloaded
     }
@@ -130,16 +133,21 @@ import ServiceCards from "../components/ServiceCards";
 import ClientLogos from "../components/ClientLogos";
 import SmallNav from "../components/SmallNav";
 import ContactForm from "../components/ContactForm";
+import { yoastHead } from "../mixins/yoastHead";
 
 export default {
-  metaInfo() {
-    const pathUrl = `${this.$static.metadata.siteUrl}${this.$route.path}`;
-    return {
-      title: "Home",
-      description: this.$static.metadata.siteDescription,
-      link: [{ rel: "canonical", href: pathUrl }],
-      meta: [{ key: "og:url", property: "og:url", content: pathUrl }],
-    };
+  // metaInfo() {
+  //   const pathUrl = `${this.$static.metadata.siteUrl}${this.$route.path}`;
+  //   return {
+  //     title: "Home",
+  //     description: this.$static.metadata.siteDescription,
+  //     link: [{ rel: "canonical", href: pathUrl }],
+  //     meta: [{ key: "og:url", property: "og:url", content: pathUrl }],
+  //   };
+  // },
+  mixins: [yoastHead],
+  created() {
+    this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
   },
   components: {
     HeroImage,
