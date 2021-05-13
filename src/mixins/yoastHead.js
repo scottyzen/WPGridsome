@@ -26,13 +26,8 @@ export const yoastHead = {
       }
       yoastHead = replaceAll(
         yoastHead,
-        "http://surfacemagic.2cubedtest.com/wp-content/",
-        "https://surfacemagic.netlify.app/remoteImages/wp-content/"
-      );
-      yoastHead = replaceAll(
-        yoastHead,
-        "https://surfacemagic.2cubedtest.com/wp-content/",
-        "https://surfacemagic.netlify.app/remoteImages/wp-content/"
+        "surfacemagic.2cubedtest.com/wp-content/",
+        "surfacemagic.netlify.app/remoteImages/wp-content/"
       );
 
       const cleanHtml = this.sanitize(yoastHead, {
@@ -43,12 +38,13 @@ export const yoastHead = {
       this.title = rawJson.child
         .map((el) => (el.tag === "title" ? el.child[0].text : null))
         .filter((el) => el)[0];
-      const metas = rawJson.child.filter((tag) => tag.node === "element");
-      const metasArray = metas
+      const elements = rawJson.child.filter((tag) => tag.node === "element");
+
+      const metasArray = elements
         .filter((m) => m.tag === "meta")
         .map((m) => m.attr);
 
-      const scriptsArray = metas
+      const scriptsArray = elements
         .filter((s) => s.tag === "script")
         .map((s) => {
           return {
@@ -57,7 +53,6 @@ export const yoastHead = {
           };
         });
 
-      // console.log(scriptsArray);
       let meta = [];
       for (let i = 0; i < metasArray.length; i++) {
         let obj = {
@@ -77,7 +72,6 @@ export const yoastHead = {
           : metasArray[i].name;
         meta.push(obj);
       }
-      console.log(meta);
       this.script = scriptsArray;
       this.meta = meta;
     },

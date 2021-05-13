@@ -2,9 +2,14 @@
   <Layout>
     <div>
       <div class="relative">
-        <hero-image>
-          <GImage :src="$static.wordPressPage.featuredMedia.imageDownloaded" />
-        </hero-image>
+        <GImage
+          class="w-full overflow-hidden hero"
+          width="1920"
+          height="645"
+          :src="$static.wordPressPage.featuredMedia.imageDownloaded"
+          quality="95"
+          fit="cover"
+        />
 
         <div class="absolute top-0 flex items-center w-full h-full">
           <div class="container">
@@ -27,10 +32,16 @@
 
       <div class="text-white bg-primary block-bg">
         <div
-          class="container flex flex-col items-center gap-4 py-12 md:flex-row justify-evenly"
+          class="container flex flex-col items-center gap-4 py-12  md:flex-row justify-evenly"
         >
           <div class="flex items-start max-w-xs mb-8 md:m-0">
-            <GImage class="mr-8 md:mr-4" src="~/assets/images/clock.svg" />
+            <GImage
+              width="48"
+              height="48"
+              class="mr-8 md:mr-4"
+              src="../assets/images/clock.svg"
+              immediate
+            />
             <div>
               <h3 class="font-bold tracking-wide">Save Time</h3>
               <p class="text-sm">
@@ -39,7 +50,13 @@
             </div>
           </div>
           <div class="flex items-start max-w-xs mb-8 md:m-0">
-            <GImage class="mr-8 md:mr-4" src="~/assets/images/euro.svg" />
+            <GImage
+              width="48"
+              height="48"
+              class="mr-8 md:mr-4"
+              src="../assets/images/euro.svg"
+              immediate
+            />
             <div>
               <h3 class="font-bold tracking-wide">Save Money</h3>
               <p class="text-sm">
@@ -48,7 +65,13 @@
             </div>
           </div>
           <div class="flex items-start max-w-xs">
-            <GImage class="mr-8 md:mr-4" src="~/assets/images/env.svg" />
+            <GImage
+              width="48"
+              height="48"
+              class="mr-8 md:mr-4"
+              src="../assets/images/env.svg"
+              immediate
+            />
             <div>
               <h3 class="font-bold tracking-wide">Save The Enviornment</h3>
               <p class="text-sm">
@@ -128,7 +151,6 @@ query {
 </static-query>
 
 <script>
-import HeroImage from "../components/UI/HeroImage.vue";
 import ServiceCards from "../components/ServiceCards";
 import ClientLogos from "../components/ClientLogos";
 import SmallNav from "../components/SmallNav";
@@ -136,21 +158,11 @@ import ContactForm from "../components/ContactForm";
 import { yoastHead } from "../mixins/yoastHead";
 
 export default {
-  // metaInfo() {
-  //   const pathUrl = `${this.$static.metadata.siteUrl}${this.$route.path}`;
-  //   return {
-  //     title: "Home",
-  //     description: this.$static.metadata.siteDescription,
-  //     link: [{ rel: "canonical", href: pathUrl }],
-  //     meta: [{ key: "og:url", property: "og:url", content: pathUrl }],
-  //   };
-  // },
   mixins: [yoastHead],
   created() {
     this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
   },
   components: {
-    HeroImage,
     ServiceCards,
     ClientLogos,
     SmallNav,
@@ -160,6 +172,21 @@ export default {
 </script>
 
 <style lang="postcss">
+.hero {
+  height: 420px;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 540px;
+  }
+}
+@media (min-width: 960px) {
+  .hero {
+    height: auto;
+  }
+}
+
 .block-bg {
   background: url("../assets/images/block-bg.jpg");
 }
