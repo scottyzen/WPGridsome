@@ -32,7 +32,7 @@ export const yoastHead = {
       yoastHead = replaceAll(
         yoastHead,
         "https://surfacemagic.2cubedtest.com/wp-content/",
-        "../assets/remoteImages/wp-content/"
+        "/remoteImages/wp-content/"
       );
 
       const cleanHtml = this.sanitize(yoastHead, {
