@@ -7,6 +7,8 @@
           width="1920"
           height="645"
           :src="$static.wordPressPage.featuredMedia.imageDownloaded"
+          :title="$static.wordPressPage.featuredMedia.title"
+          :alt="$static.wordPressPage.featuredMedia.altText"
           quality="95"
           fit="cover"
         />
@@ -145,6 +147,8 @@ query {
     yoastHead
     featuredMedia{
       imageDownloaded
+      title
+      altText
     }
   }
 }
