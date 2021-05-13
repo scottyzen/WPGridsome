@@ -27,7 +27,7 @@ export const yoastHead = {
       yoastHead = replaceAll(
         yoastHead,
         "http://surfacemagic.2cubedtest.com/wp-content/",
-        "../assets/remoteImages/wp-content/"
+        "/assets/remoteImages/wp-content/"
       );
       yoastHead = replaceAll(
         yoastHead,
