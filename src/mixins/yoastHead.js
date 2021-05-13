@@ -27,12 +27,12 @@ export const yoastHead = {
       yoastHead = replaceAll(
         yoastHead,
         "http://surfacemagic.2cubedtest.com/wp-content/",
-        "/assets/remoteImages/wp-content/"
+        "https://surfacemagic.netlify.app/remoteImages/wp-content/"
       );
       yoastHead = replaceAll(
         yoastHead,
         "https://surfacemagic.2cubedtest.com/wp-content/",
-        "/remoteImages/wp-content/"
+        "https://surfacemagic.netlify.app/remoteImages/wp-content/"
       );
 
       const cleanHtml = this.sanitize(yoastHead, {
