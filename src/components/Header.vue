@@ -4,10 +4,11 @@
       <g-link to="/"
         ><g-image
           class="w-28 md:w-auto"
-          src="../assets/images/logo.png"
-          :immediate="true"
+          src="../assets/images/logo.png?width=81"
+          immediate
           width="140"
           height="81"
+          fit="contain"
         ></g-image
       ></g-link>
       <div class="flex flex-wrap justify-end">
