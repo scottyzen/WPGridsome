@@ -2,15 +2,14 @@
   <header class="px-6 py-4 md:p-4">
     <div class="flex items-center justify-between mx-auto">
       <g-link to="/"
-        ><g-image
-          class="w-28 md:w-auto"
-          src="../assets/images/logo.png?width=81"
-          immediate
+        ><img
+          class="w-28 md:w-auto g-image"
+          src="../assets/images/logo.png"
           width="140"
           height="81"
-          fit="contain"
-        ></g-image
-      ></g-link>
+        />
+        ></g-link
+      >
       <div class="flex flex-wrap justify-end">
         <SmallNav class="hidden md:flex text-primary" />
         <Nav />
