@@ -3,10 +3,10 @@
     <div>
       <div class="relative">
         <img
-          class="w-full overflow-hidden hero g-image"
+          class="w-full overflow-hidden hero"
           width="1920"
           height="645"
-          :src="$static.wordPressPage.featuredMedia.imageDownloaded"
+          :src="$static.wordPressPage.featuredMedia.imageDownloaded.src"
           :title="$static.wordPressPage.featuredMedia.title"
           :alt="$static.wordPressPage.featuredMedia.altText"
         />
