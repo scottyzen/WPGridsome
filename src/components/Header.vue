@@ -8,8 +8,7 @@
           width="140"
           height="81"
         />
-        ></g-link
-      >
+      </g-link>
       <div class="flex flex-wrap justify-end">
         <SmallNav class="hidden md:flex text-primary" />
         <Nav />
