@@ -32,57 +32,8 @@
         </div>
       </div>
 
-      <div class="text-white bg-primary block-bg">
-        <div
-          class="container flex flex-col items-center gap-4 py-12  md:flex-row justify-evenly"
-        >
-          <div class="flex items-start max-w-xs mb-8 md:m-0">
-            <GImage
-              width="48"
-              height="48"
-              class="mr-8 md:mr-4"
-              src="../assets/images/clock.svg"
-              immediate
-            />
-            <div>
-              <h3 class="font-bold tracking-wide">Save Time</h3>
-              <p class="text-sm">
-                Lorum ipsum text to go here until final content
-              </p>
-            </div>
-          </div>
-          <div class="flex items-start max-w-xs mb-8 md:m-0">
-            <GImage
-              width="48"
-              height="48"
-              class="mr-8 md:mr-4"
-              src="../assets/images/euro.svg"
-              immediate
-            />
-            <div>
-              <h3 class="font-bold tracking-wide">Save Money</h3>
-              <p class="text-sm">
-                Lorum ipsum text to go here until final content
-              </p>
-            </div>
-          </div>
-          <div class="flex items-start max-w-xs">
-            <GImage
-              width="48"
-              height="48"
-              class="mr-8 md:mr-4"
-              src="../assets/images/env.svg"
-              immediate
-            />
-            <div>
-              <h3 class="font-bold tracking-wide">Save The Enviornment</h3>
-              <p class="text-sm">
-                Lorum ipsum text to go here until final content
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- BLUE ICONS -->
+      <IconBanner />
 
       <!-- ABOUT US  -->
       <div class="container grid items-center gap-8 my-12 md:grid-cols-2">
@@ -159,6 +110,7 @@ import ServiceCards from "../components/ServiceCards";
 import ClientLogos from "../components/ClientLogos";
 import SmallNav from "../components/SmallNav";
 import ContactForm from "../components/ContactForm";
+import IconBanner from "../components/IconBanner";
 import { yoastHead } from "../mixins/yoastHead";
 
 export default {
@@ -171,6 +123,7 @@ export default {
     ClientLogos,
     SmallNav,
     ContactForm,
+    IconBanner,
   },
 };
 </script>
@@ -191,9 +144,6 @@ export default {
   }
 }
 
-.block-bg {
-  background: url("../assets/images/block-bg.jpg");
-}
 .fade-in-up {
   animation: fade-in-up 600ms ease-in 600ms forwards;
 }
