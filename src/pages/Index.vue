@@ -2,13 +2,15 @@
   <Layout>
     <div>
       <div class="relative">
-        <img
+        <GImage
           class="w-full overflow-hidden hero"
           width="1920"
           height="645"
-          :src="$static.wordPressPage.featuredMedia.imageDownloaded.src"
+          :src="$static.wordPressPage.featuredMedia.imageDownloaded"
           :title="$static.wordPressPage.featuredMedia.title"
           :alt="$static.wordPressPage.featuredMedia.altText"
+          quality="95"
+          fit="cover"
         />
 
         <div class="absolute top-0 flex items-center w-full h-full">
