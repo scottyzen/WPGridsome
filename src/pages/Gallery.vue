@@ -2,7 +2,12 @@
   <Layout>
     <PageTitle
       :pageTitle="$static.wordPressPage.title"
-      :style="{ backgroundImage: bgImg }"
+      :style="{
+        backgroundImage: this.$static.wordPressPage.featuredMedia
+          ? `url(${this.$static.wordPressPage.featuredMedia.imageDownloaded.src})`
+          : ``,
+      }"
+      class="bg-cover"
     />
 
     <section class="container my-20">
@@ -29,13 +34,15 @@
         </li>
       </ul>
     </section>
-    <LightBox
-      ref="lightbox"
-      :media="media"
-      :showLightBox="false"
-      :showThumbs="false"
-      :showCaption="true"
-    ></LightBox>
+    <client-only>
+      <LightBox
+        ref="lightbox"
+        :media="media"
+        :showLightBox="false"
+        :showThumbs="false"
+        :showCaption="true"
+      ></LightBox>
+    </client-only>
   </Layout>
 </template>
 
@@ -49,6 +56,7 @@ query {
     }
     acf{
       gallery{
+        caption
         imageDownloaded
       }
     }
@@ -67,17 +75,11 @@ export default {
     this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
   },
   computed: {
-    bgImg() {
-      var bgImg = this.$static.wordPressPage.featuredMedia
-        ? `url(${this.$static.wordPressPage.featuredMedia.imageDownloaded.src})`
-        : "";
-      return bgImg;
-    },
     media() {
       return this.$static.wordPressPage.acf.gallery.map((item) => {
         return {
           src: item.imageDownloaded.src,
-          caption: item.imageDownloaded.caption,
+          caption: item.caption,
         };
       });
     },
@@ -92,10 +94,13 @@ export default {
 
 <style>
 .vue-lb-content {
-  padding: 40px !important;
+  padding: 40px 60px !important;
   background: #fff !important;
 }
 .vue-lb-button-close svg {
   fill: #111 !important;
+}
+.vue-lb-header {
+  margin-top: -20px;
 }
 </style>

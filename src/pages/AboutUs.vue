@@ -1,10 +1,11 @@
 <template>
   <Layout>
     <PageTitle
-      :pageTitle="$static.wordPressPage.title"
+      pageTitle="About Surface Magic"
       :style="{
         'background-image': `url(${$static.wordPressPage.featuredMedia.imageDownloaded.src})`,
       }"
+      class="bg-cover"
     />
 
     <!-- ABOUT US  -->

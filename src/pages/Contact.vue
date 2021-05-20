@@ -3,10 +3,12 @@
     <PageTitle
       :pageTitle="$static.wordPressPage.title"
       :style="{
-        'background-image': `url(${$static.wordPressPage.featuredMedia.imageDownloaded.src})`,
+        backgroundImage: this.$static.wordPressPage.featuredMedia
+          ? `url(${this.$static.wordPressPage.featuredMedia.imageDownloaded.src})`
+          : ``,
       }"
+      class="bg-cover"
     />
-
     <section
       class="container grid items-center gap-8 my-12 mb-32 md:grid-cols-2"
     >
