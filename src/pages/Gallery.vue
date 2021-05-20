@@ -35,13 +35,13 @@
       </ul>
     </section>
     <ClientOnly>
-      <LightBox
+      <!-- <LightBox
         ref="lightbox"
         :media="media"
         :showLightBox="false"
         :showThumbs="false"
         :showCaption="true"
-      ></LightBox>
+      ></LightBox> -->
     </ClientOnly>
   </Layout>
 </template>
