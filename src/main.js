@@ -12,7 +12,9 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   Vue.component("PageTitle", PageTitle);
 
   Vue.use(VueFuse);
-  Vue.use(VueLazyLoad);
+  if (isClient) {
+    Vue.use(VueLazyLoad);
+  }
   Vue.mixin(yoastHead);
 
   head.link.push({

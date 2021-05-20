@@ -34,7 +34,7 @@
         </li>
       </ul>
     </section>
-    <client-only>
+    <ClientOnly>
       <LightBox
         ref="lightbox"
         :media="media"
@@ -42,7 +42,7 @@
         :showThumbs="false"
         :showCaption="true"
       ></LightBox>
-    </client-only>
+    </ClientOnly>
   </Layout>
 </template>
 
