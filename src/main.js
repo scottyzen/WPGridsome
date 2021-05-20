@@ -3,6 +3,7 @@
 import VueFuse from "vue-fuse";
 import PageTitle from "~/components/PageTitle.vue";
 import DefaultLayout from "~/layouts/Default.vue";
+import { yoastHead } from "../src/mixins/yoastHead";
 
 export default function (Vue, { router, head, isClient, appOptions }) {
   // Set default layout as a global component
@@ -10,25 +11,14 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   Vue.component("PageTitle", PageTitle);
 
   Vue.use(VueFuse);
+  Vue.mixin(yoastHead);
 
   head.link.push({
     rel: "stylesheet",
-    href:
-      "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap",
   });
   head.link.push({
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
-  });
-
-  // head.link.push({
-  //   rel: "icon",
-  //   href: "/favicon.svg",
-  // });
-
-  // Add a meta tag
-  head.meta.push({
-    name: "description",
-    content: "A starter for Gridsome using WordPress and WPGraphQL",
   });
 }

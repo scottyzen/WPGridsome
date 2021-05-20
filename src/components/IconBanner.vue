@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white bg-primary block-bg">
+  <section class="text-white bg-primary block-bg">
     <div
       class="container flex flex-col items-center gap-4 py-12  md:flex-row justify-evenly"
     >
@@ -74,7 +74,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>

@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <Header class="relative z-10 w-full bg-white" />
-    <transition name="fade" appear mode="out-in">
-      <main class="flex-1">
-        <slot />
-      </main>
-    </transition>
+    <!-- <transition name="fade" appear mode="out-in"> -->
+    <main class="flex-1">
+      <slot />
+    </main>
+    <!-- </transition> -->
     <Footer />
   </div>
 </template>

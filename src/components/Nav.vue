@@ -1,8 +1,8 @@
 <template>
   <div class="w-full">
     <div class="flex items-center justify-end w-full md:justify-between">
-      <div
-        class="flex items-center justify-end w-full text-sm uppercase main-menu gap-x-4 lg:gap-x-12 text-primary-dark lg:text-base"
+      <nav
+        class="flex items-center justify-end w-full text-sm uppercase  main-menu gap-x-4 lg:gap-x-12 text-primary-dark lg:text-base"
         :class="{ 'hide-mobile-menu': !menuIsOpen }"
       >
         <g-link class="inline-block" to="/">Home</g-link>
@@ -12,7 +12,7 @@
         <g-link class="inline-block" to="/gallery">Gallery</g-link>
         <g-link class="inline-block" to="/news">News</g-link>
         <g-link class="button" to="/contact">Contact us</g-link>
-      </div>
+      </nav>
       <div class="py-4 md:hidden">
         <MobileMenuToggle
           class="ml-4"

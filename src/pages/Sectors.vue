@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <PageTitle title="Sectors" />
+    <PageTitle pageTitle="Sectors" />
     <div class="container my-12"></div>
   </Layout>
 </template>

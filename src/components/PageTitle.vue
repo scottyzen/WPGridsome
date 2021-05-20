@@ -1,21 +1,17 @@
 <template>
-  <div class="py-12 md:py-16 bg-gradient-to-r from-gray-900 to-gray-700">
-    <div
-      class="container relative z-10 flex flex-col items-center justify-center"
-    >
-      <h1
-        class="flex items-center mb-6 text-4xl font-semibold text-white md:text-5xl"
-      >
-        {{ title }}
+  <header class="bg-primary-dark">
+    <div class="container flex items-center h-96">
+      <h1 class="mb-20 text-4xl font-bold text-white">
+        {{ pageTitle }}
       </h1>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
 export default {
   props: {
-    title: {
+    pageTitle: {
       default: "Surface Magic",
       type: String,
     },

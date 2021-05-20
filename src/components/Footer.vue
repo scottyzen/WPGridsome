@@ -17,12 +17,12 @@
         <WPMenu slug="footer-menu-2" />
       </div>
       <div class="w-1/2 mb-12 md:w-auto">
-        <p>
+        <address class="not-italic">
           Ballysop, <br />
           Whitechurch, <br />
           New Ross, <br />
           Wexford
-        </p>
+        </address>
       </div>
       <div class="w-1/2 mb-12 md:w-auto">
         <div>Tel: <a href="tel:0864072814">086 407 2814</a></div>

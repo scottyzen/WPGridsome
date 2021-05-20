@@ -20,14 +20,13 @@ export const yoastHead = {
   },
   methods: {
     fetchMetaDatas(yoastHead) {
-      // console.log(typeof yoastHead);
       function replaceAll(string, search, replace) {
         return string.split(search).join(replace);
       }
       yoastHead = replaceAll(
         yoastHead,
-        "surfacemagic.2cubedtest.com/wp-content/",
-        "surfacemagic.netlify.app/remoteImages/wp-content/"
+        `${process.env.GRIDSOME_YOAST_DOMAIN}/wp-content/`,
+        `${process.env.GRIDSOME_DOMAIN}/remoteImages/wp-content/`
       );
 
       const cleanHtml = this.sanitize(yoastHead, {

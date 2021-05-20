@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid max-w-5xl gap-4 mx-auto text-center xs:grid-cols-2 lg:gap-8 md:grid-cols-3"
+    class="grid max-w-5xl gap-4 mx-auto text-center  xs:grid-cols-2 lg:gap-8 md:grid-cols-3"
   >
     <div class="p-4 bg-white md:p-8">
       <img
