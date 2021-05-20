@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="relative">
+    <section class="relative hero bg-primary-dark">
       <GImage
         class="w-full overflow-hidden hero"
         width="1920"

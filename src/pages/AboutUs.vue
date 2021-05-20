@@ -1,8 +1,11 @@
 <template>
   <Layout>
-    <page-title title="About Surface Magic" id="title-image">
-      <g-image src="~/assets/images/About_surface_magic.jpg"></g-image
-    ></page-title>
+    <PageTitle
+      :pageTitle="$static.wordPressPage.title"
+      :style="{
+        'background-image': `url(${$static.wordPressPage.featuredMedia.imageDownloaded.src})`,
+      }"
+    />
 
     <!-- ABOUT US  -->
     <section class="container grid items-center gap-8 my-12 md:grid-cols-2">
@@ -89,8 +92,6 @@ query {
     yoastHead
     featuredMedia{
       imageDownloaded
-      title
-      altText
     }
   }
 }
@@ -103,10 +104,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#title-image {
-  background: url("../assets/images/About_surface_magic.jpg") center;
-  background-size: cover;
-}
-</style>

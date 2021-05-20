@@ -1,6 +1,11 @@
 <template>
   <Layout>
-    <PageTitle pageTitle="Contact" />
+    <PageTitle
+      :pageTitle="$static.wordPressPage.title"
+      :style="{
+        'background-image': `url(${$static.wordPressPage.featuredMedia.imageDownloaded.src})`,
+      }"
+    />
 
     <section
       class="container grid items-center gap-8 my-12 mb-32 md:grid-cols-2"
@@ -26,6 +31,18 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  wordPressPage(id: "22"){
+    yoastHead
+    title
+    featuredMedia{
+      imageDownloaded
+    }
+  }
+}
+</static-query>
+
 <script>
 import ContactForm from "../components/ContactForm";
 import SmallNav from "../components/SmallNav";
@@ -33,6 +50,9 @@ export default {
   components: {
     ContactForm,
     SmallNav,
+  },
+  created() {
+    this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
   },
 };
 </script>
