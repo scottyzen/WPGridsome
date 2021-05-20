@@ -14,9 +14,9 @@ export default function (Vue, { router, head, isClient, appOptions }) {
 
   // Vue.use(VueFuse);
   // if (isClient) {
-  Vue.use(VueLazyLoad);
   // }
   if (process.isClient) {
+    Vue.use(VueLazyLoad);
     Vue.use(LightBox);
   }
 
