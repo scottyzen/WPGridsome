@@ -65,11 +65,11 @@ query {
 </static-query>
 
 <script>
-import LightBox from "vue-image-lightbox";
+// import LightBox from "vue-image-lightbox";
 require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
 export default {
   components: {
-    LightBox,
+    // LightBox,
   },
   created() {
     this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
