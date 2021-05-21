@@ -3,12 +3,9 @@
     <section class="relative hero bg-primary-dark">
       <GImage
         class="w-full overflow-hidden hero"
-        width="1920"
-        height="645"
         :src="$static.wordPressPage.featuredMedia.imageDownloaded"
         :title="$static.wordPressPage.featuredMedia.title"
         :alt="$static.wordPressPage.featuredMedia.altText"
-        quality="95"
         fit="cover"
         immediate
       />
@@ -93,14 +90,13 @@ query {
   wordPressPage(id: "10"){
     yoastHead
     featuredMedia{
-      imageDownloaded
+      imageDownloaded (width: 1920, height: 645, quality: 95)
       title
       altText
     }
   }
 }
 </static-query>
-
 <script>
 import ServiceCards from "../components/ServiceCards";
 import ClientLogos from "../components/ClientLogos";
