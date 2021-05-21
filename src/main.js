@@ -29,9 +29,9 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   //   href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap",
   // });
 
-  //   head.link.push({
-  //     rel: 'preload',
-  //     as: 'style',
-  //     href: 'https://fonts.googleapis.com/css2?family=Open+Sans:400,800|Open+Sans+Condensed:300,700|Slabo+27px&display=swap'
-  // })
+  // head.link.push({
+  //   rel: "preload",
+  //   as: "style",
+  //   href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap",
+  // });
 }
