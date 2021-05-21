@@ -20,12 +20,12 @@ export default function (Vue, { router, head, isClient, appOptions }) {
 
   Vue.mixin(yoastHead);
 
-  head.link.push({
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-  });
-  head.link.push({
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap",
-  });
+  // head.link.push({
+  //   rel: "preconnect",
+  //   href: "https://fonts.gstatic.com",
+  // });
+  // head.link.push({
+  //   rel: "stylesheet",
+  //   href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap",
+  // });
 }

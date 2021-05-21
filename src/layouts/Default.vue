@@ -30,6 +30,23 @@ export default {
 </script>
 
 <style lang="postcss">
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  /* src: url("/fonts/WorkSans.ttf"); */
+  src: url("/fonts/WorkSans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  /* src: url("/fonts/WorkSans.ttf"); */
+  src: url("/fonts/WorkSans.ttf") format("truetype");
+}
+
 * {
   scroll-behavior: smooth;
 }
