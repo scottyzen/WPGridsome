@@ -31,7 +31,7 @@ export default {
 
 <style lang="postcss">
 @font-face {
-  font-family: "Work Sans";
+  font-family: "Work Sans" sans-serif;
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -39,7 +39,7 @@ export default {
   src: url("/fonts/WorkSans.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Work Sans";
+  font-family: "Work Sans" sans-serif;
   font-style: normal;
   font-display: swap;
   font-weight: 700;
