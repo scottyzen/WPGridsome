@@ -6,9 +6,6 @@ export const yoastHead = {
     return {
       converter: html2json,
       sanitize,
-      meta: [],
-      title: null,
-      description: null,
     };
   },
   metaInfo() {

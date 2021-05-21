@@ -89,6 +89,7 @@
 query {
   wordPressPage(id: "10"){
     yoastHead
+    title
     featuredMedia{
       imageDownloaded (width: 1920, height: 645, quality: 95)
       title

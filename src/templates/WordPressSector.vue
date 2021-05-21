@@ -76,5 +76,8 @@ export default {
     ContactForm,
     SmallNav,
   },
+  created() {
+    this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
+  },
 };
 </script>

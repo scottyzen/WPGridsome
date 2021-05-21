@@ -5,14 +5,19 @@
         class="flex items-center justify-end w-full text-sm uppercase  main-menu gap-x-4 lg:gap-x-12 text-primary-dark lg:text-base"
         :class="{ 'hide-mobile-menu': !menuIsOpen }"
       >
-        <span class="relative parent" v-for="{ node } in menu" :key="node.key">
+        <span
+          class="relative text-center md:text-left parent"
+          v-for="{ node } in menu"
+          :key="node.key"
+        >
           <g-link class="inline-block" :to="`${node.path}`">{{
             node.label
           }}</g-link>
-          <ul v-if="node.childItems.edges.length" class="sub-menu">
+          <ul v-if="node.childItems.edges.length" class="flex sub-menu">
             <li v-for="sub in node.childItems.edges" :key="sub.node.id">
               <g-link
-                class="text-base whitespace-nowrap"
+                @click="menuIsOpen = false"
+                class="md:text-base whitespace-nowrap"
                 :to="`${sub.node.path}`"
                 >{{ sub.node.label }}</g-link
               >
@@ -43,7 +48,7 @@ query MainMenu {
         path
         id
         parentDatabaseId
-        childItems {
+        childItems(first: 99) {
           edges{
             node {
             label
@@ -105,17 +110,34 @@ export default {
   }
 }
 
-.sub-menu {
-  @apply shadow-lg flex flex-col absolute bg-white p-8 opacity-0;
-  max-height: 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  gap: 0.5rem;
+@media (max-width: 767px) {
+  .sub-menu {
+    @apply flex-col md:absolute bg-white overflow-hidden;
+    max-height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: max-height 500ms ease-out;
+  }
+  .parent:hover .sub-menu {
+    @apply opacity-100;
+    max-height: 1000px;
+    transform: scaleY(1);
+  }
 }
-.parent:hover .sub-menu {
-  @apply opacity-100;
-  max-height: 1000px;
-  transform: scaleY(1);
-  transition: opacity 200ms ease 100ms, transform 200ms ease 100ms;
+@media (min-width: 768px) {
+  .sub-menu {
+    @apply shadow-lg flex-col md:absolute bg-white p-8 opacity-0;
+    max-height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  .parent:hover .sub-menu,
+  .mobile-open {
+    @apply opacity-100;
+    max-height: 1000px;
+    transform: scaleY(1);
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+  }
 }
 </style>
