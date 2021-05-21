@@ -5,7 +5,6 @@ import PageTitle from "~/components/PageTitle.vue";
 import DefaultLayout from "~/layouts/Default.vue";
 import { yoastHead } from "../src/mixins/yoastHead";
 import VueLazyLoad from "vue-lazyload";
-import LightBox from "vue-image-lightbox";
 
 export default function (Vue, { router, head, isClient, appOptions }) {
   // Set default layout as a global component
@@ -17,7 +16,6 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   // }
   if (isClient) {
     Vue.use(VueLazyLoad);
-    Vue.use(LightBox);
   }
 
   Vue.mixin(yoastHead);

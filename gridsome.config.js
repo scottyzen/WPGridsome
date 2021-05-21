@@ -43,7 +43,7 @@ module.exports = {
         typeName: "WordPressAttachment",
         sourceField: "sourceUrl",
         targetField: "imageDownloaded",
-        targetPath: "./static/remoteImages",
+        targetPath: "./images/remoteImages",
       },
     },
 

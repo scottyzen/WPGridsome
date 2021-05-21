@@ -68,6 +68,9 @@ query {
 require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
 
 export default {
+  components: {
+    LightBox: () => import("vue-image-lightbox"),
+  },
   created() {
     this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
   },
