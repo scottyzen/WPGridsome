@@ -5,12 +5,21 @@
         class="flex items-center justify-end w-full text-sm uppercase  main-menu gap-x-4 lg:gap-x-12 text-primary-dark lg:text-base"
         :class="{ 'hide-mobile-menu': !menuIsOpen }"
       >
-        <g-link class="inline-block" to="/">Home</g-link>
-        <g-link class="inline-block" to="/about-us">About Us</g-link>
-        <g-link class="inline-block" to="/services">Services</g-link>
-        <g-link class="inline-block" to="/sectors">Sectors</g-link>
-        <g-link class="inline-block" to="/gallery">Gallery</g-link>
-        <g-link class="inline-block" to="/news">News</g-link>
+        <span class="relative parent" v-for="{ node } in menu" :key="node.key">
+          <g-link class="inline-block" :to="`${node.path}`">{{
+            node.label
+          }}</g-link>
+          <ul v-if="node.childItems.edges.length" class="sub-menu">
+            <li v-for="sub in node.childItems.edges" :key="sub.node.id">
+              <g-link
+                class="text-base whitespace-nowrap"
+                :to="`${sub.node.path}`"
+                >{{ sub.node.label }}</g-link
+              >
+            </li>
+          </ul>
+        </span>
+        <!-- <g-link class="inline-block" to="/">Home</g-link> -->
         <g-link class="button" to="/contact">Contact us</g-link>
       </nav>
       <div class="py-4 md:hidden">
@@ -24,8 +33,36 @@
   </div>
 </template>
 
+<static-query>
+query MainMenu {
+  menu(id: "2", idType: DATABASE_ID) {
+    menuItems(first: 99) {
+      edges{
+        node {
+        label
+        path
+        id
+        parentDatabaseId
+        childItems {
+          edges{
+            node {
+            label
+            path
+            id
+          }
+          }
+        }
+      }
+      }
+    }
+  }
+}
+
+</static-query>
+
 <script>
 import MobileMenuToggle from "../components/MobileMenuToggle";
+import WPMenu from "../components/WPMenu";
 export default {
   data() {
     return {
@@ -34,6 +71,14 @@ export default {
   },
   components: {
     MobileMenuToggle,
+    WPMenu,
+  },
+  computed: {
+    menu() {
+      return this.$static.menu.menuItems.edges.filter((item) => {
+        return item.node.parentDatabaseId == 0;
+      });
+    },
   },
 };
 </script>
@@ -58,5 +103,19 @@ export default {
     transform: translateY(-100vh);
     opacity: 0;
   }
+}
+
+.sub-menu {
+  @apply shadow-lg flex flex-col absolute bg-white p-8 opacity-0;
+  max-height: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  gap: 0.5rem;
+}
+.parent:hover .sub-menu {
+  @apply opacity-100;
+  max-height: 1000px;
+  transform: scaleY(1);
+  transition: opacity 200ms ease 100ms, transform 200ms ease 100ms;
 }
 </style>

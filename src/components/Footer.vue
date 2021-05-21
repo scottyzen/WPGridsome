@@ -11,7 +11,7 @@
       </div>
 
       <div class="w-1/2 mb-12 md:w-auto">
-        <WPMenu slug="main-menu" />
+        <WPMenu slug="footer-menu-1" />
       </div>
       <div class="w-1/2 mb-12 md:w-auto">
         <WPMenu slug="footer-menu-2" />
