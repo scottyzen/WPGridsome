@@ -134,7 +134,7 @@ export default {
 }
 @media (min-width: 960px) {
   .hero {
-    height: auto;
+    height: 600px;
   }
 }
 
