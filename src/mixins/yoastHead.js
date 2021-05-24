@@ -1,18 +1,20 @@
-import sanitize from "sanitize-html";
 import html2json from "html2json";
+import sanitize from "sanitize-html";
 
 export const yoastHead = {
   data() {
     return {
       converter: html2json,
       sanitize,
+      scMeta: [],
+      scScript: [],
     };
   },
   metaInfo() {
     return {
-      title: this.title,
-      meta: this.meta,
-      script: this.script,
+      title: this.scTitle,
+      meta: this.scScript,
+      script: this.scScript,
     };
   },
   methods: {
@@ -31,18 +33,10 @@ export const yoastHead = {
         allowedAttributes: false,
       });
       const rawJson = this.converter.html2json(cleanHtml);
-      this.title = rawJson.child
-        .map((el) => (el.tag === "title" ? el.child[0].text : null))
-        .filter((el) => el)[0];
+      this.scTitle = rawJson.child.map((el) => (el.tag === "title" ? el.child[0].text : null)).filter((el) => el)[0];
       const elements = rawJson.child.filter((tag) => tag.node === "element");
-
-      const metasArray = elements
-        .filter((m) => m.tag === "meta")
-        .map((m) => m.attr);
-
-      const scriptsArray = elements
-        .filter((s) => s.tag === "script")
-        .map((s) => {
+      const metasArray = elements.filter((m) => m.tag === "meta").map((m) => m.attr);
+      const scriptsArray = elements.filter((s) => s.tag === "script").map((s) => {
           return {
             innerHTML: s.attr.type,
             type: s.child[0].text,
@@ -51,25 +45,14 @@ export const yoastHead = {
 
       let meta = [];
       for (let i = 0; i < metasArray.length; i++) {
-        let obj = {
-          name: "",
-          content: "",
-          key: "",
-        };
-        obj.name = metasArray[i].property
-          ? metasArray[i].property
-          : metasArray[i].name;
-        obj.content =
-          typeof metasArray[i].content === "string"
-            ? metasArray[i].content
-            : metasArray[i].content.join(" ");
-        obj.key = metasArray[i].property
-          ? metasArray[i].property
-          : metasArray[i].name;
+        let obj = { name: "", content: "", key: "" };
+        obj.name = metasArray[i].property ? metasArray[i].property : metasArray[i].name;
+        obj.content = typeof metasArray[i].content === "string" ? metasArray[i].content : metasArray[i].content.join(" ");
+        obj.key = metasArray[i].property ? metasArray[i].property : metasArray[i].name;
         meta.push(obj);
       }
-      this.script = scriptsArray;
-      this.meta = meta;
+      this.scScript = scriptsArray;
+      this.scMeta = meta;
     },
   },
 };
