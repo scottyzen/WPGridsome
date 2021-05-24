@@ -12,7 +12,7 @@
 
     <section class="container my-20">
       <div
-        class="flex flex-col-reverse flex-wrap items-center justify-between gap-8  md:flex-row"
+        class="flex flex-col-reverse items-center justify-between gap-8  md:flex-nowrap md:flex-row"
       >
         <div>
           <div class="flex items-center mb-8">
@@ -41,12 +41,17 @@
         <GImage
           class="w-full md:w-1/2"
           src="~/assets/images/bathroom-repairs.jpg"
+          alt="Bathroom Repairs"
+          width="574"
+          height="420"
         />
       </div>
     </section>
 
     <section class="container my-20">
-      <div class="flex flex-wrap items-center justify-between gap-8">
+      <div
+        class="flex flex-col items-center justify-between gap-8  md:flex-nowrap md:flex-row"
+      >
         <GImage class="w-full md:w-1/2" src="~/assets/images/floor.jpg" />
         <div class="md:ml-auto">
           <div class="flex items-center mb-8">
@@ -76,7 +81,9 @@
     </section>
 
     <section class="container my-20">
-      <div class="flex flex-wrap items-center justify-between gap-8">
+      <div
+        class="flex flex-col-reverse items-center justify-between gap-8  md:flex-nowrap md:flex-row"
+      >
         <div>
           <div class="flex items-center mb-8">
             <img
@@ -107,7 +114,7 @@
 
     <section class="container my-20">
       <div
-        class="flex flex-col-reverse flex-wrap items-center justify-between gap-8  md:flex-row"
+        class="flex flex-col items-center justify-between gap-8  md:flex-nowrap md:flex-row"
       >
         <GImage class="w-full md:w-1/2" src="~/assets/images/kitchen.jpg" />
         <div class="md:ml-auto">
@@ -138,7 +145,9 @@
     </section>
 
     <section class="container my-20">
-      <div class="flex flex-wrap items-center justify-between gap-8">
+      <div
+        class="flex flex-col-reverse items-center justify-between gap-8  md:flex-nowrap md:flex-row"
+      >
         <div>
           <div class="flex items-center mb-8">
             <img
@@ -169,7 +178,7 @@
 
     <section class="container my-20">
       <div
-        class="flex flex-col-reverse flex-wrap items-center justify-between gap-8  md:flex-row"
+        class="flex flex-col items-center justify-between gap-8  md:flex-nowrap md:flex-row"
       >
         <GImage class="w-full md:w-1/2" src="~/assets/images/brick.jpg" />
         <div class="md:ml-auto">
