@@ -20,7 +20,10 @@
     </article>
 
     <!-- GALLERY  -->
-    <section class="container my-20">
+    <section
+      v-if="$page.wordPressSector.acf.gallery.length"
+      class="container my-20"
+    >
       <ul class="grid grid-cols-2 gap-8">
         <li v-for="item in $page.wordPressSector.acf.gallery" :key="item.key">
           <g-image :src="item.imageDownloaded"></g-image>
@@ -77,7 +80,7 @@ export default {
     SmallNav,
   },
   created() {
-    this.fetchMetaDatas(this.$static.wordPressPage.yoastHead);
+    this.fetchMetaDatas(this.$page.wordPressSector.yoastHead);
   },
 };
 </script>
