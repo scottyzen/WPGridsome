@@ -6,13 +6,20 @@
         :class="{ 'hide-mobile-menu': !menuIsOpen }"
       >
         <span
-          class="relative text-center md:text-left parent"
+          class="relative text-center md:text-left"
           v-for="{ node } in menu"
           :key="node.key"
+          :class="{ parent: node.childItems.edges.length }"
         >
-          <g-link class="inline-block" :to="`${node.path}`">{{
+          <g-link
+            v-if="node.path != '?'"
+            class="inline-block"
+            :to="`${node.path}`"
+            >{{ node.label }}</g-link
+          >
+          <span v-else class="inline-block font-semibold">{{
             node.label
-          }}</g-link>
+          }}</span>
           <ul v-if="node.childItems.edges.length" class="flex sub-menu">
             <li v-for="sub in node.childItems.edges" :key="sub.node.id">
               <g-link
@@ -42,27 +49,26 @@
 query MainMenu {
   menu(id: "2", idType: DATABASE_ID) {
     menuItems(first: 99) {
-      edges{
+      edges {
         node {
-        label
-        path
-        id
-        parentDatabaseId
-        childItems(first: 99) {
-          edges{
-            node {
-            label
-            path
-            id
-          }
+          label
+          path
+          id
+          parentDatabaseId
+          childItems(first: 99) {
+            edges {
+              node {
+                label
+                path
+                id
+              }
+            }
           }
         }
-      }
       }
     }
   }
 }
-
 </static-query>
 
 <script>
