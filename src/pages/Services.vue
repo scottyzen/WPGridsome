@@ -20,7 +20,7 @@
               width="64"
               height="64"
               src="../assets/images/icons/noun_Bathroom_2738007.svg"
-              alt="Bathroom Repairs"
+              alt="Bathroom Repairs Icon"
               class="inline-block mr-8"
               loading="lazy"
             />
@@ -52,14 +52,19 @@
       <div
         class="flex flex-col items-center justify-between gap-8  md:flex-nowrap md:flex-row"
       >
-        <GImage class="w-full md:w-1/2" src="~/assets/images/floor.jpg" />
+        <GImage
+          class="w-full md:w-1/2"
+          src="~/assets/images/floor.jpg"
+          width="574"
+          height="420"
+        />
         <div class="md:ml-auto">
           <div class="flex items-center mb-8">
             <img
               width="64"
               height="64"
               src="../assets/images/icons/noun_Floor_1667809.svg"
-              alt="Bathroom Repairs"
+              alt="Flooring Repairs Icon"
               class="inline-block mr-8"
               loading="lazy"
             />
@@ -90,7 +95,7 @@
               width="64"
               height="64"
               src="../assets/images/icons/noun_window_1313735.svg"
-              alt="Bathroom Repairs"
+              alt="Window Repairs Icon"
               class="inline-block mr-8"
               loading="lazy"
             />
@@ -108,7 +113,13 @@
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <GImage class="w-full md:w-1/2" src="~/assets/images/window.jpg" />
+        <GImage
+          alt="Window Repairs"
+          class="w-full md:w-1/2"
+          src="~/assets/images/window.jpg"
+          width="574"
+          height="420"
+        />
       </div>
     </section>
 
@@ -116,14 +127,20 @@
       <div
         class="flex flex-col items-center justify-between gap-8  md:flex-nowrap md:flex-row"
       >
-        <GImage class="w-full md:w-1/2" src="~/assets/images/kitchen.jpg" />
+        <GImage
+          alt="Worktop and Kithen Repairs"
+          class="w-full md:w-1/2"
+          src="~/assets/images/kitchen.jpg"
+          width="574"
+          height="420"
+        />
         <div class="md:ml-auto">
           <div class="flex items-center mb-8">
             <img
               width="64"
               height="64"
               src="../assets/images/icons/noun_Kitchen_1294335.svg"
-              alt="Bathroom Repairs"
+              alt="Worktop and Kithen Repairs Icon"
               class="inline-block mr-8"
               loading="lazy"
             />
@@ -154,7 +171,7 @@
               width="64"
               height="64"
               src="../assets/images/icons/noun_Door_3267183.svg"
-              alt="Bathroom Repairs"
+              alt="Door Repairs Icon"
               class="inline-block mr-8"
               loading="lazy"
             />
@@ -172,7 +189,13 @@
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <GImage class="w-full md:w-1/2" src="~/assets/images/door.jpg" />
+        <GImage
+          alt="Door Repairs"
+          class="w-full md:w-1/2"
+          src="~/assets/images/door.jpg"
+          width="574"
+          height="420"
+        />
       </div>
     </section>
 
@@ -180,14 +203,20 @@
       <div
         class="flex flex-col items-center justify-between gap-8  md:flex-nowrap md:flex-row"
       >
-        <GImage class="w-full md:w-1/2" src="~/assets/images/brick.jpg" />
+        <GImage
+          alt="Brick, Stone and Marble repairs"
+          class="w-full md:w-1/2"
+          src="~/assets/images/brick.jpg"
+          width="574"
+          height="420"
+        />
         <div class="md:ml-auto">
           <div class="flex items-center mb-8">
             <img
               width="64"
               height="64"
               src="../assets/images/icons/noun_brick_1283239.svg"
-              alt="Bathroom Repairs"
+              alt="Brick Icon"
               class="inline-block mr-8"
               loading="lazy"
             />
