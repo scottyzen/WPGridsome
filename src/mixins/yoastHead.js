@@ -6,44 +6,40 @@ export const yoastHead = {
     return {
       converter: html2json,
       sanitize,
-      meta: [],
-      title: null,
-      description: null,
+      scMeta: [],
+      scScript: [],
     };
   },
   metaInfo() {
     return {
-      title: this.title,
-      meta: this.meta,
-      script: this.script,
+      title: this.scTitle,
+      meta: this.scMeta,
+      script: this.scScript,
     };
   },
   methods: {
     fetchMetaDatas(yoastHead) {
-      // console.log(typeof yoastHead);
-      function replaceAll(string, search, replace) {
-        return string.split(search).join(replace);
-      }
-      yoastHead = replaceAll(
-        yoastHead,
-        "testing.2cubedtest.com/wp-content/",
-        "wpgridsome.com/remoteImages/wp-content/"
-      );
+      // function replaceAll(string, search, replace) {
+      //   return string.split(search).join(replace);
+      // }
+      // yoastHead = replaceAll(
+      //   yoastHead,
+      //   `${process.env.GRIDSOME_YOAST_DOMAIN}/wp-content/`,
+      //   `${process.env.GRIDSOME_DOMAIN}/images/remoteImages/wp-content/`
+      // );
 
       const cleanHtml = this.sanitize(yoastHead, {
         allowedTags: false,
         allowedAttributes: false,
       });
       const rawJson = this.converter.html2json(cleanHtml);
-      this.title = rawJson.child
+      this.scTitle = rawJson.child
         .map((el) => (el.tag === "title" ? el.child[0].text : null))
         .filter((el) => el)[0];
       const elements = rawJson.child.filter((tag) => tag.node === "element");
-
       const metasArray = elements
         .filter((m) => m.tag === "meta")
         .map((m) => m.attr);
-
       const scriptsArray = elements
         .filter((s) => s.tag === "script")
         .map((s) => {
@@ -55,11 +51,7 @@ export const yoastHead = {
 
       let meta = [];
       for (let i = 0; i < metasArray.length; i++) {
-        let obj = {
-          name: "",
-          content: "",
-          key: "",
-        };
+        let obj = { name: "", content: "", key: "" };
         obj.name = metasArray[i].property
           ? metasArray[i].property
           : metasArray[i].name;
@@ -72,8 +64,8 @@ export const yoastHead = {
           : metasArray[i].name;
         meta.push(obj);
       }
-      this.script = scriptsArray;
-      this.meta = meta;
+      this.scScript = scriptsArray;
+      this.scMeta = meta;
     },
   },
 };

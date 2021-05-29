@@ -12,8 +12,8 @@
 </template>
 
 <page-query>
-query($page: Int) {
-  allWordPressPost(perPage: 12, page: $page) @paginate {
+query GetAllPosts {
+  allWordPressPost {
     pageInfo {
       totalPages
       currentPage
@@ -26,10 +26,10 @@ query($page: Int) {
         slug
         featuredMedia {
           sourceUrl
-          imageDownloaded
+          downloaded
         }
         categories {
-          title
+          name
           id
           slug
         }
@@ -40,12 +40,12 @@ query($page: Int) {
 </page-query>
 
 <script>
-import { Pager } from 'gridsome'
-import PostGrid from '../components/PostGrid'
+import { Pager } from "gridsome";
+import PostGrid from "../components/PostGrid";
 export default {
   components: {
     PostGrid,
     Pager,
   },
-}
+};
 </script>

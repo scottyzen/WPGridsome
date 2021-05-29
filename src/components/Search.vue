@@ -41,7 +41,7 @@
               <g-image
                 v-if="item.node.featuredMedia"
                 class="w-12 rounded-sm md:w-16"
-                :src="item.node.featuredMedia.imageDownloaded"
+                :src="item.node.featuredMedia.downloaded"
               />
             </g-link>
           </div>
@@ -59,8 +59,7 @@ query Home {
         title
         path
         featuredMedia {
-          sourceUrl
-          imageDownloaded
+          downloaded
         }
       }
     }
@@ -69,15 +68,15 @@ query Home {
 </static-query>
 
 <script>
-import VueFuse from './VeuFuse'
+import VueFuse from "./VeuFuse";
 
 export default {
   data() {
     return {
-      search: '',
+      search: "",
       results: [],
       renderComponent: true,
-    }
+    };
   },
   components: {
     VueFuse,
@@ -85,31 +84,31 @@ export default {
   computed: {
     options() {
       return {
-        keys: ['node.title'],
-      }
+        keys: ["node.title"],
+      };
     },
   },
   methods: {
     handleResults(r) {
-      this.results = r
+      this.results = r;
     },
     closeSearch(e) {
       // console.log(e);
-      this.search = ''
-      this.results = []
-      this.forceRerender()
+      this.search = "";
+      this.results = [];
+      this.forceRerender();
     },
     forceRerender() {
       // Remove my-component from the DOM
-      this.renderComponent = false
+      this.renderComponent = false;
 
       this.$nextTick(() => {
         // Add the component back in
-        this.renderComponent = true
-      })
+        this.renderComponent = true;
+      });
     },
   },
-}
+};
 </script>
 
 <style>

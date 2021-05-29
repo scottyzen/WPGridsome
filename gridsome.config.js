@@ -1,6 +1,3 @@
-// This is where project configuration and plugin options are located.
-// Learn more: https://gridsome.org/docs/config
-
 module.exports = {
   siteName: 'WPGridsome',
   siteUrl: `https://${process.env.DOMAIN}`,
@@ -12,13 +9,12 @@ module.exports = {
   },
   plugins: [
     {
-      use: '@gridsome/source-wordpress',
+      use: '@travisreynolds/gridsome-source-wordpress',
       options: {
         baseUrl: process.env.WORDPRESS_URL, // required
-        apiBase: 'wp-json',
-        typeName: 'WordPress',
-        perPage: 100,
-        concurrent: 10,
+        apiBase: "wp-json",
+        typeName: "WordPress",
+        images: true
       },
     },
     {
@@ -36,16 +32,6 @@ module.exports = {
       },
     },
     { use: 'gridsome-plugin-tailwindcss' },
-    {
-      use: '@noxify/gridsome-plugin-remote-image',
-      options: {
-        original: true,
-        typeName: 'WordPressAttachment',
-        sourceField: 'sourceUrl',
-        targetField: 'imageDownloaded',
-        targetPath: './static/remoteImages',
-      },
-    },
 
     {
       use: 'gridsome-plugin-pwa',

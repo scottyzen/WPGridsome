@@ -5,7 +5,7 @@
         v-if="$page.wordPressPost.featuredMedia"
         class="w-full -mb-24 bg-center bg-cover h-90vh featured-image shadow-custom"
         :style="{
-          backgroundImage: `url(${$page.wordPressPost.featuredMedia.imageDownloaded.src})`,
+          backgroundImage: `url(${$page.wordPressPost.featuredMedia.downloaded.src})`,
         }"
       ></div>
       <div
@@ -31,7 +31,7 @@ query Post($id: ID!) {
     content
     featuredMedia {
       sourceUrl
-      imageDownloaded
+      downloaded
       altText
       title
       mediaDetails {
@@ -41,7 +41,7 @@ query Post($id: ID!) {
     categories {
       id
       slug
-      title
+      name
     }
   }
 }

@@ -5,7 +5,7 @@
   >
     <g-image
       v-if="node.featuredMedia"
-      :src="node.featuredMedia.imageDownloaded"
+      :src="node.featuredMedia.downloaded"
       class="object-cover w-full h-200 rounded-t-md"
     ></g-image>
     <g-image
@@ -31,7 +31,7 @@
           <g-link
             class="inline-block p-1 px-3 text-xs text-indigo-700 rounded-full bg-indigo-50 dark:bg-indigo-500 dark:text-indigo-100"
             :to="`/category/${node.slug}`"
-            >{{ node.title }}</g-link
+            >{{ node.name }}</g-link
           >
         </span>
       </div>
@@ -41,14 +41,16 @@
 
 <script>
 export default {
-  props: ['node'],
+  props: ["node"],
   computed: {
     categories() {
       // Exclude uncategorized
-      return this.node.categories.filter((item) => item.slug != 'uncategorized')
+      return this.node.categories.filter(
+        (item) => item.slug != "uncategorized"
+      );
     },
   },
-}
+};
 </script>
 
 <style>

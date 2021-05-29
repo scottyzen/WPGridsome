@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <PageTitle :title="$page.wordPressCategory.title" class="-mb-6" />
+    <PageTitle :title="$page.wordPressCategory.name" class="-mb-6" />
     <div class="px-4 pt-10 mx-auto my-8 max-w-7xl md:p-8">
       <PostGrid :posts="$page.wordPressCategory.belongsTo.edges" />
       <Pager
@@ -14,7 +14,7 @@
 <page-query>
 query WordPressCategory($id: ID!, $page: Int) {
   wordPressCategory(id: $id) {
-    title
+    name
     belongsTo(page: $page, perPage: 12) @paginate {
       pageInfo {
         totalPages
@@ -29,10 +29,10 @@ query WordPressCategory($id: ID!, $page: Int) {
             excerpt
             featuredMedia {
               sourceUrl
-              imageDownloaded
+              downloaded
             }
             categories {
-              title
+              name
               slug
             }
           }
@@ -44,12 +44,12 @@ query WordPressCategory($id: ID!, $page: Int) {
 </page-query>
 
 <script>
-import { Pager } from 'gridsome'
-import PostGrid from '../components/PostGrid'
+import { Pager } from "gridsome";
+import PostGrid from "../components/PostGrid";
 export default {
   components: {
     Pager,
     PostGrid,
   },
-}
+};
 </script>
